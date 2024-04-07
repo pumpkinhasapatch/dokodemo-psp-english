@@ -1,0 +1,18 @@
+# Encrypted game files
+build/
+extract/
+insert/
+
+# Software dependencies
+tools/
+
+# BeXide file formats
+*.KSC
+*.DIC
+*.GIM
+
+# File checksums and settings
+*.csv
+
+# GIMP editor layered images
+*.xcf

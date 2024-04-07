@@ -1,0 +1,316 @@
+// Doko Demo Issyo Fan Translation Project
+// /PSP_GAME/SYSDIR/BOOT.BIN
+
+#VAR(Table, TABLE)
+#ADDTBL("shiftjis.tbl", Table)
+#ACTIVETBL(Table)
+
+// New Game > Enter Player Data screen
+// Gender
+#JMP($D8194,$D8196)
+#FIXEDLENGTH(3,0)
+Grl<END>
+
+#JMP($D8198,$D819A)
+Boy<END>
+
+// Default Pokepi names
+#JMP($D8334,$D833A)
+#FIXEDLENGTH(7,0)
+Toro<END>
+
+#JMP($D833C,$D8342)
+Suzuki<END>
+
+#JMP($D8344,$D834A)
+Jun<END>
+
+#JMP($D834C,$D8356)
+#FIXEDLENGTH(11,0)
+Pierre<END>
+
+#JMP($D8358,$D8362)
+Ricky<END>
+
+#JMP($D8364,$D836A)
+// Why is Kuro's name here? They're only the side character black cats
+//クロ
+Kuro<END>
+
+// Genders again, in reverse order for some reason
+#JMP($D8370,$D8372)
+#FIXEDLENGTH(3,0)
+Boy<END>
+
+#JMP($D8374,$D8376)
+Grl<END>
+
+// https://www.avclub.com/here-s-why-it-s-important-to-know-the-blood-types-of-vi-1798270554
+// In Japan, it’s believed that a person’s ABO blood group is an indicator of their personality.
+#JMP($D8378,$D837E)
+#FIXEDLENGTH(7,0)
+// Blood Type A, full-width letter
+Type <$82><$60><END>
+
+#JMP($D8380,$D8386)
+// B
+Type <$82><$61><END>
+
+#JMP($D8388,$D838E)
+Type AB<END>
+
+#JMP($D8390,$D8396)
+// O
+Type <$82><$6E><END>
+
+// Star signs
+#JMP($D8398,$D83A1)
+#FIXEDLENGTH(11,0)
+Aries<END>
+
+#JMP($D83A4,$D83AE)
+Taurus<END>
+
+#JMP($D83B0,$D83BA)
+Gemini<END>
+
+#JMP($D83BC,$D83C2)
+#FIXEDLENGTH(7,0)
+Cancer<END>
+
+#JMP($D83C4,$D83CA)
+Leo<END>
+
+#JMP($D83CC,$D83D6)
+#FIXEDLENGTH(11,0)
+Virgo<END>
+
+#JMP($D83D8,$D83E2)
+Libra<END>
+
+#JMP($D83E4,$D83EE)
+Scorpio<END>
+
+#JMP($D83F0,$D83F6)
+#FIXEDLENGTH(7,0)
+// Too long, check if its correct
+//いて座
+Sagittarius<END>
+
+#JMP($D83F8,$D83FE)
+//やぎ座
+Capricorn<END>
+
+#JMP($D8400,$D840A)
+#FIXEDLENGTH(11,0)
+//みずがめ座
+Aquarius<END>
+
+#JMP($D840C,$D8412)
+#FIXEDLENGTH(7,0)
+Pisces<END>
+
+// Replace Japanese keypad characters with ABCs
+#JMP($D92C8,$D92FA)
+#FIXEDLENGTH(51,0)
+.@/:~<END>
+
+#JMP($D92FC,$D9326)
+#FIXEDLENGTH(43,0)
+abc<LR>
+ABC<END>
+
+// def
+#JMP($D93DC,$D9406)
+#FIXEDLENGTH(43,0)
+def<LR>
+DEF<END>
+
+#JMP($D9328)
+#FIXEDLENGTH(59,0)
+ghi<LR>
+GHI<END>
+
+#JMP($D9424,$D944E)
+#FIXEDLENGTH(23,0)
+jkl<LR>
+JKL<END>
+
+#JMP($D9398,$D93DA)
+#FIXEDLENGTH(67,0)
+mno<LR>
+MNO<END>
+
+#JMP($D9450,$D9466)
+#FIXEDLENGTH(23,0)
+pqrs<LR>
+PQRS<END>
+
+// tuv
+#JMP($D9408,$D9422)
+#FIXEDLENGTH(27,0)
+tuv<LR>
+TUV<END>
+
+// wxyz
+#JMP($D9494,$D94AA)
+#FIXEDLENGTH(23,0)
+wxyz<LR>
+WXYZ<END>
+
+// !?Y$%&+-=
+#JMP($D91AC,$D91C2)
+#FIXEDLENGTH(23,0)
+!?$%&+-=<END>
+
+#JMP($D943C,$D944E)
+#FIXEDLENGTH(19,0)
+//Space bar
+<$20><END>
+
+//------------
+#JMP($DA0D0,$DA102)
+#FIXEDLENGTH(51,0)
+//"メモリースティック"の空き容量が不足しています。<END>
+There is not enough space on the "Memory Stick".<END>
+
+#JMP($DA104,$DA13A)
+#FIXEDLENGTH(55,0)
+//このゲームのデータをセーブするには800KB以上必要です。<END>
+This game requires at least 800KB to save data.<END>
+
+#JMP($DA13C,$DA167)
+#FIXEDLENGTH(44,0)
+//Circle: 確認
+                                <$81><$9B>：Okay<END>
+
+#JMP($DA168,$DA19B)
+#FIXEDLENGTH(52,0)
+//"どこでもいっしょ" のセーブデータが見つかりました。<END>
+Start new save data for<LR>
+"Doko Demo Issyo Portable"?<END>
+
+#JMP($DA19C,$DA217)
+#FIXEDLENGTH(124,0)
+//このデータに上書きを行うと以前のポケピは消えてしまいますが、教えた言葉や友達ノートの情報は新しいポケピに引き継がれます。
+If you proceed, the previous<LR>
+Pokepi will leave, but any words,<LR>
+friend notes and decorations<LR>
+will move to the new Pokepi.<END>
+
+#JMP($DA218,$DA22F)
+#FIXEDLENGTH(24,0)
+//このまま進めますか？<END>
+Do you want to do this?<END>
+
+#JMP($DA230,$DA266)
+#FIXEDLENGTH(55,0)
+//セーブデータの時刻と、"PSP"本体の時刻が合っていません。<END>
+The time of the save data and<LR>
+system time do not match.<END>
+
+#JMP($DA268,$DA296)
+#FIXEDLENGTH(47,0)
+//"PSP"本体の時計を正しい時刻に合わせてください。<END>
+Please set the "PSP" clock to<LR>
+the correct time.<END>
+
+//------------
+//Ask if Player Data is correct (Yes/No)
+#JMP($DA2B4,$DA2CA)
+#FIXEDLENGTH(23,0)
+//これでよろしいですか？<END>
+Is this correct?<END>
+
+//------------
+//Player Data birthday date format
+//Date format (2024年12月31日 -> 2024/12/31)
+
+#JMP($DA30C,$DA312)
+#FIXEDLENGTH(7,0)
+//年 -- Year format
+%4d/<END>
+
+#JMP($DA314,$DA31A)
+//月 -- Month format
+%2d/<END>
+
+#JMP($DA31C,$DA322)
+//日 -- Day format
+%2d<END>
+
+//------------
+//Appears for a second when exiting to the title screen
+
+#JMP($D8EA4,$D8EAE)
+#FIXEDLENGTH(11,0)
+//セーブ中…
+Saving…<END>
+
+#JMP($DA42C,$DA436)
+#FIXEDLENGTH(11,0)
+//ロード中…
+Loading…<END>
+
+//------------
+// Options screen
+#JMP($DA56C,$DA57E)
+#FIXEDLENGTH(19,0)
+Testing now…<LR><END>
+
+#JMP($DA580,$DA598)
+#FIXEDLENGTH(25,0)
+Save changes to options?<END>
+
+//------------
+//Mochimono menu (Decorations/Belongings)
+
+#JMP($DA638,$DA643)
+#FIXEDLENGTH(12,0)
+//出品する
+List<END>
+
+#JMP($DA644,$DA64F)
+//やっぱヤメ
+Never mind<END>
+
+#JMP($DA650,$DA667)
+#FIXEDLENGTH(24,0)
+//プレゼント交換に使う
+Wrap as gift<END>
+
+#JMP($DA668,$DA673)
+#FIXEDLENGTH(12,0)
+//すてちゃう
+Throw away<END>
+
+#JMP($DA674,$DA683)
+#FIXEDLENGTH(16,0)
+//お部屋にかざる
+Place in room<END>
+
+#JMP($DA684,$DA693)
+//しまっておく
+Put it away<END>
+
+#JMP($DA694,$DA6AB)
+#FIXEDLENGTH(24,0)
+//本当に出品しますか？
+Are you sure on this?<END>
+
+#JMP($DA6AC,$DA6BF)
+#FIXEDLENGTH(20,0)
+//本当にすてますか？
+Really delete this?<END>
+
+//------------
+//Date the decoration was received
+
+#JMP($DA6D8,$DA6DF)
+#FIXEDLENGTH(8,0)
+// Month format
+%2d/<END>
+
+#JMP($DA6E0,$DA6E7)
+// Day format
+%2d<END>
