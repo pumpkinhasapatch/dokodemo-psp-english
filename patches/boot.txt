@@ -6,13 +6,14 @@
 #ACTIVETBL(Table)
 
 // New Game > Enter Player Data screen
-// Gender
+// Female Gender
 #JMP($D8194,$D8196)
 #FIXEDLENGTH(3,0)
-Grl<END>
+<$81><$8A><END>
 
+// Male Gender
 #JMP($D8198,$D819A)
-Boy<END>
+<$81><$89><END>
 
 // Default Pokepi names
 #JMP($D8334,$D833A)
@@ -38,12 +39,14 @@ Ricky<END>
 Kuro<END>
 
 // Genders again, in reverse order for some reason
+// Male Gender
 #JMP($D8370,$D8372)
 #FIXEDLENGTH(3,0)
-Boy<END>
+<$81><$89><END>
 
+// Female Gender
 #JMP($D8374,$D8376)
-Grl<END>
+<$81><$8A><END>
 
 // https://www.avclub.com/here-s-why-it-s-important-to-know-the-blood-types-of-vi-1798270554
 // In Japan, it’s believed that a person’s ABO blood group is an indicator of their personality.

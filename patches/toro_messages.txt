@@ -61,6 +61,16 @@ Um, um…<LR><END>
 Um～<LR>
 Hmm～<LR><END>
 
+//えっと、えっと…<LR>
+#FIXEDLENGTH(17,0)
+#JMP($2B19)
+Um, um…<LR><END>
+
+//えっと～<LR>えっと～<LR>
+#FIXEDLENGTH(18,0)
+#JMP($2B37)
+Um~<LR>Um~<LR><END>
+
 //ほひゃあ!?<LR><END>
 #FIXEDLENGTH(11,0)
 #JMP($2B62)
@@ -71,11 +81,21 @@ Hoiyah!?<LR><END>
 #JMP($2B7B)
 Nya <HEART><LR><END>
 
+//何を おしえて くれるの<NYA>？<LR>
+#FIXEDLENGTH(28,0)
+#JMP($3E48)
+What can you tell me?<LR><END>
+
 //なぁに？ なぁに？<LR>何を おしえて くれるの<$17><$17><END>
 #FIXEDLENGTH(42,0)
 #JMP($3E73)
 What? What?<LR>
 What can you tell me <$17><$17><END>
+
+//何を おしえて くれるのか<NYA>～<LR><END>
+#FIXEDLENGTH(30,0)
+#JMP($3EAE)
+What can you tell me~<LR><END>
 
 //ねぇねぇ？<LR><END>
 #FIXEDLENGTH(11,0)
@@ -86,6 +106,11 @@ Hey hey?<LR><END>
 #FIXEDLENGTH(16,0)
 #JMP($3F05)
 You know, like,<LR><END>
+
+//気になる<NYA>～<LR>
+#FIXEDLENGTH(14,0)
+#JMP($3F22)
+I'm curious～<LR><END>
 
 //おしえて ほしい<$17><$17><END>
 #FIXEDLENGTH(17,0)
@@ -107,6 +132,16 @@ Oh nya～<LR><END>
 #JMP($3FB2)
 Tut～<LR><END>
 
+//<POKEPI>は もう 知ってるの<NYA>！<LR><END>
+#FIXEDLENGTH(29,0)
+#JMP($3FEC)
+<POKEPI> already knows, <NYA>!<LR><END>
+
+//<$16><$14><$02><$00><$16> なの<NYA>！<END>
+#FIXEDLENGTH(16,0)
+#JMP($400B)
+It's <$16><$14><$02><$00><$16>!<END>
+
 //また ひとつ <LR>かしこく なったニャ！<LR><END>
 #FIXEDLENGTH(35,0)
 #JMP($4034)
@@ -117,6 +152,11 @@ smarter again, nya!<LR><END>
 #FIXEDLENGTH(16,0)
 #JMP($406A)
 Now a moment<LR><END>
+
+//人間に 近づいたか ニャ～！<LR><END>
+#FIXEDLENGTH(27,0)
+#JMP($407C)
+Are you close to humans?<LR><END>
 
 //おしえて くれて<LR>ありがとう<$17><$17><END>
 #FIXEDLENGTH(28,0)
@@ -129,10 +169,10 @@ teaching me <$17><$17><END>
 #JMP($40E0)
 I have to remember <$17><$17><END>
 
-//おぼえた<$17><$17><END>
-#FIXEDLENGTH(10,0)
+//おぼえた <NYA>！<LR>どうも ありがとう<NYA>！<LR><END>
+#FIXEDLENGTH(37,0)
 #JMP($410C)
-Learned <$17><$17><END>
+I remembered <NYA>!<LR>Thanks a lot!<LR><END>
 
 //がんばって 覚えないと<$17><$17><END>
 #FIXEDLENGTH(23,0)
@@ -145,28 +185,65 @@ It's hard to learn <$17><$17><END>
 I'm closer to<LR>
 being a human <$17><$17><END>
 
+//他のが 知りたい
+#FIXEDLENGTH(21,0)
+#JMP($41A7)
+//I want to know about another place
+Let's go somewhere<LR>
+
+//今度は ちがうのを おしえて
+#FIXEDLENGTH(32,0)
+#JMP($41C7)
+Tell me the difference this time<LR><END>
+
 //んも～<LR>ちゃんと 聞いててよ～<LR><END>
 #FIXEDLENGTH(29,0)
 #JMP($41F2)
 Hmm～<LR>
 Please listen to me～<LR><END>
 
+//「<$14><$00><$00>」と 書いて～<LR><END>
+#FIXEDLENGTH(19,0)
+#JMP($421A)
+Write "<$14><$00><$00>"~<LR><END>
+
+//「<$14><$01><$00>」と 読むの？<LR><END>
+#FIXEDLENGTH(19,0)
+#JMP($422F)
+Did you read <$14><$01><$00>?<LR><END>
+
 //あれ？<LR>じゃあ なんて 読むの<$17><$17><END>
 #JMP($424D)
 Huh?<LR>
 What are you reading <$17><$17><END>
 
-//わかった～<LR>あとで おしえて<$17><$17><END>
-#FIXEDLENGTH(28,0)
+//わかった～<LR>あとで おしえて<NYA>～<LR><END>
+#FIXEDLENGTH(32,0)
 #JMP($4279)
 Okay～<LR>
-Tell me later <$17><$17><END>
+Tell me later <NYA>～<LR><END>
 
-//ふにゃ～<LR>あとで おしえて<$17><$17><END>
-#FIXEDLENGTH(26,0)
+//「<$14><$00><$00>」って 書いて…<LR><END>
+#FIXEDLENGTH(21,0)
+#JMP($42A4)
+Write down "<$14><$00><$00>"…<LR><END>
+
+//「<$14><$01><$00>」って 読むんだ～<LR><END>
+#FIXEDLENGTH(23,0)
+#JMP($42BB)
+It says "<$14><$01><$00>"<LR><END>
+
+//ふにゃ～<LR>あとで おしえて<NYA>…<LR><END>
+#FIXEDLENGTH(30,0)
 #JMP($42DD)
 Oh nya～<LR>
-Tell me later <$17><$17><END>
+Tell me later <NYA>…<LR><END>
+
+//<$14><$00><$00>さん、<LR>なの<NYA>？<LR><END>
+#FIXEDLENGTH(20,0)
+#JMP($4304)
+<$14><$00><$00>-san,<LR>
+is it?<LR><END>
 
 //えっと じゃあ…<LR>なんて 呼べば イイのか<$17><$17><END>
 #FIXEDLENGTH(40,0)
@@ -180,30 +257,71 @@ Is it okay if I call you <$17><$17><END>
 Oh nya…<LR>
 I don't know what to call you…<LR><END>
 
-//ちょっと コワイから…<LR><$14><END>
-#FIXEDLENGTH(23,0)
+//ちょっと コワイから…<LR>
+//<$14><$00><$00>さんって 呼んどく<NYA>…<LR><END>
+#FIXEDLENGTH(48,0)
 #JMP($4392)
-I'm a little scared…<LR><$14><END>
+I'm a bit scared…<LR>
+You said to call them <$14><$00><$00>…<LR><END>
+
+//<$14><$00><$00><$14><$01><$00> なの<NYA>？<END>
+#FIXEDLENGTH(16,0)
+#JMP($43CD)
+It's <$14><$00><$00><$14><$01><$00> <NYA>?<END>
+
+//<$14><$00><$00>、<LR>なんだ～<LR><END>
+#FIXEDLENGTH(15,0)
+#JMP($43E8)
+What is <$14><$00><$00>?<LR><END>
+
+//<$14><$00><$00>って <POKEPI>と 比べたら どんな人？<END>
+#FIXEDLENGTH(35,0)
+#JMP($440B)
+What kind of person is <$14><$00><$00>?<END>
 
 //ちがうよ～<LR><END>
 #FIXEDLENGTH(11,0)
 #JMP($445B)
 Different<LR><END>
 
+//<$16><$14><$03><$00><$16>は <$16><$14><$02><$00><$16> なの<NYA>～<LR><END>
+#FIXEDLENGTH(24,0)
+#JMP($4468)
+<$16><$14><$03><$00><$16> is <$16><$14><$02><$00><$16> <$NYA>～<LR><END>
+
 //そうじゃ なくって…<LR><END>
 #FIXEDLENGTH(20,0)
 #JMP($4493)
 That's not it…<LR><END>
+
+//<PLAYER>って…<LR>
+//<POKEPI>と カンケーのある <$14><$02><$00>？<END>
+#FIXEDLENGTH(40,0)
+#JMP($44BA)
+<PLAYER> huh…<LR>
+Is <$14><$02><$00> related to <POKEPI>？<END>
 
 //ふむふむ…<LR><END>
 #FIXEDLENGTH(11,0)
 #JMP($44ED)
 Hmmmm…<LR><END>
 
+//<PLAYER>と <POKEPI>は…<LR>
+//カンケーが あるんだ<NYA>…<LR><END>
+#FIXEDLENGTH(43,0)
+#JMP($4503)
+<PLAYER> and <POKEPI><LR>
+have a relationship…<LR><END>
+
 //そっか…<LR><END>
 #FIXEDLENGTH(9,0)
 #JMP($4539)
 I see…<LR><END>
+
+//特に カンケー ないんだ<NYA>…<LR><END>
+#FIXEDLENGTH(28,0)
+#JMP($454D)
+There's no answer, <NYA>…<LR><END>
 
 //あ！<LR><END>
 #FIXEDLENGTH(5,0)
@@ -213,17 +331,22 @@ Ah!<LR><END>
 //おそわった ことばは…<LR><END>
 #FIXEDLENGTH(22,0)
 #JMP($4584)
-Words I was afraid of<LR><END>
+The words I learned…<LR><END>
 
 #JMP($459C)
-#FIXEDLENGTH(27,0)
-//ことばメモに 書いておくの<$17><$17><END>
-Write it in your notes <$17><$17><END>
+#FIXEDLENGTH(30,0)
+//ことばメモに 書いておくの<NYA>！<END>
+Write them in your notes, <NYA>!<END>
 
 #JMP($45CD)
 #FIXEDLENGTH(33,0)
 //もし 読み方とか まちがってたら～<LR><END>
-What if I read it wrong～<LR><END>
+Excuse me if I read it wrong～<LR><END>
+
+#JMP($4601)
+#FIXEDLENGTH(25,0)
+//<PLAYER>に 直してほしい<NYA><HEART><END>
+I want <PLAYER> to fix it <HEART><END>
 
 #JMP($462D)
 #FIXEDLENGTH(22,0)
@@ -236,14 +359,14 @@ If you can't read it…<LR><END>
 The word can't be used <$17><$17><END>
 
 #JMP($4675)
-#FIXEDLENGTH(9,0)
-//だから <$16><$14><END>
-So <$16><$14><END>
+#FIXEDLENGTH(19,0)
+//だから <PLAYER>先生！<LR><END>
+So, master <PLAYER>！<LR><END>
 
 #JMP($468A)
-#FIXEDLENGTH(15,0)
-//よろしく なの<$17><$17><END>
-Nice meeting<$17><$17><END>
+#FIXEDLENGTH(19,0)
+//よろしく なの<NYA>～<LR><END>
+Thank you, <NYA>～<LR><END>
 
 #JMP($46B1)
 #FIXEDLENGTH(5,0)
@@ -255,38 +378,238 @@ Oh!<LR><END>
 //そういえば…<LR><END>
 By the way…<LR><END>
 
+#JMP($46D0)
+#FIXEDLENGTH(21,0)
+//前の子の <PLAYER>から…<LR><END>
+It's from <PLAYER>…<LR><END>
+
 #JMP($46F0)
-#FIXEDLENGTH(27,0)
-//ことばメモを うけついだの<$17><$17><END>
-You have the word memo <$17><$17><END>
+#FIXEDLENGTH(30,0)
+//ことばメモを うけついだの<NYA>！<END>
+You have the word memo, <NYA>!<END>
+
+#JMP($4721)
+#FIXEDLENGTH(36,0)
+//<PLAYER>が 残してくれた 大切なコトバ…<LR><END>
+The words that <PLAYER> left behind…<LR><END>
 
 #JMP($474F)
 #FIXEDLENGTH(37,0)
-//これを 使って <POKEPI>も おぼえるの<$17><$17><$00>！<END>
-Use this <PETNAME>to remember <$17><$17><$00>!<END>
-// <PETNAME> remembers about <WORD>!<END>
+//これを 使って <POKEPI>も おぼえるの<NYA>！<END>
+You can also remember <POKEPI> with it!<END>
+
+#JMP($4787)
+#FIXEDLENGTH(25,0)
+//<PLAYER>に 負けないぐらい～<LR><END>
+You're as good as <PLAYER>～<LR><END>
+
+#JMP($47B0)
+#FIXEDLENGTH(40,0)
+//<POKEPI>も いっぱい コトバ おぼえるの<NYA>！<LR><END>
+<POKEPI> also remembers lots of words！<LR><END>
+
+#JMP($47F0)
+#FIXEDLENGTH(18,0)
+//<POKEPI>の おトモダチ<END>
+<POKEPI>'s friends<END>
+
+#JMP($4810)
+#FIXEDLENGTH(39,0)
+//<PLAYER>が おしえてくれた コトバなの<NYA>～<LR><END>
+This is what <PLAYER> taught me, <NYA>～<LR><END>
+
+#JMP($483D)
+#FIXEDLENGTH(33,0)
+//<PLAYER>は <POKEPI>って 言ってたけど…<LR><END>
+<PLAYER> said their name was <POKEPI>…<LR><END>
+
+#JMP($486B)
+#FIXEDLENGTH(15)
+//<$16><$14><$02><$00><$16>は どう？<LR><END>
+How is <$16><$14><$02><$00><$16>？<LR><END>
 
 #JMP($488D)
-#FIXEDLENGTH(13,0)
-//そういや…<LR><$16><$14><END>
-I see, nya<LR>
-<$16><$14><END>
+#FIXEDLENGTH(46,0)
+//そういや…<LR>
+//<PLAYER>が 好きかどうか 知らない<NYA><HEART><LR><END>
+I see, nya…<LR>
+I'm not sure if I like <PLAYER> <NYA><LR><END>
 
 #JMP($48C9)
 #FIXEDLENGTH(9,0)
 //そっか…<LR><END>
 I see…<LR><END>
 
+#JMP($48D4)
+#FIXEDLENGTH(33,0)
+//好きでもキライでも ないんだ<NYA>…<LR><END>
+I don't like it or hate it <NYA>…<LR><END>
+
 #JMP($4900)
+#FIXEDLENGTH(9,0)
 //そっか～<LR><END>
 I see～<LR><END>
 
+#JMP($490B)
+#FIXEDLENGTH(17,0)
+//<PLAYER>なんだ<NYA>！<LR><END>
+It's <PLAYER>, <NYA>!<LR><END>
+
 #JMP($4927)
+#FIXEDLENGTH(9,0)
 //そっか…<LR><END>
 I see…<LR><END>
 
-//#JMP($60C0)
-//べモノ？<END>
+#JMP($4932)
+#FIXEDLENGTH(17,0)
+//<PLAYER>なんだ<NYA>…<LR><END>
+It's <PLAYER>, nya,<LR><END>
+
+#JMP($49DB)
+#FIXEDLENGTH(4,0)
+//さん<END>
+-san<END>
+
+#JMP($4A27)
+#FIXEDLENGTH(4,0)
+//さん<END>
+-san<END>
+
+#JMP($4A30)
+#FIXEDLENGTH(6,0)
+//ちゃん<END>
+-chan<END>
+
+#JMP($4A3B)
+#FIXEDLENGTH(4,0)
+//くん<END>
+-kun<END>
+
+#JMP($4A44)
+#FIXEDLENGTH(4,0)
+//さま<END>
+sama<END>
+
+#JMP($4A4D)
+#FIXEDLENGTH(4,0)
+// sensei/teacher (too long)
+//先生<END>
+-sei<END>
+
+#JMP($4A72)
+#FIXEDLENGTH(4,0)
+//さん<END>
+-san<END>
+
+#JMP($4A7B)
+#FIXEDLENGTH(6,0)
+//ちゃん<END>
+-chan<END>
+
+#JMP($4A86)
+#FIXEDLENGTH(4,0)
+//くん<END>
+-kun<END>
+
+#JMP($4A8F)
+#FIXEDLENGTH(4,0)
+//さま<END>
+sama<END>
+
+#JMP($4A98)
+#FIXEDLENGTH(4,0)
+//先生<END>
+-sei<END>
+
+#JMP($4FBE)
+#FIXEDLENGTH(22,0)
+//<$16><$14><$02><$00><$16>って…<LR>
+//どんな人？<END>
+What person is <$16><$14><$02><$00><$16>?<END>
+
+#JMP($5074)
+#FIXEDLENGTH(31,0)
+//<$16><$14><$02><$00><$16>って…<LR>
+//ひとり？ たくさん？<END>
+Is <$16><$14><$02><$00><$16> alone?<LR>
+A lot?<END>
+
+#JMP($51EF)
+#FIXEDLENGTH(22,0)
+//<$16><$14><$02><$00><$16>って…<LR>
+//どんな人？<END>
+What person is <$16><$14><$02><$00><$16>?<END>
+
+#JMP($530A)
+#FIXEDLENGTH(20,0)
+//<$16><$14><$02><$00><$16>って…<LR>
+//どっち？<END>
+<$16><$14><$02><$00><$16>…<LR>
+Which one?<END>
+
+#JMP($53E0)
+#FIXEDLENGTH(28,0)
+//<$16><$14><$02><$00><$16>って…<LR>
+//どんな人のコト？<END>
+<$16><$14><$02><$00><$16>…<LR>
+Who are they?<END>
+
+#JMP($60AC)
+#FIXEDLENGTH(28,0)
+//<$16><$14><$02?><$00><$16>って…<LR>
+//どんな食べモノ？<END>
+<$16><$14><$02?><$00><$16>…<LR>
+What kind of food?<END>
+
+#JMP($6149)
+#FIXEDLENGTH(20,0)
+//<$16><$14><$02><$00><$16>って…<LR>
+//どっち？<END>
+<$16><$14><$02><$00><$16>…<LR>
+What is it?<END>
+
+#JMP($6263)
+#FIXEDLENGTH(20,0)
+//<$16><$14><$02><$00><$16>って…<LR>
+//どっち？<END>
+<$16><$14><$02><$00><$16>…<LR>
+What is it?<END>
+
+#JMP($634E)
+#FIXEDLENGTH(20,0)
+//<$16><$14><$02><$00><$16>って…<LR>
+//どっち？<END>
+<$16><$14><$02><$00><$16>…<LR>
+What is it?<END>
+
+#JMP($6446)
+#FIXEDLENGTH(24,0)
+//<$16><$14><$02><$00><$16>って…<LR>
+//どんな番組？<END>
+<$16><$14><$02><$00><$16>…<LR>
+What kind of show?<END>
+
+#JMP($6595)
+#FIXEDLENGTH(18,0)
+//<$16><$14><$02><$00><$16>って…<LR>
+//どれ？<END>
+<$16><$14><$02><$00><$16>…<LR>
+Which one?<END>
+
+#JMP($66AC)
+#FIXEDLENGTH(18,0)
+//<$16><$14><$02><$00><$16>って…<LR>
+//どれ？<END>
+<$16><$14><$02><$00><$16>…<LR>
+Which one?<END>
+
+#JMP($6792)
+#FIXEDLENGTH(28,0)
+//<$16><$14><$02><$00><$16>って…<LR>
+//どんな風に使う？<END>
+<$16><$14><$02><$00><$16>…<LR>
+What weather is it?<END>
+
 #JMP($9522)
 #FIXEDLENGTH(18,0)
 //わーい！ わーい！<LR><END>
@@ -614,8 +937,8 @@ I got Dekopinned…<LR><END>
 
 #JMP($B697,$B6AC)
 #FIXEDLENGTH(22,0)
-//さすが <$16><$14><$01><$00><$16> だよね！<LR><END>
-As expected of <$16><$14><$01><$00><$16>!<LR><END>
+//さすが <POKEPI> だよね！<LR><END>
+As expected of <POKEPI>!<LR><END>
 
 #JMP($B6B8,$B6CF)
 #FIXEDLENGTH(24,0)
@@ -761,11 +1084,11 @@ you…<LR><END>
 #FIXEDLENGTH(19,0)
 //ネコの <POKEPI>です…<LR><END>
 I'm <POKEPI><LR>
-the cat<LR><END>
+the cat.<LR><END>
 
 #JMP($7BCFB,$7BD0D)
 #FIXEDLENGTH(19,0)
-//あのね…<LR><$16><$14><$01><$00><$16>ね…<LR><END>
+//あのね…<LR><POKEPI>ね…<LR><END>
 Listen here<LR>
 please…<END>
 
@@ -778,26 +1101,67 @@ My dream is to become human <HEART><LR><END>
 #FIXEDLENGTH(35,0)
 //人間に なる方法<LR>
 //探して旅してたら…<LR>
-I was traveling looking for help,<LR><END>
+I was traveling looking for<LR>
+help,<LR><END>
 
 #JMP($7BD5F,$7BD7A)
 #FIXEDLENGTH(28,0)
 //ここに たどり着いたのニャ…<LR><END>
-and I arrived here, nya…<LR><END>
+and I ended up<LR>
+here, nya…<LR><END>
 
 #JMP($7BD86,$7BD9E)
 #FIXEDLENGTH(25,0)
 //きっと これは 運命ニャ！<LR><END>
-This must be my fate!<LR><END>
+This must be<LR>
+my destiny!<LR><END>
 
 #JMP($7BDB2,$7BDD6)
 #FIXEDLENGTH(37,0)
-//ここで <$16><$14><$01><$00><$16>と いっしょに 暮らせば！<LR><END>
-I wish I could live here with you!<LR><END>
+//ここで <POKEPI>と いっしょに 暮らせば！<LR><END>
+I wish I could<LR>
+live here<LR>
+with you!<LR><END>
 
 #JMP($7BDD9,$7BE00)
 #FIXEDLENGTH(40,0)
 //何だか 人間に<LR>なれそうな 気がするニャ<HEART><LR><END>
-Somehow,<LR>we can get to know each other<LR><END>
+Somehow,<LR>
+we can get to<LR>
+know each<LR>
+other.<LR><END>
 
+//えへへ、そんなわけで…<LR><END>
+#FIXEDLENGTH(23,0)
+#JMP($7BF0D)
+Ehehe, that's all…<LR><END>
 
+//よろしくなのニャ<HEART><LR><END>
+#FIXEDLENGTH(19,0)
+#JMP($7BF2C)
+Nice to meet you, nya<HEART><LR><END>
+
+//あ！<LR><END>
+#FIXEDLENGTH(5,0)
+#JMP($892B4)
+Ah!<LR><END>
+
+//つまらないモノ ですが～<LR><END>
+#FIXEDLENGTH(24,0)
+#JMP($892C4)
+It's a bit boring, but~<LR><END>
+
+//ひっこしの ごあいさつに…<LR><END>
+#FIXEDLENGTH(26,0)
+#JMP($892DE)
+A gift for moving in…<LR><END>
+
+//これ あげる<NYA><$81><$49>!<END>
+#FIXEDLENGTH(11,0)
+#JMP($89300)
+Take this!<END>
+
+//バイバイ<END>
+#FIXEDLENGTH(8,0)
+#JMP($983CF)
+Bye bye <END>
