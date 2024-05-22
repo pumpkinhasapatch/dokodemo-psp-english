@@ -86,11 +86,11 @@ Nya <HEART><LR><END>
 #JMP($3E48)
 What can you tell me?<LR><END>
 
-//なぁに？ なぁに？<LR>何を おしえて くれるの<$17><$17><END>
-#FIXEDLENGTH(42,0)
+//なぁに？ なぁに？<LR>何を おしえて くれるの<NYA>～<LR><END>
+#FIXEDLENGTH(46,0)
 #JMP($3E73)
-What? What?<LR>
-What can you tell me <$17><$17><END>
+Huh? What?<LR>
+What can you tell me <NYA>~<LR><END>
 
 //何を おしえて くれるのか<NYA>～<LR><END>
 #FIXEDLENGTH(30,0)
@@ -112,10 +112,10 @@ You know, like,<LR><END>
 #JMP($3F22)
 I'm curious～<LR><END>
 
-//おしえて ほしい<$17><$17><END>
-#FIXEDLENGTH(17,0)
+//おしえて ほしい<NYA>～<LR><END>
+#FIXEDLENGTH(21,0)
 #JMP($3F3D)
-I want to know <$17><$17><END>
+I want to know <NYA>～<LR><END>
 
 //ちぇ～<LR><END>
 #FIXEDLENGTH(7,0)
@@ -158,43 +158,43 @@ Now a moment<LR><END>
 #JMP($407C)
 Are you close to humans?<LR><END>
 
-//おしえて くれて<LR>ありがとう<$17><$17><END>
-#FIXEDLENGTH(28,0)
+//おしえて くれて<LR>ありがとう<NYA><HEART><LR><END>
+#FIXEDLENGTH(32,0)
 #JMP($40AD)
 Thanks for<LR>
-teaching me <$17><$17><END>
+teaching me, <NYA><HEART><LR><END>
 
-//しっかり 覚えないと<$17><$17><END>
-#FIXEDLENGTH(21,0)
+//しっかり 覚えないと<NYA>…<LR><END>
+#FIXEDLENGTH(25,0)
 #JMP($40E0)
-I have to remember <$17><$17><END>
+I have to remember <NYA>…<LR><END>
 
 //おぼえた <NYA>！<LR>どうも ありがとう<NYA>！<LR><END>
 #FIXEDLENGTH(37,0)
 #JMP($410C)
 I remembered <NYA>!<LR>Thanks a lot!<LR><END>
 
-//がんばって 覚えないと<$17><$17><END>
-#FIXEDLENGTH(23,0)
+//がんばって 覚えないと<NYA>～<LR><END>
+#FIXEDLENGTH(27,0)
 #JMP($4144)
-It's hard to learn <$17><$17><END>
+It's hard to learn <NYA>～<LR><END>
 
-//これでまた…<LR>人間に 近づいた<$17><$17><END>
-#FIXEDLENGTH(30,0)
+//これでまた…<LR>人間に 近づいた<NYA>！<LR><END>
+#FIXEDLENGTH(34,0)
 #JMP($4172)
 I'm closer to<LR>
-being a human <$17><$17><END>
+being a human <NYA>！<LR><END>
 
-//他のが 知りたい
+//他のが 知りたい<NYA>～<LR><END>
 #FIXEDLENGTH(21,0)
 #JMP($41A7)
 //I want to know about another place
-Let's go somewhere<LR>
+Let's go somewhere～<LR><END>
 
-//今度は ちがうのを おしえて
+//今度は ちがうのを おしえて<NYA>～<LR><END>
 #FIXEDLENGTH(32,0)
 #JMP($41C7)
-Tell me the difference this time<LR><END>
+Tell me what changed this time～<LR><END>
 
 //んも～<LR>ちゃんと 聞いててよ～<LR><END>
 #FIXEDLENGTH(29,0)
@@ -212,10 +212,11 @@ Write "<$14><$00><$00>"~<LR><END>
 #JMP($422F)
 Did you read <$14><$01><$00>?<LR><END>
 
-//あれ？<LR>じゃあ なんて 読むの<$17><$17><END>
+//あれ？<LR>じゃあ なんて 読むの<NYA>？<LR><END>
+#FIXEDLENGTH(33,0)
 #JMP($424D)
 Huh?<LR>
-What are you reading <$17><$17><END>
+What are you reading <NYA>?<LR><END>
 
 //わかった～<LR>あとで おしえて<NYA>～<LR><END>
 #FIXEDLENGTH(32,0)
@@ -245,11 +246,11 @@ Tell me later <NYA>…<LR><END>
 <$14><$00><$00>-san,<LR>
 is it?<LR><END>
 
-//えっと じゃあ…<LR>なんて 呼べば イイのか<$17><$17><END>
-#FIXEDLENGTH(40,0)
+//えっと じゃあ…<LR>なんて 呼べば イイのか<NYA>？<LR><END>
+#FIXEDLENGTH(44,0)
 #JMP($4323)
 Um, then…<LR>
-Is it okay if I call you <$17><$17><END>
+Is that name good, <NYA>?<LR><END>
 
 //ふにゃ…<LR>なんて 呼んで イイか わかんにゃい…<LR><END>
 #FIXEDLENGTH(45,0)
@@ -354,9 +355,9 @@ I want <PLAYER> to fix it <HEART><END>
 If you can't read it…<LR><END>
 
 #JMP($4645)
-#FIXEDLENGTH(25,0)
-//しりとりに 使えないもん<$17><$17><END>
-The word can't be used <$17><$17><END>
+#FIXEDLENGTH(29,0)
+//しりとりに 使えないもん<NYA>～<LR><END>
+The word can't be used <NYA>～<LR><END>
 
 #JMP($4675)
 #FIXEDLENGTH(19,0)
@@ -635,23 +636,24 @@ Uh, well…<LR><END>
 Ahem!<LR><END>
 
 #JMP($95F5)
-#FIXEDLENGTH(20,0)
-//そうなの、大変なの<$17><$17><END>
-Yes, it's tricky <$17><$17><END>
+#FIXEDLENGTH(24,0)
+//そうなの、大変なの<NYA>！<LR><END>
+Yes, it's tricky <NYA>!<LR><END>
 
 #JMP($9644)
-//そっか、じゃないの<$17><$17><END>
-I see, isn't it <$17><$17><END>
+#FIXEDLENGTH(24,0)
+//そっか、じゃないの<NYA>～<LR><END>
+I see, it's not <NYA>～<LR><END>
 
 #JMP($969B)
-#FIXEDLENGTH(26,0)
-//まだ 何にも 言ってないの<$17><$17><END>
-I haven't spoken yet <$17><$17><END>
+#FIXEDLENGTH(30,0)
+//まだ 何にも 言ってないの<NYA>！<LR><END>
+I haven't spoken yet <NYA>!<LR><END>
 
 #JMP($96C6)
-#FIXEDLENGTH(16,0)
-//ふにゃ～、大変<$17><$17><END>
-It's so funny <$17><$17><END>
+#FIXEDLENGTH(20,0)
+//ふにゃ～、大変<NYA>～<LR><END>
+It's so funny <NYA>～<LR><END>
 
 #JMP($9741)
 #FIXEDLENGTH(29,0)
@@ -659,15 +661,15 @@ It's so funny <$17><$17><END>
 Hey!<LR>
 Listen carefully～!<LR><END>
 
-#JMP($976A)
-#FIXEDLENGTH(21,0)
-//ふーん、じゃないの<$17><$17><END>
-Hmm, isn't it <$17><$17><END>
+#JMP($976B)
+#FIXEDLENGTH(24,0)
+//ふーん、じゃないの<NYA>～<LR><END>
+Hmm, isn't it <NYA>～<LR><END>
 
 #JMP($97F3)
-#FIXEDLENGTH(17,0)
-//うにゃ～<LR>コワイ<$17><$17><END>
-Unya～<LR>Scary <$17><$17><END>
+#FIXEDLENGTH(20,0)
+//うにゃ～<LR>コワイ<NYA>～<END>
+Unya～<LR>So scary～<END>
 
 #JMP($986A)
 #FIXEDLENGTH(38,0)
@@ -696,10 +698,10 @@ You're so scary～<LR><END>
 Wow, what to do～<LR><END>
 
 #JMP($99F5)
-#FIXEDLENGTH(12,0)
-//え？ え？<LR><$16><$14><END>
+#FIXEDLENGTH(32,0)
+//え？ え？<LR><PLAYER>は 強いんだ<NYA>～<LR><END>
 Huh? What?<LR>
-<$16><$14><END>
+<PLAYER> is strong～<LR><END>
 
 #JMP($9A33)
 #FIXEDLENGTH(29,0)
@@ -729,9 +731,9 @@ That's right, it's not a lie!<LR><END>
 Haha～<LR><END>
 
 #JMP($9B27)
-#FIXEDLENGTH(19,0)
-//また やっちゃった<$17><$17><END>
-You did it again <$17><$17><END>
+#FIXEDLENGTH(23,0)
+//また やっちゃった<NYA>…<LR><END>
+You did it again <NYA>…<LR><END>
 
 #JMP($9B49)
 #FIXEDLENGTH(7,0)
@@ -741,16 +743,18 @@ Nya <HEART><LR><END>
 #JMP($9B52)
 #FIXEDLENGTH(13,0)
 //ま、いっか<HEART><LR><END>
-Well, family <HEART><LR><END>
+Oh, family <HEART><LR><END>
 
 #JMP($9B7D)
-#FIXEDLENGTH(15,0)
-//にゃんか 変だ<$17><$17><END>
-That's weird<$17><$17><END>
+#FIXEDLENGTH(19,0)
+//にゃんか 変だ<NYA>…<LR><END>
+Meow? That's odd…<LR><END>
 
 #JMP($9BBE)
-//あれれ？<LR>変だ<$17><$17><END>
-Huh?<LR>Weird<$17><$17><END>
+//あれれ？<LR>
+//変だ<NYA>…<LR><END>
+Huh?<LR>
+How strange…<LR><END>
 
 #JMP($9BDB)
 #FIXEDLENGTH(13,0)
@@ -763,9 +767,9 @@ Maybe…<LR><END>
 I'm fooled!?<END>
 
 #JMP($9C52)
-#FIXEDLENGTH(25,0)
-//もう１回 聞いちゃおっか<$17><$17><END>
-Can I ask you again <$17><$17><END>
+#FIXEDLENGTH(29,0)
+//もう１回 聞いちゃおっか<NYA>…<LR><END>
+Can I ask you again <NYA>…<LR><END>
 
 #JMP($9CAF)
 #FIXEDLENGTH(19,0)
@@ -773,9 +777,9 @@ Can I ask you again <$17><$17><END>
 Ah, so…?<LR><END>
 
 #JMP($9CF6)
-#FIXEDLENGTH(8,0)
-//え～<LR><$16><$14><$01><END>
-Eh～<LR><$16><$14><$01><END>
+#FIXEDLENGTH(28,0)
+//え～<LR><POKEPI>、 そんなに大切？<LR><END>
+Eh～<LR>Is <POKEPI> important?<LR><END>
 
 #JMP($9D1D)
 #FIXEDLENGTH(15,0)
@@ -806,9 +810,11 @@ Oh? What…?<LR><END>
 Are you sure?<LR><END>
 
 #JMP($9E99)
-#FIXEDLENGTH(30,0)
-//うわーん！ うわーん！<LR>ひどい<$17><$17><END>
-Oh wow!<LR>That's terrible <$17><$17><END>
+#FIXEDLENGTH(34,0)
+//うわーん！ うわーん！<LR>
+//ひどい<NYA>～<LR><END>
+Boo hoo!<LR>
+that's so heartless <NYA>～<LR><END>
 
 #JMP($9EF0)
 #FIXEDLENGTH(12,0)
@@ -816,9 +822,10 @@ Oh wow!<LR>That's terrible <$17><$17><END>
 Huh? Hey…?<LR><END>
 
 #JMP($9F64)
-#FIXEDLENGTH(8,0)
-//え～<LR><$16><$14><$01><END>
-Eh～<LR><$16><$14><$01><END>
+#FIXEDLENGTH(13,0)
+//え～<LR><POKEPI>？<LR><END>
+Eh～<LR>
+<POKEPI>？<LR><END>
 
 #JMP($9F7C)
 #FIXEDLENGTH(15,0)
@@ -835,23 +842,30 @@ Err, umm…?<END>
 Huh, hey?<LR><END>
 
 #JMP($A887)
-#FIXEDLENGTH(11,0)
-//なるほど～<LR><$16><$14><END>
-I see～<LR><$16><$14><END>
+#FIXEDLENGTH(19,0)
+//なるほど～<LR><PLAYER>…<LR><END>
+I see～<LR>
+<PLAYER>…<LR><END>
 
 #JMP($A8A8)
-#FIXEDLENGTH(9,0)
-//ふにゃ～<LR><$16><$14><END>
-Wow nya～<LR><$16><$14><END>
+#FIXEDLENGTH(17,0)
+//ふにゃ～<LR><PLAYER>…<LR><END>
+Wow nya～<LR>
+<PLAYER>…<LR><END>
 
 #JMP($B168)
-#FIXEDLENGTH(21,0)
-//わかった～<LR>こんど <$16><$14><$02><END>
-Okay～<LR>Now <$16><$14><$02><END>
+#FIXEDLENGTH(37,0)
+//わかった～<LR>
+//こんど <$16><$14><$02><$00><$16>に 会ったら…<LR><END>
+Okay～<LR>
+Now let's meet <$16><$14><$02><$00><$16>…<LR><END>
 
 #JMP($B193)
-//わかった～<LR>あとで <$16><$14><$02><END>
-Okay～<LR>Later <$16><$14><$02><END>
+#FIXEDLENGTH(28,0)
+//わかった～<LR>
+//あとで <$16><$14><$02><$00><$16>に…<LR><END>
+Okay～<LR>
+See <$16><$14><$02><$00><$16> later…<LR><END>
 
 #JMP($B1CF)
 #FIXEDLENGTH(20,0)
@@ -869,9 +883,9 @@ Ah, yes!<LR><END>
 It's a big deal<LR><END>
 
 #JMP($B269)
-#FIXEDLENGTH(21,0)
-//みたいな質問を する<$17><$17><END>
-Ask questions like<$17><$17><END>
+#FIXEDLENGTH(24,0)
+//みたいな質問を する<NYA>！<END>
+Ask something like that!<END>
 
 #JMP($B28C)
 #FIXEDLENGTH(33,0)
@@ -898,14 +912,14 @@ Well…<LR><END>
 That's right!<LR><END>
 
 #JMP($B4FF)
-#FIXEDLENGTH(10,0)
-//なるほど<$17><$17><END>
-I see <$17><$17><END>
+#FIXEDLENGTH(12,0)
+//なるほど<NYA><LR><END>
+I see, <NYA>.<LR><END>
 
 #JMP($B544)
-#FIXEDLENGTH(11,0)
-//あとで、<$16><$14><$03><END>
-Later, <$16><$14><$03><END>
+#FIXEDLENGTH(18,0)
+//あとで、<$16><$14><$03><$00><$16>に～<LR><END>
+Later, <$16><$14><$03><$00><$16>～<END>
 
 // Only overwrite bytes between 0x0000B59F and 0x0000B5B0.
 // Trim the end of the translated text if it is any longer.
@@ -914,16 +928,20 @@ Later, <$16><$14><$03><END>
 //って 聞いたらね～<LR><END>
 If you ask me～<LR><END>
 
-#JMP($B5BC,$B5D1)
-#FIXEDLENGTH(22,0)
-//そっか<HEART><LR>なでなでが <$16><$14><END>
-I see <HEART><LR>Pat me down<$16><$14><END>
+#JMP($B5BC)
+#FIXEDLENGTH(37,0)
+//そっか<HEART><LR>
+//なでなでが <PLAYER>の答え<NYA><HEART><LR><END>
+I see <HEART><LR>
+Pet me, <PLAYER> <NYA><HEART><LR><END>
 
 #JMP($B5EF,$B604)
-#FIXEDLENGTH(22,0)
+#FIXEDLENGTH(39,0)
 // Dekopin - finger flick to the forehead​, Japanese family culture
-//そっか…<LR>でこピンが <$16><$14><END>
-I see…<LR>Dekopin me <$16><$14><END>
+//そっか…<LR>
+//でこピンが <PLAYER>の答えだ<NYA><HEART><LR><END>
+I see…<LR>
+Dekopin me <PLAYER> <NYA><HEART><LR><END>
 
 #JMP($B621,$B638)
 #FIXEDLENGTH(24,0)
@@ -955,10 +973,10 @@ Which is better<LR><END>
 //って <$16><$14><END>
 You said <$16><$14><END>
 
-#JMP($B75C,$B765)
-#FIXEDLENGTH(10,0)
-//なるほど<$17><$17><END>
-I see <$17><$17><END>
+#JMP($B75C)
+#FIXEDLENGTH(12,0)
+//なるほど<NYA><LR><END>
+I see, <NYA><LR><END>
 
 #JMP($B7FD,$B80C)
 #FIXEDLENGTH(16,0)
@@ -980,10 +998,10 @@ Why～?<LR><END>
 //せっかく 聞いたのに…<LR><END>
 Even though I heard it…<LR><END>
 
-#JMP($B8B9,$B8D2)
-#FIXEDLENGTH(26,0)
-//えへへ<HEART><LR>なんか うれしい<$17><$17><END>
-Hehe <HEART><LR>I'm so happy for you <$17><$17><END>
+#JMP($B8B9)
+#FIXEDLENGTH(30,0)
+//えへへ<HEART><LR>なんか うれしい<NYA><LR><END>
+Hehe <HEART><LR>I'm so happy for you!<LR><END>
 
 #JMP($B8E2,$B8EA)
 #FIXEDLENGTH(9,0)
@@ -995,10 +1013,10 @@ You know…<LR><END>
 //おしえてあげて よかったね！<LR><END>
 I'm glad you taught me!<LR><END>
 
-#JMP($B975,$B98E)
-#FIXEDLENGTH(26,0)
-//でも ヒミツに しちゃった<$17><$17><END>
-But I did it in secret <$17><$17><END>
+#JMP($B975)
+#FIXEDLENGTH(30,0)
+//でも ヒミツに しちゃった<NYA>～<LR><END>
+But I did it in secret <NYA>～<LR><END>
 
 #JMP($B99E,$B9AC)
 #FIXEDLENGTH(15,0)
@@ -1015,25 +1033,27 @@ Hey, guess what!<LR><END>
 //そっか…<LR>でも なかよく なれると イイよね…<LR><END>
 Okay…<LR>But I'm good when we're good friends…<LR><END>
 
-#JMP($BB31,$BB57)
-#FIXEDLENGTH(39,0)
-//やっぱ さん付けで 呼んだ方が イイのか<$17><$17><END>
-Is it better if I call you by your name <$17><$17><END>
+#JMP($BB31)
+#FIXEDLENGTH(43,0)
+//やっぱ さん付けで 呼んだ方が イイのか<NYA>？<LR><END>
+Is it better if I call you by your name?<LR><END>
 
-#JMP($BB8D,$BB97)
-#FIXEDLENGTH(11,0)
-//わーい！<LR><$16><$14><END>
-Yay!<LR><$16><$14><END>
+#JMP($BB8D)
+#FIXEDLENGTH(27,0)
+//わーい！<LR><PLAYER>、おかえり～<LR><END>
+Yay!<LR><PLAYER> returned～<LR><END>
 
-#JMP($BBEA,$BBF2)
-//でもね…<LR><$16><$14><END>
-But…<LR><$16><$14><END>
+#JMP($BBEA)
+#FIXEDLENGTH(46,0)
+//でもね…<LR><PLAYER>の ルス中に 誰も 来なかったよ？<LR><END>
+But…<LR>
+During <PLAYER>'s absence, nobody came?<LR><END>
 
-#JMP($BC23,$BC3C)
-#FIXEDLENGTH(26,0)
-//わーい！<LR>ご紹介 待ってる<$17><$17><END>
-Wow!<LR>I'm waiting for your introduction <$17><$17><END>
-Wow!<LR>Please introduce <$17><$17><END>
+#JMP($BC23)
+#FIXEDLENGTH(30,0)
+//わーい！<LR>ご紹介 待ってる<NYA>！<LR><END>
+Wow!<LR>I'm waiting for you <NYA>!<LR><END>
+
 #JMP($BC4C,$BC5B)
 #FIXEDLENGTH(16,0)
 //あのね あのね…<LR><END>
@@ -1041,37 +1061,37 @@ Now you know…<LR><END>
 
 #JMP($BC5E,$BC77)
 //お名前…<LR>おしえてくれる？<LR><END>
-Your name…<LR>Can you tell me it?<LR><END>
 Can you tell me your name?<LR><END>
 
-#JMP($BCAA,$BCC0)
-#FIXEDLENGTH(23,0)
-//あれれ？<LR>誰だったのか<$17><$17><EBD>
-Huh?<LR>Who was that <$17><$17><END>
+#JMP($BCAA)
+#FIXEDLENGTH(27,0)
+//あれれ？<LR>誰だったのか<NYA>？<LR><END>
+Huh?<LR>Who was that, <NYA>?<END>
 
 #JMP($BD3A,$BD4A)
 #FIXEDLENGTH(17,0)
 //えっと、えっと…<LR><END>
 Um, err…<LR><END>
 
-#JMP($BD4D,$BD5D)
-//どちらさま です<$17><$17><END>
-Which one is it <$17><$17><END>
+#JMP($BD4D)
+#FIXEDLENGTH(21,0)
+//どちらさま です<NYA>？<END>
+Which one is it, <NYA>?<END>
 
 #JMP($BD70,$BD83)
 #FIXEDLENGTH(20,0)
 //あ、もう これ以上…<LR><END>
 Oh, there's no more…<LR><END>
 
-#JMP($BD86,$BDB1)
-#FIXEDLENGTH(44,0)
-//はじめての人は<LR>ともだちノートに<LR>書けないの<$17><$17><END>
-First-time users cannot write in friend notes <$17><$17><END>
+#JMP($BD86)
+#FIXEDLENGTH(48,0)
+//はじめての人は<LR>ともだちノートに<LR>書けないの<NYA>～<LR><END>
+New users cannot write in friend notes, <NYA>～<END>
 
-#JMP($BDDE,$BE03)
-#FIXEDLENGTH(38,0)
-//ともだちノートの<LR>整理を してもらって<$17><$17><END>
-I asked you to organise my notes <$17><$17><END>
+#JMP($BDDE)
+#FIXEDLENGTH(42,0)
+//ともだちノートの<LR>整理を してもらって<NYA>…<LR><END>
+I want you to sort my friend notes, <NYA>…<LR><END>
 
 // New game introduction
 #JMP($7BCB0,$7BCC2)
