@@ -108,13 +108,16 @@ Command flags and file checking may be added to the program later to customize w
 [PumpkinhasaPatch](https://github.com/pumpkinhasapatch) - batch script programming, project founder, translation checking
 
 ## Licensing
-This project uses a [GNU GPL 3.0 license](./COPYING), which means that the patching scripts and other "source code" included in this repository or modifications to them must be made available to other people, to let them make changes and build their copy of the game.
+This project is covered by version 3 or later of the [GNU General Public License](./LICENSE-GPL.txt) and [GNU Lesser General Public License](./LICENSE-LGPL.txt). This means any source code and translation files included in this repository are free for anyone to use or edit, but modifications to them must be made available to other people when you create Patch Files or changes, to let other people learn from and improve on the project and create their own version of the game.
 
-Patched versions of the game made using this tool contain other copyrighed material  and should NOT be distributed as an ISO file or [binary patch](https://en.wikipedia.org/wiki/Patch_(computing)#Binary_patches), as it may break laws and stop people from making improvements to the translations, basically like restarting the project from scratch and taking apart the game's files again.
+"Patch Files" are small, pre-built binary files with an extension like .bps or .xdelta that contain the minimal amount of changes needed to transform an original Japanese copy of Doko Demo Issyo Portable into an English-translated modification. These can be freely shared and distributed over the internet as long as they only contain code and assets from the Translation Project, without other copyrighted content from the original game. Patch Files must also be shared with the same patching tools and source code used to create them.
+
+Full disc images or folders containing the original game files contain content copyrighed by Sony/Bexide, and are not covered by an open source license. These should NOT be shared with other people, as it may break laws and get you into legal trouble, and it is usually possible to create a Patch File from a modified version of the game. PumpkinhasaPatch is not responsible for Combined Works shared outside of [this GitHub page](https://github.com/pumpkinhasapatch/dokodemo-psp-patcher), and any complaints should be directed to the uploader of the Combined Work or site hosting it.
 
 Please understand what you can do with this project carefully, you wouldn't want to make a pumpkin cry now...
 
 ### You can do these things
+- Use any provided or generated Patch Files and documentation to modify your own copy of Doko Demo Issyo Portable for private personal use.
 - Make changes to the Patcher source code or included game assets, and release your version of the code for others to improve on or patch their copy of Doko Demo Issyo Portable with.
 - Create and share a minimal game patch or binary diff using a tool like [xdelta](https://github.com/jmacd/xdelta-gpl), along with the Patcher and any modifications made to it, for people to enjoy or make changes to.
 - Tell other people about the translation project and share screenshots or gameplay footage.
