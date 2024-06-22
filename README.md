@@ -65,6 +65,8 @@ The following versions of dependency applications are included for user convenie
 
 ![どこでもいっしょ PSP box art](https://i.ebayimg.com/images/g/BKIAAOSwG8tgMWiA/s-l960.jpg)
 
+> Note: You may have an newer copy if you are dumping your rom, the SHA256 file hash of the .ISO ROM must be ``c78d0974f660cd92c1b10a1466ac278625d38e4dd93bfb48f66f090ff7a4c119`` in order for the patching process to work correctly. 
+
 - Any model/region PSP console (except PSP Go) running [Custom Firmware](https://www.pspunk.com/psp-cfw), to copy files from the game disc onto your computer and apply the new language. You may also be able to play the translated game on your PSP after.
 
 > You could buy an original copy of the game from an online seller for about $30 AUD, but any profit goes to the seller and does not support Sony or BeXide, the creators of this great series. I would also suggest buying official merch from the [PlayStation Japan store](https://www.playstation.com/ja-jp/local/official-products/character-goods/dokodemoissyo) to show your love and maybe get a new game developed for modern platforms. ([Translated site](https://www-playstation-com.translate.goog/ja-jp/local/official-products/character-goods/dokodemoissyo/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp), purchase links may not work.)
