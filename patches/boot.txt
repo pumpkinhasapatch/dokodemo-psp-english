@@ -161,10 +161,11 @@ TUV<END>
 wxyz[LR]
 WXYZ<END>
 
-// !?Y$%&+-=
+// !?¥$%&+-=
 #JMP($D91AC,$D91C2)
 #FIXEDLENGTH(23,0)
-!?$%&+-=<END>
+!?¥$%[LR]
+&+-=<END>
 
 #JMP($D943C,$D944E)
 #FIXEDLENGTH(19,0)
