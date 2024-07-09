@@ -120,45 +120,45 @@ Pisces<END>
 
 #JMP($D92FC,$D9326)
 #FIXEDLENGTH(43,0)
-abc<LR>
+abc[LR]
 ABC<END>
 
 // def
 #JMP($D93DC,$D9406)
 #FIXEDLENGTH(43,0)
-def<LR>
+def[LR]
 DEF<END>
 
 #JMP($D9328)
 #FIXEDLENGTH(59,0)
-ghi<LR>
+ghi[LR]
 GHI<END>
 
 #JMP($D9424,$D944E)
 #FIXEDLENGTH(23,0)
-jkl<LR>
+jkl[LR]
 JKL<END>
 
 #JMP($D9398,$D93DA)
 #FIXEDLENGTH(67,0)
-mno<LR>
+mno[LR]
 MNO<END>
 
 #JMP($D9450,$D9466)
 #FIXEDLENGTH(23,0)
-pqrs<LR>
+pqrs[LR]
 PQRS<END>
 
 // tuv
 #JMP($D9408,$D9422)
 #FIXEDLENGTH(27,0)
-tuv<LR>
+tuv[LR]
 TUV<END>
 
 // wxyz
 #JMP($D9494,$D94AA)
 #FIXEDLENGTH(23,0)
-wxyz<LR>
+wxyz[LR]
 WXYZ<END>
 
 // !?Y$%&+-=
@@ -190,15 +190,15 @@ This game requires at least 800KB to save data.<END>
 #JMP($DA168,$DA19B)
 #FIXEDLENGTH(52,0)
 //"どこでもいっしょ" のセーブデータが見つかりました。<END>
-Start new save data for<LR>
+Start new save data for[LR]
 "Doko Demo Issyo Portable"?<END>
 
 #JMP($DA19C,$DA217)
 #FIXEDLENGTH(124,0)
 //このデータに上書きを行うと以前のポケピは消えてしまいますが、教えた言葉や友達ノートの情報は新しいポケピに引き継がれます。
-If you proceed, the previous<LR>
-Pokepi will leave, but any words,<LR>
-friend notes and decorations<LR>
+If you proceed, the previous[LR]
+Pokepi will leave, but any words,[LR]
+friend notes and decorations[LR]
 will move to the new Pokepi.<END>
 
 #JMP($DA218,$DA22F)
@@ -209,13 +209,13 @@ Do you want to do this?<END>
 #JMP($DA230,$DA266)
 #FIXEDLENGTH(55,0)
 //セーブデータの時刻と、"PSP"本体の時刻が合っていません。<END>
-The time of the save data and<LR>
+The time of the save data and[LR]
 system time do not match.<END>
 
 #JMP($DA268,$DA296)
 #FIXEDLENGTH(47,0)
 //"PSP"本体の時計を正しい時刻に合わせてください。<END>
-Please set the "PSP" clock to<LR>
+Please set the "PSP" clock to[LR]
 the correct time.<END>
 
 //------------
@@ -259,7 +259,7 @@ Loading…<END>
 // Options screen
 #JMP($DA56C,$DA57E)
 #FIXEDLENGTH(19,0)
-Testing now…<LR><END>
+Testing now…[LR]<END>
 
 #JMP($DA580,$DA598)
 #FIXEDLENGTH(25,0)
