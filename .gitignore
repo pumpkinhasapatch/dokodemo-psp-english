@@ -4,7 +4,7 @@ extract/
 insert/
 
 # Software dependencies
-tools/
+tools/GimConv/
 
 # BeXide file formats
 *.KSC
