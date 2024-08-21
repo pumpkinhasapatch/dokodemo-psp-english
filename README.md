@@ -28,7 +28,7 @@
 
 Doko Demo Issyo (Hiragana: どこでもいっしょ) is a Japanese video game about talking creatures called Pokepi or "Pocket People" (see below). The gameplay is like a mix of [Tamagotchi](https://en.wikipedia.org/wiki/Tamagotchi) and [Animal Crossing](https://en.wikipedia.org/wiki/Animal_Crossing) or a life and pet simulator - Teach Pokepi words that will appear around the game and have conversations as they learn more each day and become closer friends with you. This game was released on the original PlayStation in 1999 and later remade for PlayStation Portable in 2004.
 
-![](https://gmedia.playstation.com/is/image/SIEPDC/dokodemoissyo-character-all-02-ja-01mar22?$1600px--t$)
+<div align=center><img src="https://gmedia.playstation.com/is/image/SIEPDC/dokodemoissyo-character-all-02-ja-01mar22?$1600px--t$" height=200></div>
 
 The game was successful in Japan and had many sequels, merchandise and even a TV [series](https://dokodemo.fandom.com/wiki/Travel_with_Toro). However, most Doko Demo Issyo content was only released in Japanese and was never officially made available in other countries or languages. Information about the games spread to English-speaking countries over the internet and many fans became disappointed that they could not experience the games in their native language, only being able to import products from Japan and use image machine translation to make sense of all the game's Japanese language.
 
@@ -42,7 +42,7 @@ If you would like to learn more about Doko Demo Issyo, you can visit the [Fandom
 
 ### Dumping the original game
 
-<img src="https://static.wikia.nocookie.net/dokodemo/images/d/d5/5052001-01.jpg" style="width: 200px; float: right; margin-left: 10px;">
+<img src="https://static.wikia.nocookie.net/dokodemo/images/d/d5/5052001-01.jpg" width=200 align=right>
 
 The translation project is built around "Doko Demo Issyo Portable", which is a remake of the first Doko Demo Issyo game for PSP consoles and was released in Japan, in 2004. The correct box art for the game looks like the image on the right.
 
@@ -72,7 +72,7 @@ This is the easiest way to play Doko Demo Issyo in English if you don't care abo
 
 #### Instructions:
 1. Download [xdelta UI](https://www.romhacking.net/utilities/598/) and the latest .xdelta Patch File from the [Releases page](https://github.com/pumpkinhasapatch/dokodemo-psp-patcher/releases). The Patch File contains the minimum changes needed to convert an original Japanese copy of the game into our fan translation.
-<img src="https://s3-external-1.amazonaws.com/romhacking-hacks/utilities/screenshots/598screenshot1.png" style="float: right; margin-left: 10px;">
+<img src="https://www.romhacking.net/utilities/screenshots/598screenshot1.png" align=right>
 2. Start xdeltaUI.exe and make sure you are on the "Apply Patch" tab. Click the "Open" button next to Patch at the top-right, and select the .xdelta Patch File you downloaded in Step 1. Open your Doko Demo Issyo UMD .iso backup as the Source File.
 3. Set the Output File to somewhere memorable on your computer, and click the "Patch" button to merge the two other files into the new translated game.
 4. You can now run the Output File in the [PPSSPP emulator](https://www.ppsspp.org) on most modern devices, or copy it back onto your modded PSP to play the translated Doko Demo Issyo game. If this didn't work, contact [Support](#support) or keep reading the Custom build guide below.
@@ -106,12 +106,16 @@ If you get an "Atlas.exe - System Error" saying that "MSVCP140.dll was not found
 sudo apt install wine perl -y
 
 # Download the source code. You could also get a .zip archive from GitHub.
-git clone https://github.com/pumpkinhasapatch/DokoDemo-PSP-Patcher.git
-```
-Now do this every time you want to build the game.
-```bash
-# Navigate to the folder and run the build script to rebuild the game.
+git clone https://github.com/pumpkinhasapatch/dokodemo-psp-english.git
+
+# Navigate into project folder.
 cd dokodemo-psp-english
+
+# Allow build script and bpar to run as programs.
+sudo chmod +x build.sh
+sudo chmod +x tools/bpar
+
+# Attempt to patch the game in the build folder. Should tell you if any files are missing.
 ./build.sh
 ```
 
