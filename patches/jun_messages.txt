@@ -1,0 +1,76 @@
+// Doko Demo Issyo PSP English Translation Project
+// © pumpkinhasapatch 2024 <https://github.com/pumpkinhasapatch/dokodemo-psp-english>
+// USAGI.KSC Atlas script (Jun the Rabbit)
+// Based on https://suzukistation.neocities.org/junpsp
+
+#SETTARGETFILE("insert/USAGI.KSC")
+#VAR(Table, TABLE)
+#ADDTBL("shiftjis.tbl", Table)
+#ACTIVETBL(Table)
+
+// New game introduction
+#JMP($5F988)
+#FIXEDLENGTH(39,0)
+//はじめまして、[LR]
+//ウサギの [POKEPI]です[NYA]♥[LR]<END>
+Nice to see[LR]
+you, I'm [POKEPI][LR]
+the rabbit![LR]<END>
+
+#JMP($5F9BA)
+#FIXEDLENGTH(44,0)
+//フッと 思い立って[LR]
+//一人旅に 出たんだけどぉ…[LR]<END>
+I had a sudden idea to go on a solo trip…[LR]<END>
+
+#JMP($5F9F9)
+#FIXEDLENGTH(48,0)
+//[PLAYER]さんのトコ…[LR]
+//なんだか居心地 よさそうだし…[LR]<END>
+and your[LR]
+place here,[LR]
+it does look[LR]
+pretty cozy…[LR]<END>
+
+#JMP($5FA31)
+#FIXEDLENGTH(52,0)
+//ちょーっと 居候させて ほしいかな～？[LR]
+//ってカンジで？[LR]<END>
+Do you mind if[LR]
+I stay here[LR]
+a while?[LR]
+If that's okay.[LR]<END>
+
+#JMP($5FC3F)
+#FIXEDLENGTH(46,0)
+//そんなワケで、[LR]
+//しばらく お世話に なりま～す♥[LR]<END>
+I'll always be[LR]
+here to look[LR]
+out for you! ♥[LR]<END>
+
+#JMP($630D6)
+#FIXEDLENGTH(15,0)
+//あ！そうそう！[LR]<END>
+Ah, thanks![LR]<END>
+
+#JMP($630F0)
+#FIXEDLENGTH(29,0)
+//これ、つまらないモノですが～[LR]<END>
+This might[LR]
+seem lame, but[LR]<END>
+
+#JMP($63112)
+#FIXEDLENGTH(34,0)
+//引っ越しの ごあいさつってコトで…[LR]<END>
+it's a gift from me moving in…[LR]<END>
+
+#JMP($6313C)
+#FIXEDLENGTH(11,0)
+Here it is!<END>
+
+// Finished talking
+#JMP($7200A)
+#FIXEDLENGTH(8,0)
+//バイバイ<END>
+Bye bye!<END>
