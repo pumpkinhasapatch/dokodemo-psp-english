@@ -1,2 +1,15 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Use CRLF line endings to fix issues with some Windows programs
+*.bat text eol=crlf
+*.cmd text eol=crlf
+patches/*.txt text eol=crlf
+*.cfg text eol=crlf
+
+# Linux shell scripts should always use LF line endings
+*.sh text eol=lf
+
+# Do not make any changes to binary files
+*.png binary
+*.xcf binary
