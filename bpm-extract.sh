@@ -12,9 +12,9 @@ ls | grep -P "^F[0-9]{3}.BPM$" | xargs -d"\n" rm
 
 echo Extracting BPM archives in the current directory
 # Use ./KS*.BPM to only extract KSC/DIC archives or ./*.BPM to extract everything
-for file in ./*.BPM; do
+for file in ./KS*.BPM; do
     if [ -f "$file" ]; then
-        ../tools/bpar -x "$file" 
+        ../tools/bpar -x "$file"
     fi
 done
 
