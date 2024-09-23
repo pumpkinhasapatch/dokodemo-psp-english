@@ -73,6 +73,7 @@ cp -f ./GimConv.cfg ./tools/GimConv/
 
 echo Replacing game icon...
 cp -f ICON0.png build/PSP_GAME/ICON0.PNG
+cp -f PIC0.png build/PSP_GAME/PIC0.PNG
 
 echo Writing patches/param.txt to build/PSP_GAME/PARAM.SFO...
 perl tools/abcde/abcde.pl --artificial-end-token "<END>" -cm abcde::Atlas build/PSP_GAME/PARAM.SFO patches/param.txt

@@ -101,8 +101,8 @@ tools\Atlas\Atlas.exe build\PSP_GAME\SYSDIR\BOOT.BIN patches\boot.txt > nul
 tools\Atlas\Atlas.exe build\PSP_GAME\PARAM.SFO patches\param.txt > nul
 
 :: Replace game artwork that appears on the XMB/PPSSPP menu
-copy /Y ICON0.png build\PSP_GAME\ICON0.PNG
-copy /Y PIC0.png build\PSP_GAME\PIC0.PNG
+copy ICON0.png build\PSP_GAME\ICON0.PNG
+copy PIC0.png build\PSP_GAME\PIC0.PNG
 
 :: Remove the encrypted EBOOT.BIN so the game loads our modified BOOT.BIN
 if exist build\PSP_GAME\SYSDIR\EBOOT.BIN del build\PSP_GAME\SYSDIR\EBOOT.BIN
