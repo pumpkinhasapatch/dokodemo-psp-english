@@ -7,9 +7,18 @@
 patches/*.txt text eol=crlf
 *.cfg text eol=crlf
 
+# Fix build.cmd getting stuck when using Atlas v1.11 or older, caused by LF endings in shiftjis.tbl
+# Was fixed in Atlas v1.12 released May 2024 - Hang fix: Unix line breaks in table files now work
+# https://github.com/stevemonaco/Atlas/releases/tag/v1.12
+*.tbl text eol=crlf
+
 # Linux shell scripts should always use LF line endings
 *.sh text eol=lf
 
 # Do not make any changes to binary files
 *.png binary
 *.xcf binary
+
+# Treat contents of the tools folder as vendored code (libraries) so they don't get included in code reports
+# https://github.com/github-linguist/linguist/blob/main/docs/overrides.md#vendored-code
+tools/** linguist-vendored
