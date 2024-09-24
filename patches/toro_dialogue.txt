@@ -1,21 +1,18 @@
-// Doko Demo Issyo Portable - English Translation Project
-// Toro dialogue (NEKO.KSC) - Atlas script file by PumpkinhasaPatch
-// Updated Feb 2024
+// Doko Demo Issyo PSP English Translation Project - NEKO.KSC Atlas script - (Toro diary and items)
+// © pumpkinhasapatch 2024 <https://github.com/pumpkinhasapatch/dokodemo-psp-english>
 
-#JMP(0x2102a18)
+#SETTARGETFILE("insert/NEKO.KSC")
+#VAR(Table, TABLE)
+#ADDTBL("shiftjis.tbl", Table)
+#ACTIVETBL(Table)
 
-//ニャ<END>
-//0x2102a18, length=5
-//Cat noise, said by Toro (and maybe Kuro) a lot
-Nya!<END>
+// Diary entries - Notebook -> "Enikki" menu
 
 //------------
-//ケッコン<END> -- Literally translates to 'marriage' or 'wedding'
-#WRITE(0x2102a1d)
+//ケッコン - Translates to "marriage" but this makes more sense
+#JMP($8E1CD)
+#FIXEDLENGTH(8,0)
 Learning<END>
-
-//<END> -- Original text has a double end for some reason, don't change
-<END>
 
 //あけまして[LR]
 //おめでとうニャ。[LR]
@@ -26,16 +23,20 @@ Learning<END>
 //$_W1する[LR] -- Toro wants to marry the player? "Marriage - That's the goal!"
 //それが目標！<END>
 
-Happy new year![LR]
-Congrats,nya.[LR]
+#JMP($8E1D7)
+#FIXEDLENGTH(126,0)
+Happy New Year![LR]
+Congrats.[LR]
 First day of the year,[LR]
 I want to become a human this year.[LR]
 With $_YOU![LR]
-$_W1[LR]
-That's the goal,nya!<END>
+$_W1,[LR]
+that's the goal, meow!<END>
 
 //------------
 //なっとうまき<END> -- Type of sushi
+#JMP($8E256)
+#FIXEDLENGTH(12,0)
 Natto roll<END>
 
 //バレンタインの日♥[LR]
@@ -47,6 +48,8 @@ Natto roll<END>
 //下駄箱に入れたら[LR]
 //ビックリするかニャ？<END>
 
+#JMP($8E263)
+#FIXEDLENGTH(111,0)
 Valentine's Day♥[LR]
 [LR]
 I stayed up[LR]
@@ -61,9 +64,12 @@ surprised?<END>
 
 //------------
 //お父さん<END>
+#JMP($8E2D3)
+#FIXEDLENGTH(8,0)
 father<END>
 
 //お母さん<END>
+#JMP($8E2DC)
 mother<END>
 
 //おひなさまのお祭り！[LR] -- https://en.wikipedia.org/wiki/Hinamatsuri
@@ -75,6 +81,8 @@ mother<END>
 //コドモたちも[LR]
 //こんなに いるニャ♥<END>
 
+#JMP($8E2E5)
+#FIXEDLENGTH(104,0)
 It's Hinamatsuri![LR]
 Dolls Day[LR]
 The Emperor[LR]
@@ -87,6 +95,8 @@ children, nya.♥<END>
 
 //------------
 //ハワイ<END>
+#JMP($8E34E)
+#FIXEDLENGTH(6,0)
 Hawaii<END>
 
 //今日は コドモの日。[LR] -- https://en.wikipedia.org/wiki/Children%27s_Day_(Japan)
@@ -98,6 +108,8 @@ Hawaii<END>
 //$_W1まで[LR]
 //泳jいでくのかニャ？<END>
 
+#JMP($8E355)
+#FIXEDLENGTH(132,0)
 Today is[LR]
 Children's Day.[LR]
 The carp[LR]
@@ -111,9 +123,12 @@ swimming?<END>
 
 //------------
 //おり姫<END>
+#JMP($8E3DA)
+#FIXEDLENGTH(6,0)
 Vega<END>
 
 //ひこ星<END>
+#JMP($8E3E1)
 Altair<END>
 
 //今日は たなばた。[LR] -- https://en.wikipedia.org/wiki/Tanabata
@@ -125,6 +140,8 @@ Altair<END>
 //みんなで 応援[LR]
 //してあげなきゃニャ！<END>
 
+#JMP($8E3E8)
+#FIXEDLENGTH(108,0)
 Today is Tanabata,[LR]
 the Star Festival.[LR]
 Above the sky, about now,[LR]
@@ -135,6 +152,8 @@ a year date. Nya!<END>
 
 //------------
 //エプロン<END>
+#JMP($8E455)
+#FIXEDLENGTH(8,0)
 an apron<END>
 
 //街中キラキラ♥[LR]
@@ -146,6 +165,8 @@ an apron<END>
 //$_W1が[LR]
 //欲しいニャ♥<END>
 
+#JMP($8E45E)
+#FIXEDLENGTH(99,0)
 It's sparkling around town.[LR]
 Jingle Bells ♪[LR]
 Where is Santa Claus?[LR]
@@ -162,12 +183,14 @@ I want $_W1 as a present, nya.♥<END>
 //いくつに なっても…[LR]
 //いつまでもトモダチ♥<END>
 
+#JMP($8E4C2)
+#FIXEDLENGTH(126,0)
 Happy birthday ♪[LR]
 It's $_YOU's birthday, nya.[LR]
-$_YOU...[LR]
-No matter how old you become...[LR]
+$_YOU…[LR]
+No matter how old you become…[LR]
 $_ME is[LR]
-At any age...[LR]
+At any age…[LR]
 Friends forever♥<END>
 
 //------------
@@ -180,9 +203,11 @@ Friends forever♥<END>
 //このままで いても[LR]
 //いいよね…？<END>
 
+#JMP($8E541)
+#FIXEDLENGTH(133,0)
 Yay![LR]
 After all, the room is the best.[LR]
-I will be lonely if I leave $_YOU...[LR]
+I will be lonely if I leave $_YOU…[LR]
 Is it okay for me to stay here…[LR]
 Just a little bit longer?<END>
 
@@ -196,6 +221,8 @@ Just a little bit longer?<END>
 //なんだか やっぱり[LR]
 //さみしいのニャ…<END>
 
+#JMP($8E5C7)
+#FIXEDLENGTH(119,0)
 Today, I say goodbye to this room…[LR]
 Farewell to $_YOU…[LR]
 I think I'll become human soon…[LR]
@@ -242,14 +269,16 @@ I feel lonely after all,nya…<END>
 //キラわれちゃうから…[LR]
 //おじぎ おじぎ。<END>
 
-My first diary.[LR]
-$_YOU are a very[LR]
-kind person♥[LR]
-I'm relieved♥[LR]
+#JMP($8E78E)
+#FIXEDLENGTH(118,0)
+My first day.[LR]
+$_YOU seems like[LR]
+a nice person.[LR]
+I'm relieved. ♥[LR]
 [LR]
-I have to be polite[LR]
-Because you'll get annoyed...[LR]
-*bows*<END>
+I have to be
+polite or I'll[LR]
+get scolded…<END>
 
 //------------
 //さこつ<END>
@@ -3624,40 +3653,54 @@ Because you'll get annoyed...[LR]
 
 //ポケピクーイズ<END>
 
+#FIXEDLENGTH(3,0)
 //1月<END>
+#JMP($982D1)
 Jan<END>
 
 //2月<END>
+#JMP($982D5)
 Feb<END>
 
 //3月<END>
+#JMP($982D9)
 Mar<END>
 
 //4月<END>
+#JMP($982DD)
 Apr<END>
 
 //5月<END>
+#JMP($982E1)
 May<END>
 
 //6月<END>
+#JMP($982E5)
 Jun<END>
 
 //7月<END>
+#JMP($982E9)
 Jul<END>
 
 //8月<END>
+#JMP($982ED)
 Aug<END>
 
 //9月<END>
+#JMP($982F1)
 Sep<END>
 
+#FIXEDLENGTH(4,0)
 //10月<END>
+#JMP($982F4)
 Oct <END>
 
 //11月<END>
+#JMP($982FA)
 Nov <END>
 
 //12月<END>
+#JMP($982FF)
 Dec <END>
 
 //誕生日<END>

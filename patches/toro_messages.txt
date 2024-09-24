@@ -1,22 +1,40 @@
-// Doko Demo Issyo English Translation Project - NEKO.KSC Atlas script
-// Copyright (C) 2024 PumpkinhasaPatch <https://github.com/pumpkinhasapatch>
+// Doko Demo Issyo PSP English Translation Project - NEKO.KSC Atlas script (Toro messages)
+// © pumpkinhasapatch 2024 <https://github.com/pumpkinhasapatch/dokodemo-psp-english>
 
 // This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU Lesser General Public License as published by
+// it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 
 // This program is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU Lesser General Public License for more details.
+// GNU General Public License for more details.
 
-// You should have received a copy of the GNU Lesser General Public License
+// You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+#SETTARGETFILE("insert/NEKO.KSC")
 #VAR(Table, TABLE)
 #ADDTBL("shiftjis.tbl", Table)
 #ACTIVETBL(Table)
+
+//ニャ！ - Nya, cat onomatopoeia
+#FIXEDLENGTH(6,0)
+#JMP($C7F7)
+ Meow!<END>
+
+//ニャ
+#JMP($8E1C8)
+#FIXEDLENGTH(4,0)
+meow<END>
+
+//[POKEPI]の名前
+#FIXEDLENGTH(11,0)
+#JMP($C2D)
+[POKEPI]s name
+#JMP($C76)
+[POKEPI]s name
 
 // [LR] is a line return break (Tell the game to move down to a new line).
 //それは おいといて…[LR]<END>
@@ -97,7 +115,7 @@ Nya ♥[LR]<END>
 
 //何を おしえて くれるの[NYA]？[LR]
 #FIXEDLENGTH(28,0)
-#JMP($3E48)
+#JMP($3E4A)
 What can you tell me?[LR]<END>
 
 //なぁに？ なぁに？[LR]何を おしえて くれるの[NYA]～[LR]<END>
@@ -302,7 +320,7 @@ Different[LR]<END>
 //<$16><$14><$03><$00><$16>は <$16><$14><$02><$00><$16> なの[NYA]～[LR]<END>
 #FIXEDLENGTH(24,0)
 #JMP($4468)
-<$16><$14><$03><$00><$16> is <$16><$14><$02><$00><$16> <$NYA>～[LR]<END>
+<$16><$14><$03><$00><$16> is <$16><$14><$02><$00><$16> [NYA]～[LR]<END>
 
 //そうじゃ なくって…[LR]<END>
 #FIXEDLENGTH(20,0)
@@ -439,7 +457,7 @@ This is what [PLAYER] taught me, [NYA]～[LR]<END>
 [PLAYER] said their name was [POKEPI]…[LR]<END>
 
 #JMP($486B)
-#FIXEDLENGTH(15)
+#FIXEDLENGTH(15,0)
 //<$16><$14><$02><$00><$16>は どう？[LR]<END>
 How is <$16><$14><$02><$00><$16>？[LR]<END>
 
