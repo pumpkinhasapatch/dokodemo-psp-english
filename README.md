@@ -11,6 +11,7 @@
   <a href="#installation">Installation</a> •
   <a href="#building">Building</a> •
   <a href="#features">Features</a> •
+  <a href="#screenshots">Screenshots</a> •
   <a href="#support">Support</a> •
   <a href="#development">Development</a> •
   <a href="#credits">Credits</a> •
@@ -24,6 +25,13 @@
   <a href="https://github.com/pumpkinhasapatch/dokodemo-psp-english/issues"><img src="https://img.shields.io/github/issues/pumpkinhasapatch/DokoDemo-PSP-Patcher" alt="Issues"></a>
   <a href="https://github.com/pumpkinhasapatch/dokodemo-psp-english/commits/main"><img src="https://img.shields.io/github/last-commit/pumpkinhasapatch/DokoDemo-PSP-Patcher" alt="Commits"></a>
 </p>
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/fbbbe89f-6f7c-42e3-9df7-bc4bd4d1acdf" width=49%>
+  <img src="https://github.com/user-attachments/assets/75d22216-744a-4f1c-b305-76a6cebd77cb" width=49%>
+</div>
+
+
 
 ## Overview
 
@@ -153,6 +161,20 @@ Not everything is complete yet, and we have focused on important parts of menus 
 | R. Suzuki | None | Some kind person has already translated a bit of the game. Need to find Hex addresses and add text from https://suzukistation.neocities.org/suzpsp and https://suzukistation.neocities.org/suzdiary |
 | Jun Mihara | Introduction | Done the first block of text when you start a new game. There is more at https://suzukistation.neocities.org/junpsp |
 | Other Pokepi | None | All other Pokepi will use their original Japanese dialogue.
+
+## Screenshots
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/8b4e6cc0-469d-441b-aa70-ce21587970f6" width=49%>
+  <img src="https://github.com/user-attachments/assets/78142180-3b86-414c-a67a-3e6f98dbdaad" width=49%>
+  <img src="https://github.com/user-attachments/assets/63193f1a-d314-471d-9e93-bd8daf3ca536" width=49%>
+  <img src="https://github.com/user-attachments/assets/45f62a5d-1495-4ebd-84ba-0c236a3fc86d" width=49%>
+  <br>
+  <img src="https://github.com/user-attachments/assets/8e214a22-95bf-4aa8-9dbe-b2a2ec530849" width=49%>
+  <img src="https://github.com/user-attachments/assets/e5fe8b73-6e59-492e-a342-2fd67d8c5d83" width=49%>
+  <br>
+  <img src="https://github.com/user-attachments/assets/ec329771-1b98-48b6-bd82-01130e6c5734" width=49%>
+  <img src="https://github.com/user-attachments/assets/48732697-5f45-455e-bddf-23b3e60c8fda" width=49%>
+</div>
 
 ## Support
 
