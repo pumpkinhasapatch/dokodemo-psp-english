@@ -4,21 +4,22 @@
   <br>
 </h1>
 
-<h4 align="center">A work-in-progress <a href="https://en.wikibooks.org/wiki/PSP/Translation_Projects">English translation</a> <a href="https://en.wikipedia.org/wiki/Patch_(computing)">patch</a> for <a href="https://www.ign.com/games/doko-demo-issyo-psp">Doko Demo Issyo</a> on the PlayStation Portable.</h4>
+<h4 align="center">A work-in-progress <a href="https://en.wikipedia.org/wiki/Fan_translation_of_video_games">English translation</a> <a href="https://en.wikipedia.org/wiki/Patch_(computing)">patch</a> for <a href="https://www.ign.com/games/doko-demo-issyo-psp">Doko Demo Issyo</a> on the PlayStation Portable.</h4>
 
 <p align="center">
   <a href="#overview">Overview</a> •
   <a href="#installation">Installation</a> •
-  <a href="#manual-build">Manual build</a> •
+  <a href="#building">Building</a> •
   <a href="#features">Features</a> •
   <a href="#support">Support</a> •
   <a href="#development">Development</a> •
   <a href="#credits">Credits</a> •
-  <a href="#license">License</a>
+  <a href="#license">License</a> •
+  <a href="https://github.com/pumpkinhasapatch/dokodemo-psp-english/wiki">Wiki</a>
 </p>
 
 <p align="center">
-  <a href="https://discord.com/invite/AnTzMftu"><img src="https://img.shields.io/discord/824319065773441045?logo=discord&logoColor=white&color=5865F2&label=%23translation-proj-chat" alt="Discord"></a>
+  <a href="https://discord.gg/3EYqGKpqNG"><img src="https://img.shields.io/discord/824319065773441045?logo=discord&logoColor=white&color=5865F2&label=%23translation-proj-chat" alt="Discord"></a>
   <a href="https://github.com/pumpkinhasapatch/DokoDemo-PSP-Patcher/releases"><img src="https://img.shields.io/github/downloads/pumpkinhasapatch/DokoDemo-PSP-Patcher/total" alt="Releases"></a>
   <a href="https://github.com/pumpkinhasapatch/dokodemo-psp-english/issues"><img src="https://img.shields.io/github/issues/pumpkinhasapatch/DokoDemo-PSP-Patcher" alt="Issues"></a>
   <a href="https://github.com/pumpkinhasapatch/dokodemo-psp-english/commits/main"><img src="https://img.shields.io/github/last-commit/pumpkinhasapatch/DokoDemo-PSP-Patcher" alt="Commits"></a>
@@ -67,10 +68,15 @@ This is the easiest way to play Doko Demo Issyo in English if you don't care abo
 
 #### You will need:
 - [Original game ISO](#dumping-the-original-game) of Doko Demo Issyo Portable matching the checksums above.
-- [xdelta UI](https://www.romhacking.net/utilities/598/) - A graphical patching tool that lets you apply .xdelta patch files to a game.
 - [Translation patch](https://github.com/pumpkinhasapatch/dokodemo-psp-patcher/releases) - Download the latest .xdelta patch file from our Releases page. This contains all the changes needed to convert an original Japanese copy of Doko Demo Issyo Portable into our fan translation.
+- Either [xdelta UI](https://www.romhacking.net/utilities/598/) for Windows or the [online xdelta patcher](https://kotcrab.github.io/xdelta-wasm/) to apply .xdelta patch files to the game.
 
-#### Instructions:
+### Online xdelta patcher
+Go to the [online xdelta patcher](https://kotcrab.github.io/xdelta-wasm/) website made by kotcrab. Select your game ISO as the Source File and the latest translation xdelta file as the Patch File.
+
+All the work is done inside your web browser, you do not have to download any extra software with this method, and your game ISO and patch files are not sent to any websites or servers.
+
+### Xdelta UI (Windows)
 1. Download [xdelta UI](https://www.romhacking.net/utilities/598/) and the latest .xdelta Patch File from the [Releases page](https://github.com/pumpkinhasapatch/dokodemo-psp-patcher/releases). The Patch File contains the minimum changes needed to convert an original Japanese copy of the game into our fan translation.
 <img src="https://www.romhacking.net/utilities/screenshots/598screenshot1.png" align=right>
 2. Start xdeltaUI.exe and make sure you are on the "Apply Patch" tab. Click the "Open" button next to Patch at the top-right, and select the .xdelta Patch File you downloaded in Step 1. Open your Doko Demo Issyo UMD .iso backup as the Source File.
@@ -82,7 +88,8 @@ You can also use the other tools to apply .xdelta patches including command line
 ### Playing the translation
 Once you have applied the English translation, you can play it on a modded PSP console or use the [PPSSPP emulator](https://ppsspp.org) on computers and most modern devices. Launch PPSSPP and go to the Files tab, then find your translated game file or the `build` folder to start playing.
 
-## Manual build
+
+## Building
 
 This is a more advanced setup that works with some dumps of Doko Demo Issyo Portable that do not exactly match the file hashes above, and allows you to make changes to text and images before inserting them into the game.
 
@@ -172,9 +179,9 @@ By taking apart and searching the game files in a Hex Editor, I was able to loca
 ### Dependency programs used by build scripts:
 The following programs are used under a different license. These programs are also open to changes and the source code can be found on the linked page:
 
-- Atlas V1.11 8/10/2010 - https://www.romhacking.net/utilities/224 - A text patching tool and scripting language to insert new data over the Doko Demo Issyo Pokepi's speech among other things.
+- Atlas v1.12 by Steve Monaco "Klarth" - https://github.com/stevemonaco/Atlas (older versions at [Romhacking.net](https://www.romhacking.net/utilities/224)) - A text patching tool and scripting language to insert new data over the Doko Demo Issyo Pokepi's speech among other things.
 - [abcde by abw](https://www.romhacking.net/utilities/1392/) - A cross-platform alternative to Atlas with more features and better error reporting, written in Perl script.
-- bpar by nekobit - https://code.neko.rehab/ddi-tools/file - To extract and insert files from the game's proprietary DATA.BP archive.
+- bpar by nekobit - https://code.neko.rehab/ddi-tools/file (dead link, [archived](https://github.com/pumpkinhasapatch/ddi-tools)) - To extract and insert files from the game's proprietary DATA.BP archive.
 - Sony's GimConv - A freeware/proprietary program for Windows developed by Sony for converting PNG images to the GIM format the game uses. GimConv is not included with the Patcher due to copyright reasons, and you may need to add it to the `tools` folder yourself.
 
 ### Other people who indirectly helped:
