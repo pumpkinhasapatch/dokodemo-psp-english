@@ -46,7 +46,7 @@ Leave that aside…[LR]<END>
 #FIXEDLENGTH(18,0)
 #JMP($29EA)
 You know,[LR]
-right…<END>
+right…[LR]<END>
 
 //えとね、[LR]えとね…[LR]<END>
 #JMP($2A09)
@@ -70,7 +70,8 @@ um～[LR]<END>
 
 //あのね、[LR]あのね…[LR]<END>
 #JMP($2ABF)
-You know[LR]what…[LR]<END>
+You know[LR]
+what…[LR]<END>
 
 //えとね、[LR]えとね…[LR]<END>
 #JMP($2ADE)
@@ -101,7 +102,8 @@ Um, um…[LR]<END>
 //えっと～[LR]えっと～[LR]
 #FIXEDLENGTH(18,0)
 #JMP($2B37)
-Um~[LR]Um~[LR]<END>
+Um～[LR]
+Um～[LR]<END>
 
 //ほひゃあ!?[LR]<END>
 #FIXEDLENGTH(11,0)
@@ -122,12 +124,16 @@ What can you tell me?[LR]<END>
 #FIXEDLENGTH(46,0)
 #JMP($3E73)
 Huh? What?[LR]
-What can you tell me [NYA]~[LR]<END>
+What can you[LR]
+teach me[LR]
+[NYA]～[LR]<END>
 
 //何を おしえて くれるのか[NYA]～[LR]<END>
 #FIXEDLENGTH(30,0)
 #JMP($3EAE)
-What can you tell me~[LR]<END>
+What can you[LR]
+teach me,[LR]
+[NYA]?[LR]<END>
 
 //ねぇねぇ？[LR]<END>
 #FIXEDLENGTH(11,0)
@@ -164,10 +170,12 @@ Oh nya～[LR]<END>
 #JMP($3FB2)
 Tut～[LR]<END>
 
+// If player tries to teach the same word more than once.
 //[POKEPI]は もう 知ってるの[NYA]！[LR]<END>
 #FIXEDLENGTH(29,0)
 #JMP($3FEC)
-[POKEPI] already knows, [NYA]![LR]<END>
+I already know[LR]
+that, [NYA]![LR]<END>
 
 //<$16><$14><$02><$00><$16> なの[NYA]！<END>
 #FIXEDLENGTH(16,0)
@@ -183,18 +191,19 @@ smarter again, nya![LR]<END>
 //これで ちょっと[LR]<END>
 #FIXEDLENGTH(16,0)
 #JMP($406A)
-Now a moment[LR]<END>
+With this I'm a[LR]<END>
 
 //人間に 近づいたか ニャ～！[LR]<END>
 #FIXEDLENGTH(27,0)
 #JMP($407C)
-Are you close to humans?[LR]<END>
+bit closer to being human![LR]<END>
 
 //おしえて くれて[LR]ありがとう[NYA]♥[LR]<END>
 #FIXEDLENGTH(32,0)
 #JMP($40AD)
 Thanks for[LR]
-teaching me, [NYA]♥[LR]<END>
+teaching me,[LR]
+[NYA] ♥[LR]<END>
 
 //しっかり 覚えないと[NYA]…[LR]<END>
 #FIXEDLENGTH(25,0)
@@ -204,7 +213,8 @@ I have to remember [NYA]…[LR]<END>
 //おぼえた [NYA]！[LR]どうも ありがとう[NYA]！[LR]<END>
 #FIXEDLENGTH(37,0)
 #JMP($410C)
-I remembered [NYA]![LR]Thanks a lot![LR]<END>
+I remembered [NYA]![LR]
+Thanks a lot![LR]<END>
 
 //がんばって 覚えないと[NYA]～[LR]<END>
 #FIXEDLENGTH(27,0)
@@ -226,18 +236,20 @@ Let's go somewhere～[LR]<END>
 //今度は ちがうのを おしえて[NYA]～[LR]<END>
 #FIXEDLENGTH(32,0)
 #JMP($41C7)
-Tell me what changed this time～[LR]<END>
+[LR]Tell me about[LR]
+something else～[LR]<END>
 
 //んも～[LR]ちゃんと 聞いててよ～[LR]<END>
 #FIXEDLENGTH(29,0)
 #JMP($41F2)
 Hmm～[LR]
-Please listen to me～[LR]<END>
+Please listen[LR]
+to me～[LR]<END>
 
 //「<$14><$00><$00>」と 書いて～[LR]<END>
 #FIXEDLENGTH(19,0)
 #JMP($421A)
-Write "<$14><$00><$00>"~[LR]<END>
+Write "<$14><$00><$00>"～[LR]<END>
 
 //「<$14><$01><$00>」と 読むの？[LR]<END>
 #FIXEDLENGTH(19,0)
@@ -281,8 +293,9 @@ is it?[LR]<END>
 //えっと じゃあ…[LR]なんて 呼べば イイのか[NYA]？[LR]<END>
 #FIXEDLENGTH(44,0)
 #JMP($4323)
-Um, then…[LR]
-Is that name good, [NYA]?[LR]<END>
+Well then…[LR]
+Is that name[LR]
+okay, [NYA]?[LR]<END>
 
 //ふにゃ…[LR]なんて 呼んで イイか わかんにゃい…[LR]<END>
 #FIXEDLENGTH(45,0)
@@ -498,6 +511,8 @@ I see…[LR]<END>
 //[PLAYER]なんだ[NYA]…[LR]<END>
 It's [PLAYER], nya,[LR]<END>
 
+// Person's name pronouns/honorifics
+
 #JMP($49DB)
 #FIXEDLENGTH(4,0)
 //さん<END>
@@ -617,6 +632,7 @@ What is it?<END>
 
 #JMP($6446)
 #FIXEDLENGTH(24,0)
+// Television programme
 //<$16><$14><$02><$00><$16>って…[LR]
 //どんな番組？<END>
 <$16><$14><$02><$00><$16>…[LR]
@@ -706,7 +722,8 @@ Unya～[LR]So scary～<END>
 #JMP($986A)
 #FIXEDLENGTH(38,0)
 //ふにゃ♥[LR]ちょっと こわくなくなった…[LR]<END>
-Oh nya ♥[LR]You're a little less scary…[LR]<END>
+Oh nya ♥[LR]
+You're a little less scary…[LR]<END>
 
 #JMP($98A7)
 #FIXEDLENGTH(9,0)
@@ -744,7 +761,7 @@ You fooled me again…[LR]<END>
 #JMP($9A5B)
 #FIXEDLENGTH(13,0)
 //そうだよね！[LR]<END>
-That's right![LR]<END>
+Thats right![LR]<END>
 
 #JMP($9AA9)
 #FIXEDLENGTH(28,0)
@@ -811,7 +828,8 @@ Ah, so…?[LR]<END>
 #JMP($9CF6)
 #FIXEDLENGTH(28,0)
 //え～[LR][POKEPI]、 そんなに大切？[LR]<END>
-Eh～[LR]Is [POKEPI] important?[LR]<END>
+Eh～[LR]
+Is [POKEPI] important?[LR]<END>
 
 #JMP($9D1D)
 #FIXEDLENGTH(15,0)
@@ -941,7 +959,7 @@ Well…[LR]<END>
 #JMP($B488)
 #FIXEDLENGTH(13,0)
 //あ、そうだ！[LR]<END>
-That's right![LR]<END>
+Ah, okay![LR]<END>
 
 #JMP($B4FF)
 #FIXEDLENGTH(12,0)
@@ -955,7 +973,7 @@ Later, <$16><$14><$03><$00><$16>～<END>
 
 // Only overwrite bytes between 0x0000B59F and 0x0000B5B0.
 // Trim the end of the translated text if it is any longer.
-#JMP($B59F,$B5B0)
+#JMP($B59F)
 #FIXEDLENGTH(18,0)
 //って 聞いたらね～[LR]<END>
 If you ask me～[LR]<END>
@@ -967,7 +985,7 @@ If you ask me～[LR]<END>
 I see ♥[LR]
 Pet me, [PLAYER] [NYA]♥[LR]<END>
 
-#JMP($B5EF,$B604)
+#JMP($B5EF)
 #FIXEDLENGTH(39,0)
 // Dekopin - finger flick to the forehead​, Japanese family culture
 //そっか…[LR]
@@ -975,32 +993,33 @@ Pet me, [PLAYER] [NYA]♥[LR]<END>
 I see…[LR]
 Dekopin me [PLAYER] [NYA]♥[LR]<END>
 
-#JMP($B621,$B638)
+#JMP($B621)
 #FIXEDLENGTH(24,0)
 //なでなで されちゃった♥[LR]<END>
 I was petted ♥[LR]<END>
 
-#JMP($B644,$B65B)
+#JMP($B644)
 // Past tense of Dekopin, not sure if Toro is proud or upset about it
 //でこピン されちゃった…[LR]<END>
 I got Dekopinned…[LR]<END>
 
-#JMP($B697,$B6AC)
+#JMP($B697)
 #FIXEDLENGTH(22,0)
 //さすが [POKEPI] だよね！[LR]<END>
 As expected of [POKEPI]![LR]<END>
 
-#JMP($B6B8,$B6CF)
+#JMP($B6B8)
 #FIXEDLENGTH(24,0)
 //わかった～[LR]それじゃあ…[LR]<END>
-Okay～[LR]Alright then…[LR]<END>
+Okay～[LR]
+Alright then…[LR]<END>
 
-#JMP($B6EB,$B6F7)
+#JMP($B6EB)
 #FIXEDLENGTH(13,0)
 //どっちの方が[LR]<END>
 Which is better[LR]<END>
 
-#JMP($B70B,$B711)
+#JMP($B70B)
 #FIXEDLENGTH(7,0)
 //って <$16><$14><END>
 You said <$16><$14><END>
@@ -1010,22 +1029,22 @@ You said <$16><$14><END>
 //なるほど[NYA][LR]<END>
 I see, [NYA][LR]<END>
 
-#JMP($B7FD,$B80C)
+#JMP($B7FD)
 #FIXEDLENGTH(16,0)
 //って きいたら～[LR]<END>
 If you ask me～[LR]<END>
 
-#JMP($B833,$B837)
+#JMP($B833)
 #FIXEDLENGTH(5,0)
 //あ、[LR]<END>
 Ah,[LR]<END>
 
-#JMP($B88B,$B895)
+#JMP($B88B)
 #FIXEDLENGTH(11,0)
 //なんで～？[LR]<END>
 Why～?[LR]<END>
 
-#JMP($B898,$B8AD)
+#JMP($B898)
 #FIXEDLENGTH(22,0)
 //せっかく 聞いたのに…[LR]<END>
 Even though I heard it…[LR]<END>
@@ -1033,37 +1052,39 @@ Even though I heard it…[LR]<END>
 #JMP($B8B9)
 #FIXEDLENGTH(30,0)
 //えへへ♥[LR]なんか うれしい[NYA][LR]<END>
-Hehe ♥[LR]I'm so happy for you![LR]<END>
+Tee-hee ♥[LR]
+I'm kind of happy![LR]<END>
 
-#JMP($B8E2,$B8EA)
+#JMP($B8E2)
 #FIXEDLENGTH(9,0)
 //あのね…[LR]<END>
 You know…[LR]<END>
 
-#JMP($B94A,$B965)
+#JMP($B94A)
 #FIXEDLENGTH(28,0)
 //おしえてあげて よかったね！[LR]<END>
-I'm glad you taught me![LR]<END>
+I'm glad that I told you![LR]<END>
 
 #JMP($B975)
 #FIXEDLENGTH(30,0)
 //でも ヒミツに しちゃった[NYA]～[LR]<END>
-But I did it in secret [NYA]～[LR]<END>
+But I kept it a secret [NYA]～[LR]<END>
 
-#JMP($B99E,$B9AC)
+#JMP($B99E)
 #FIXEDLENGTH(15,0)
 //あ、そうそう！[LR]<END>
-Aw yeah![LR]<END>
+Oh, right![LR]<END>
 
-#JMP($BA69,$BA79)
+#JMP($BA69)
 #FIXEDLENGTH(17,0)
 //あのね、あのね！[LR]<END>
 Hey, guess what![LR]<END>
 
-#JMP($BAE9,$BB13)
+#JMP($BAE9)
 #FIXEDLENGTH(43,0)
 //そっか…[LR]でも なかよく なれると イイよね…[LR]<END>
-Okay…[LR]But I'm good when we're good friends…[LR]<END>
+Okay…[LR]
+But I'm good when we're good friends…[LR]<END>
 
 #JMP($BB31)
 #FIXEDLENGTH(43,0)
@@ -1073,7 +1094,8 @@ Is it better if I call you by your name?[LR]<END>
 #JMP($BB8D)
 #FIXEDLENGTH(27,0)
 //わーい！[LR][PLAYER]、おかえり～[LR]<END>
-Yay![LR][PLAYER] returned～[LR]<END>
+Yay![LR]
+[PLAYER] returned～[LR]<END>
 
 #JMP($BBEA)
 #FIXEDLENGTH(46,0)
@@ -1084,17 +1106,21 @@ During [PLAYER]'s absence, nobody came?[LR]<END>
 #JMP($BC23)
 #FIXEDLENGTH(30,0)
 //わーい！[LR]ご紹介 待ってる[NYA]！[LR]<END>
-Wow![LR]I'm waiting for you [NYA]![LR]<END>
+Wow![LR]
+I'm waiting for you [NYA]![LR]<END>
 
-#JMP($BC4C,$BC5B)
+#JMP($BC4C)
 #FIXEDLENGTH(16,0)
 //あのね あのね…[LR]<END>
-Now you know…[LR]<END>
+Now I know…[LR]<END>
 
-#JMP($BC5E,$BC77)
+// Main Menu -> Friends -> Introduce
+#JMP($BC5E)
+#FIXEDLENGTH(26,0)
 //お名前…[LR]おしえてくれる？[LR]<END>
-Can you tell me your name?[LR]<END>
+Can you tell me your name?<END>
 
+// If Cancel is pressed when entering a name
 #JMP($BCAA)
 #FIXEDLENGTH(27,0)
 //あれれ？[LR]誰だったのか[NYA]？[LR]<END>
@@ -1110,7 +1136,7 @@ Um, err…[LR]<END>
 //どちらさま です[NYA]？<END>
 Which one is it, [NYA]?<END>
 
-#JMP($BD70,$BD83)
+#JMP($BD70)
 #FIXEDLENGTH(20,0)
 //あ、もう これ以上…[LR]<END>
 Oh, there's no more…[LR]<END>
@@ -1126,56 +1152,56 @@ New users cannot write in friend notes, [NYA]～<END>
 I want you to sort my friend notes, [NYA]…[LR]<END>
 
 // New game introduction
-#JMP($7BCB0,$7BCC2)
+#JMP($7BCB0)
 #FIXEDLENGTH(19,0)
 //はじめましてニャ…[LR]<END>
-Nice to meet[LR]
-you…[LR]<END>
+Oh, hello[LR]
+there…[LR]<END>
 
-#JMP($7BCCD,$7BCDF)
+#JMP($7BCCD)
 #FIXEDLENGTH(19,0)
 //ネコの [POKEPI]です…[LR]<END>
 I'm [POKEPI][LR]
 the cat.[LR]<END>
 
-#JMP($7BCFB,$7BD0D)
+#JMP($7BCFB)
 #FIXEDLENGTH(19,0)
 //あのね…[LR][POKEPI]ね…[LR]<END>
-Listen here[LR]
-please…<END>
+Listen up[LR]
+please…[LR]<END>
 
-#JMP($7BD10,$7BD2E)
+#JMP($7BD10)
 #FIXEDLENGTH(31,0)
 //人間に なるのが[LR]ユメなのニャ♥[LR]<END>
-My dream is to become human ♥[LR]<END>
+My dream is to become human[LR]<END>
 
-#JMP($7BD3A,$7BD5C)
+#JMP($7BD3A)
 #FIXEDLENGTH(35,0)
 //人間に なる方法[LR]
 //探して旅してたら…[LR]
-I was traveling looking for[LR]
-help,[LR]<END>
+I was looking[LR]
+for some help,[LR]<END>
 
-#JMP($7BD5F,$7BD7A)
+#JMP($7BD5F)
 #FIXEDLENGTH(28,0)
 //ここに たどり着いたのニャ…[LR]<END>
 and I ended up[LR]
-here, nya…[LR]<END>
+here, meow…[LR]<END>
 
-#JMP($7BD86,$7BD9E)
+#JMP($7BD86)
 #FIXEDLENGTH(25,0)
 //きっと これは 運命ニャ！[LR]<END>
 This must be[LR]
 my destiny![LR]<END>
 
-#JMP($7BDB2,$7BDD6)
+#JMP($7BDB2)
 #FIXEDLENGTH(37,0)
 //ここで [POKEPI]と いっしょに 暮らせば！[LR]<END>
 I wish I could[LR]
 live here[LR]
 with you![LR]<END>
 
-#JMP($7BDD9,$7BE00)
+#JMP($7BDD9)
 #FIXEDLENGTH(40,0)
 //何だか 人間に[LR]なれそうな 気がするニャ♥[LR]<END>
 Somehow,[LR]
@@ -1186,12 +1212,14 @@ other.[LR]<END>
 //えへへ、そんなわけで…[LR]<END>
 #FIXEDLENGTH(23,0)
 #JMP($7BF0D)
-Ehehe, that's all…[LR]<END>
+Hehe, that's[LR]
+my story.[LR]<END>
 
 //よろしくなのニャ♥[LR]<END>
 #FIXEDLENGTH(19,0)
 #JMP($7BF2C)
-Nice to meet you, nya♥[LR]<END>
+Nice to[LR]
+meet you.<END>
 
 //あ！[LR]<END>
 #FIXEDLENGTH(5,0)
@@ -1201,17 +1229,27 @@ Ah![LR]<END>
 //つまらないモノ ですが～[LR]<END>
 #FIXEDLENGTH(24,0)
 #JMP($892C4)
-It's a bit boring, but~[LR]<END>
+It's not[LR]
+much, but…[LR]<END>
 
 //ひっこしの ごあいさつに…[LR]<END>
 #FIXEDLENGTH(26,0)
 #JMP($892DE)
-A gift for moving in…[LR]<END>
+I have a[LR]
+moving-in[LR]
+gift…[LR]<END>
 
-//これ あげる[NYA]<$81><$49>!<END>
-#FIXEDLENGTH(11,0)
+//これ あげる[NYA]!<END>
+#FIXEDLENGTH(16,0)
 #JMP($89300)
-Take this!<END>
+Take this,[LR]
+[NYA]!<END>
+
+//にゃにゃ！<END>
+#FIXEDLENGTH(10,0)
+#JMP($8D401)
+Meow[LR]
+meow!<END>
 
 //バイバイ<END>
 #FIXEDLENGTH(8,0)
