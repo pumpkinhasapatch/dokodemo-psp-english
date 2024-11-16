@@ -239,6 +239,15 @@ I feel lonely after all,nya…<END>
 //もっと おはなし[LR]
 //したかったニャ…<END>
 
+#JMP($8E63F)
+#FIXEDLENGTH(86,0)
+Goodbye…[LR]
+[LR]
+I'm going to find another way to become human.[LR]
+[LR]
+[LR]
+I wanted to talk more, meow…<END>
+
 //------------
 //人間に なって[LR]
 //戻ってこよう！[LR]
@@ -248,6 +257,14 @@ I feel lonely after all,nya…<END>
 //[LR]
 //だから もう平気…[LR]
 //もう 泣かないニャ！<END>
+
+#JMP($8E696)
+#FIXEDLENGTH(118,0)
+I'll come back to see $_YOU after becoming a human![LR]
+My dream will surely come true![LR]
+[LR]
+So it's okay now…[LR]
+I won't cry anymore!<END>
 
 //------------
 //きっと また…[LR]
@@ -259,8 +276,18 @@ I feel lonely after all,nya…<END>
 //「さようなら」よりも[LR]
 //「ありがとう」を言おう！<END>
 
+#JMP($8E70D)
+#FIXEDLENGTH(128,0)
+I'm sure I'll meet $_YOU again…[LR]
+Someday, somewhere,[LR]
+Friends forever.[LR]
+[LR]
+For now, it's farewell, but…[LR]
+Rather than saying "goodbye", I say[LR]
+"thank you!"<END>
+
 //------------
-//はじめての日記。[LR]
+//はじめての日記。[LR] - First diary entry after 1 day of playing
 //$_YOUは すごく[LR]
 //やさしそうな人♥[LR]
 //ホッとしたｽ♥[LR]
@@ -281,9 +308,15 @@ polite or I'll[LR]
 get scolded…<END>
 
 //------------
-//さこつ<END>
+//さこつ<END> - Wishbone? Someone's name?
+#JMP($8E805)
+#FIXEDLENGTH(6,0)
+Sakotu<END>
 
 //演歌<END>
+#JMP($8E80C)
+#FIXEDLENGTH(4,0)
+Enka<END>
 
 //$_FMEといっしょに[LR]
 //お風呂に行った♥[LR]
@@ -294,8 +327,18 @@ get scolded…<END>
 //ハダカの つきあい[LR]
 //何だか キモチイイ♥<END>
 
+#JMP($8E811)
+#FIXEDLENGTH(114,0)
+Went to the[LR]
+bath with $_FME ♥[LR]
+Washed each other[LR]
+Sang $_W2…[LR]
+Hanging around[LR]
+Feels good ♥<END>
+
 //------------
 //おひるね<END>
+sleep<END>
 
 //$_FMEといっしょに[LR]
 //お風呂に行った♥[LR]
@@ -304,7 +347,16 @@ get scolded…<END>
 //$_W1が[LR]
 //出来るのニャ！[LR]
 //すごい！ すごい！[LR]
-//カエルって すごい！<END>
+//カエルって すごい！<END> - カエル = frog; Likely related to Ricky, the Frog Pokepi
+
+#JMP($8E88D)
+#FIXEDLENGTH(119,0)
+Went to the[LR]
+bath with $_FME ♥[LR]
+$_FME can $_W1[LR]
+while submerged in hot water![LR]
+Wow![LR]
+Frogs are amazing!<END>
 
 //------------
 //$_FMEといっしょに[LR]
@@ -316,6 +368,16 @@ get scolded…<END>
 //[LR]
 //…引き分けだった。<END>
 
+#JMP($8E905)
+#FIXEDLENGTH(92,0)
+Went to the bath with $_FME ♥[LR]
+[LR]
+We compared[LR]
+which $_W1[LR]
+was whiter![LR]
+[LR]
+…It was a draw.<END>
+
 //------------
 //$_FMEといっしょに[LR]
 //お風呂に行った♥[LR]
@@ -324,12 +386,28 @@ get scolded…<END>
 //温めすぎると熱暴走[LR]
 //しちゃうらしいニャ…[LR]
 //[LR]
-//機械の体って 大変。<END>
+//機械の体って 大変。<END> - Suzuki the Robot?
+
+#JMP($8E962)
+#FIXEDLENGTH(104,0)
+I went to the bath with $_FME ♥[LR]
+[LR]
+If $_W1[LR]
+gets too warm, it will overheat[LR]
+meow…[LR]
+[LR]
+Having a mechanical body is tough.<END>
 
 //------------
 //ユメ<END>
+#JMP($8E9CB)
+#FIXEDLENGTH(4,0)
+Dream<END>
 
 //思い出<END>
+#JMP($8E9D0)
+#FIXEDLENGTH(6,0)
+Memories<END>
 
 //$_FMEといっしょに[LR]
 //お風呂に行った♥[LR]
@@ -340,8 +418,19 @@ get scolded…<END>
 //ふたりいっしょだと[LR]
 //すごく楽しい♥<END>
 
+#JMP($8E9D7)
+#FIXEDLENGTH(112,0)
+I went to the bath with $_FME.[LR]
+[LR]
+I talked to $_W1[LR]
+While soaking in the water…[LR]
+It was so much fun together ♥<END>
+
 //------------
 //紅茶<END>
+#JMP($8EA48)
+#FIXEDLENGTH(4,0)
+Tea<END>
 
 //おシャレなお店で[LR]
 //$_FMEとカンパイ！[LR]
@@ -352,8 +441,21 @@ get scolded…<END>
 //お値段見て[LR]
 //もっとドキドキ…<END>
 
+#JMP($8EA4D)
+#FIXEDLENGTH(118,0)
+At a stylish restaurant[LR]
+Cheers with $_FME![LR]
+I'm not used to this kind of shop…[LR]
+[LR]
+I'm a little nervous…[LR]
+When I saw the price of $_W1[LR]
+I was even more nervous…<END>
+
 //------------
 //お茶<END>
+#JMP($8EAC4)
+#FIXEDLENGTH(4,0)
+Tea<END>
 
 //おシャレなお店で[LR]
 //$_FMEとカンパイ！[LR]
@@ -364,8 +466,22 @@ get scolded…<END>
 //よく味 わかんない…[LR]
 //おいしい気もする…<END>
 
+#JMP($8EAC9)
+#FIXEDLENGTH(103,0)
+At a fancy shop[LR]
+Cheers with $_FME![LR]
+[LR]
+Vintage[LR]
+$_W1[LR]
+What's that…[LR]
+I don't really know what it tastes like…[LR]
+It seems delicious…<END>
+
 //------------
 //牛乳<END>
+#JMP($8EB31)
+#FIXEDLENGTH(4,0)
+Milk<END>
 
 //おシャレなお店で[LR]
 //$_FMEとカンパイ！[LR]
@@ -376,10 +492,27 @@ get scolded…<END>
 //  からです。」[LR]
 //お行儀悪い？<END>
 
+#JMP($8EB36)
+#FIXEDLENGTH(111,0)
+At a fancy shop[LR]
+Cheers with $_FME![LR]
+[LR]
+$_W1[LR]
+stomps the counter![LR]
+"It's from that customer"[LR]
+[LR]
+Is that bad manners?<END>
+
 //------------
 //青汁<END>
+#JMP($8EBA6)
+#FIXEDLENGTH(4,0)
+Vege<END>
 
 //なっとう<END>
+#JMP($8EBAB)
+#FIXEDLENGTH(8,0)
+Natto<END>
 
 //おシャレなお店で[LR]
 //$_FMEとカンパイ！[LR]
@@ -390,8 +523,20 @@ get scolded…<END>
 //$_FME自慢の[LR]
 //カクテルだって！<END>
 
+#JMP($8EBB4)
+#FIXEDLENGTH(89,0)
+At a fancy shop[LR]
+Cheers with $_FME![LR]
+[LR]
+$_W1 mixed with[LR]
+$_W2[LR]
+is a cocktail that $_FME is proud of!<END>
+
 //------------
 //焼き鳥<END>
+#JMP($8EC0E)
+#FIXEDLENGTH(6,0)
+Yakitori<END>
 
 //おシャレなお店で[LR]
 //$_FMEとカンパイ！[LR]
@@ -402,8 +547,19 @@ get scolded…<END>
 //ぐらいしか知らない。[LR]
 //ちょっとジェラシー。<END>
 
+#JMP($8EC15)
+#FIXEDLENGTH(133,0)
+Cheers with $_FME at a stylish restaurant![LR]
+$_FME knows a lot about these kinds of restaurants…[LR]
+All I know about is the[LR]
+$_W1 restaurant.[LR]
+A little jealous.<END>
+
 //------------
 //トンカツ弁当<END>
+#JMP($8EC9B)
+#FIXEDLENGTH(12,0)
+Pork cutlets<END>
 
 //$_FMEと[LR]
 //電車でおでかけ。[LR]
@@ -413,6 +569,15 @@ get scolded…<END>
 //買ってたら…[LR]
 //あと少しで[LR]
 //乗り遅れる所だった…<END>
+
+#JMP($8ECA8)
+#FIXEDLENGTH(88,0)
+Going out on the train with $_FME.[LR]
+[LR]
+I was buying[LR]
+$_W1[LR]
+at the station kiosk.[LR]
+I almost missed it…<END>
 
 //------------
 //$_FMEと[LR]
@@ -424,6 +589,15 @@ get scolded…<END>
 //[LR]
 //教わっちゃった。<END>
 
+#JMP($8ED01)
+#FIXEDLENGTH(114,0)
+Going out to see the train with $_FME.[LR]
+Right straight to match the train's speed![LR]
+$_FME's special move,[LR]
+$_FME train punch,[LR]
+[LR]
+I learned it.<END>
+
 //------------
 //$_FMEと[LR]
 //電車でおでかけ。[LR]
@@ -434,8 +608,20 @@ get scolded…<END>
 //すいてるから乗ろう！[LR]
 //いちばん前に乗ろう！<END>
 
+#JMP($8ED74)
+#FIXEDLENGTH(121,0)
+Going out by train with $_FME.[LR]
+Is this train going to[LR]
+$_W1?[LR]
+I'm not sure though.[LR]
+It's not crowded so let's get on![LR]
+Let's get in the front!<END>
+
 //------------
 //サラリーマン<END>
+#JMP($8EDEE)
+#FIXEDLENGTH(12,0)
+Salaryman<END>
 
 //$_FMEと[LR]
 //電車でおでかけ。[LR]
@@ -446,8 +632,21 @@ get scolded…<END>
 //$_FMEが電車と合体[LR]
 //引っぱってくれる。<END>
 
+#JMP($8EDFB)
+#FIXEDLENGTH(122,0)
+Going out by train with $_FME.[LR]
+$_W1 is[LR]
+a train full of people.[LR]
+If it's too heavy and the train[LR]
+doesn't move,[LR]
+$_FME will combine with the train[LR]
+and pull it.<END>
+
 //------------
 //ラーメン<END>
+#JMP($8EE76)
+#FIXEDLENGTH(8,0)
+Ramen<END>
 
 //$_FMEと[LR]
 //電車でおでかけ。[LR]
@@ -458,8 +657,20 @@ get scolded…<END>
 //きつきつで、[LR]
 //乗り換えが大変ニャ。<END>
 
+#JMP($8EE7F)
+#FIXEDLENGTH(122,0)
+Going out by train with $_FME.[LR]
+We went around eating at all the famous[LR]
+$_W1 restaurants.[LR]
+But the schedule was[LR]
+tight, and[LR]
+transfers were a pain.<END>
+
 //------------
-//フランス<END>
+//フランス<END> - Pierre (Dog pokepi) is french
+#JMP($8EEFA)
+#FIXEDLENGTH(8,0)
+France<END>
 
 //$_FMEと[LR]
 //川辺で一休み。[LR]
@@ -470,8 +681,18 @@ get scolded…<END>
 //$_W1が[LR]
 //見えたんだニャ。<END>
 
+#JMP($8EF03)
+#FIXEDLENGTH(110,0)
+Taking a rest by the river with $_FME.[LR]
+Beyond this vast sky, there seems to be a[LR]
+country called $_W1.[LR]
+$_FME must have seen $_W1[LR].<END>
+
 //------------
-//海<END>
+//海<END> - Sea; ocean - Unused? no $_W1
+#JMP($8EF72)
+#FIXEDLENGTH(2,0)
+海<END>
 
 //$_FMEと[LR]
 //川辺で一休み。[LR]
@@ -482,8 +703,22 @@ get scolded…<END>
 //大きな声出すと [LR]
 //ちょっとスッとする♥<END>
 
+#JMP($8EF75)
+#FIXEDLENGTH(131,0)
+Taking a rest by the river with $_FME.[LR]
+$_FME said loudly[LR]
+"You idiot!"[LR]
+"The one who says 'idiot' is the[LR]
+idiot!"[LR]
+When I say it loudly[LR]
+I feel a little better ♥<END>
+
 //------------
+
 //パンツ<END>
+#JMP($8EFF9)
+#FIXEDLENGTH(6,0)
+Pants<END>
 
 //$_FMEと 川辺で[LR]
 //空を見てた。[LR]
@@ -493,6 +728,14 @@ get scolded…<END>
 //あの雲を見てる。[LR]
 //だって お空は[LR]
 //つながってるから。<END>
+
+#JMP($8F000)
+#FIXEDLENGTH(116,0)
+Taking a rest by the river with $_FME[LR]
+looking at the sky by the river.[LR]
+I found a cloud that looks like $_W1.[LR]
+I'm sure $_YOU is also[LR]
+looking at the clouds.<END>
 
 //------------
 //$_FMEと[LR]
@@ -504,8 +747,20 @@ get scolded…<END>
 //だけど ３回しか[LR]
 //はねなかった…<END>
 
+#JMP($8F075)
+#FIXEDLENGTH(132,0)
+$_FME and I down by the river.[LR]
+I skimmed a pebble on the water.[LR]
+The angle of incidence… The initial velocity…[LR]
+$_FME calculated a lot[LR]
+and threw a pebble too.[LR]
+But it only bounced three times…[LR]<END>
+
 //------------
 //80年代なつメロ<END>
+#JMP($8F0FA)
+#FIXEDLENGTH(14,0)
+80s song tunes<END>
 
 //$_FMEと[LR]
 //川辺で一休み。[LR]
@@ -516,8 +771,18 @@ get scolded…<END>
 //キレイな歌声。[LR]
 //うっとり♥<END>
 
+#JMP($8F109)
+#FIXEDLENGTH(102,0)
+Taking a break by the river with $_FME.[LR]
+They sang $_W1 to me.[LR]
+A beautiful voice riding the wind.[LR]
+Enchanting ♥<END>
+
 //------------
 //電車<END>
+#JMP($8F170)
+#FIXEDLENGTH(4,0)
+Tram<END>
 
 //$_FMEと[LR]
 //待ち合わせした。[LR]
@@ -528,8 +793,20 @@ get scolded…<END>
 //でもあったのかニャ？[LR]
 //ちょっと かなり心配。<END>
 
+#JMP($8F175)
+#FIXEDLENGTH(111,0)
+I made a date to meet up with $_FME[LR]
+[LR]
+[LR]
+But when the time came, he didn't come…[LR]
+Did the $_W1 have an accident?[LR]
+I'm a little worried.<END>
+
 //------------
 //吸血鬼ネコ映画<END>
+#JMP($8F1E5)
+#FIXEDLENGTH(14,0)
+Dracula Cats<END>
 
 //$_FMEと[LR]
 //待ち合わせした。[LR]
@@ -540,8 +817,21 @@ get scolded…<END>
 //「……券、忘れた。」[LR]
 //まったくもーニャ…<END>
 
+#JMP($8F1F4)
+#FIXEDLENGTH(108,0)
+I made a date with $_FME.[LR]
+"$_W1"[LR]
+We promised to go see it.[LR]
+[LR]
+"Okay, let's go"[LR]
+"…I forgot the ticket."[LR]
+What the…<END>
+
 //------------
 //焼き肉<END>
+#JMP($8F261)
+#FIXEDLENGTH(6,0)
+a meal<END>
 
 //$_FMEと[LR]
 //待ち合わせした。[LR]
@@ -551,6 +841,15 @@ get scolded…<END>
 //$_W1を[LR]
 //おごったら[LR]
 //許してくれるかニャ？<END>
+
+#JMP($8F268)
+#FIXEDLENGTH(98,0)
+I made a date with $_FME.[LR]
+I was late…[LR]
+$_FME was angry…[LR]
+[LR]
+If I give them $_W1[LR]
+will they forgive me?<END>
 
 //------------
 //$_FMEと[LR]
@@ -562,6 +861,14 @@ get scolded…<END>
 //$_FMEに見られた…[LR]
 //恥ずかしかった…<END>
 
+#JMP($8F2CB)
+#FIXEDLENGTH(109,0)
+I made a date with $_FME.[LR]
+I came a little too early so I played around and pretended to be a statue.[LR]
+[LR]
+$_FME saw me…[LR]
+I was embarrassed…<END>
+
 //------------
 //$_FMEと[LR]
 //待ち合わせした。[LR]
@@ -572,8 +879,20 @@ get scolded…<END>
 //$_W1中で[LR]
 //もう忙しくってさ！」<END>
 
+#JMP($8F339)
+#FIXEDLENGTH(107,0)
+I arranged to meet up with $_FME.[LR]
+He took a while to come…[LR]
+[LR]
+"Oh, $_FME～"[LR]
+"Sorry, I'm in $_W1 now…[LR]
+I'm busy!"<END>
+
 //------------
 //月刊にゃんこ生活<END>
+#JMP($8F3A5)
+#FIXEDLENGTH(16,0)
+Monthly Cat Life<END>
 
 //$_W1を[LR]
 //$_FMEに紹介した。[LR]
@@ -584,8 +903,19 @@ get scolded…<END>
 //じゃんじゃん[LR]
 //持ってきてあげた。<END>
 
+#JMP($8F3B6)
+#FIXEDLENGTH(116,0)
+I introduced $_W1 to[LR]
+$_FME.[LR]
+$_FME was reading it very seriously.[LR]
+I was so happy that I bought[LR]
+$_W1 more of it in droves.<END>
+
 //------------
 //週刊わたしのネコ<END>
+#JMP($8F42B)
+#FIXEDLENGTH(16,0)
+My Cat Weekly<END>
 
 //$_FMEと[LR]
 //お部屋のお片付け。[LR]
@@ -596,8 +926,19 @@ get scolded…<END>
 //  そこ置いてケロ♪」[LR]
 //手伝ってほしかった…<END>
 
+#JMP($8F43C)
+#FIXEDLENGTH(126,0)
+With $_FME tidying up my room.[LR]
+But $_FME was just reading[LR]
+$_W1…[LR]
+"I'm still reading, what is it?"[LR]
+I wanted them to help me…<END>
+
 //------------
-//週刊少年にゃん<$F1>こ<END>
+//週刊少年にゃんこ<END>
+#JMP($8F4BB)
+#FIXEDLENGTH(16,0)
+Kitty Boy Weekly<END>
 
 //$_FMEと[LR]
 //人間になる方法を[LR]
@@ -608,8 +949,19 @@ get scolded…<END>
 //人間になる方法は[LR]
 //見つからなかった…。<END>
 
+#JMP($8F4CC)
+#FIXEDLENGTH(104,0)
+I read[LR]
+$_W1[LR]
+and researched how to become a human.[LR]
+[LR]
+It was interesting, but I couldn't find the answer…<END>
+
 //------------
 //週刊ネコとゆめ<END>
+#JMP($8F535)
+#FIXEDLENGTH(14,0)
+Weekly Cat News<END>
 
 //$_W1を[LR]
 //$_FMEに紹介した。[LR]
@@ -620,10 +972,27 @@ get scolded…<END>
 //あれぇ？[LR]
 //そんな内容だっけ？<END>
 
+#JMP($8F544)
+#FIXEDLENGTH(98,0)
+I introduced $_W1[LR]
+to $_FME.[LR]
+[LR]
+"Hmm, this is…[LR]
+$_W2-ness[LR]
+Special theory robot!"[LR]
+Huh?[LR]
+Is that what it was about?<END>
+
 //------------
 //週刊ネコタイム<END>
+#JMP($8F5A7)
+#FIXEDLENGTH(14,0)
+Weekly Cat Time<END>
 
 //せんぺい<END>
+#JMP($8F5B6)
+#FIXEDLENGTH(8,0)
+Snacks<END>
 
 //$_W1を[LR]
 //$_FMEに紹介した。[LR]
@@ -633,6 +1002,17 @@ get scolded…<END>
 //食べたいウサ～[LR]
 //持ってきてピョン！」[LR]
 //ちょっと つかれた…。<END>
+
+#JMP($8F5BF)
+#FIXEDLENGTH(111,0)
+I introduced $_W1 to[LR]
+$_FME.[LR]
+[LR]
+"Which one is next?[LR]
+$_W2[LR]
+I want to eat it～[LR]
+Bring it to me!"[LR]
+I'm a little tired…<END>
 
 //------------
 //$_FMEに[LR]
@@ -644,6 +1024,16 @@ get scolded…<END>
 //[LR]
 //…おいしいのかニャ？<END>
 
+#JMP($8F62F)
+#FIXEDLENGTH(88,0)
+$_FME showed me his field.[LR]
+[LR]
+A new type of vegetable![LR]
+It tastes like[LR]
+$_W1![LR]
+[LR]
+…Is it delicious?<END>
+
 //------------
 //$_FMEの[LR]
 //お気に入りのバーに[LR]
@@ -654,9 +1044,23 @@ get scolded…<END>
 //$_W1とか[LR]
 //キープしたいニャ。<END>
 
-//手<END>
+#JMP($8F688)
+#FIXEDLENGTH(127,0)
+I was taken to[LR]
+$_FME's[LR]
+favorite bar.[LR]
+He kept a bottle.[LR]
+I'm a little jealous.[LR]
+$_ME also…[LR]
+I want to keep $_W1 or[LR]
+meow.<END>
 
 //------------
+//手<END>
+#JMP($8F708)
+#FIXEDLENGTH(2,0)
+it<END>
+
 //$_FMEと[LR]
 //滝を見に行った。[LR]
 //でも…[LR]
@@ -666,7 +1070,20 @@ get scolded…<END>
 //ぶわ～っと出てる時が[LR]
 //あるらしい…<END>
 
+#JMP($8F70B)
+#FIXEDLENGTH(114,0)
+With $_FME[LR]
+We went to see a waterfall.[LR]
+But…[LR]
+It's better not to take pictures…[LR]
+From the waterfall, $_W1…[LR]
+sometimes seem to come out…<END>
+
+//------------
 //キス<END>
+#JMP($8F77E)
+#FIXEDLENGTH(4,0)
+kiss<END>
 
 //$_FMEと[LR]
 //公園をおさんぽ。[LR]
@@ -677,7 +1094,21 @@ get scolded…<END>
 //$_W1の[LR]
 //時間はあっという間。<END>
 
+#JMP($8F783)
+#FIXEDLENGTH(106,0)
+With $_FME[LR]
+walking around the park.[LR]
+The sun is about to set.[LR]
+[LR]
+It's a fun day.[LR]
+With $_W1[LR]
+time flies by.<END>
+
+//------------
 //自転車<END>
+#JMP($8F7EE)
+#FIXEDLENGTH(6,0)
+Bicycle<END>
 
 //春のニオイ見つけた。[LR]
 //$_W1が[LR]
@@ -688,6 +1119,17 @@ get scolded…<END>
 //$_MEも[LR]
 //負けずにがんばろう。<END>
 
+#JMP($8F7F5)
+#FIXEDLENGTH(115,0)
+I found the smell of spring.[LR]
+Even when a $_W1[LR]
+passes by, he doesn't notice.[LR]
+But he's trying his best[LR]
+to enjoy spring.[LR]
+$_ME[LR]
+Let's not give up.<END>
+
+//------------
 //雨の花を見つけた。[LR]
 //雨が降ると お外で[LR]
 //$_W1が[LR]
@@ -697,6 +1139,18 @@ get scolded…<END>
 //キライに なるより[LR]
 //イイトコを 探そう！<END>
 
+#JMP($8F869)
+#FIXEDLENGTH(130,0)
+I found a rain flower.[LR]
+When it rains outside,[LR]
+$_W1[LR]
+can't go out…[LR]
+But when it rains[LR]
+the flowers bloom beautifully.[LR]
+Rather than hating it[LR]
+let's look for the good parts!<END>
+
+//------------
 //花火ドーン！[LR]
 //流れ星にお願いすると[LR]
 //かなうらしいから…[LR]
@@ -706,6 +1160,18 @@ get scolded…<END>
 //$_W1が[LR]
 //食べたい 食べたい！<END>
 
+#JMP($8F8EC)
+#FIXEDLENGTH(133,0)
+Fireworks![LR]
+If you make a wish to a shooting star[LR]
+it will come true…[LR]
+If you make a wish to fireworks[LR]
+it will surely come true.[LR]
+Let's make a wish![LR]
+$_W1[LR]
+I want to eat it!<END>
+
+//------------
 //秋を見つけに行った。[LR]
 //葉っぱが紅い所、[LR]
 //秋は そこにある。[LR]
@@ -715,6 +1181,16 @@ get scolded…<END>
 //ごちｿそうになった。[LR]
 //これが 秋の味。<END>
 
+#JMP($8F972)
+#FIXEDLENGTH(117,0)
+It's autumn,[LR]
+where the leaves are red.[LR]
+[LR]
+When I was looking at the fallen leaves,[LR]
+$_W1 was treated to a feast.[LR]
+This is the taste of autumn.<END>
+
+//------------
 //田んぼの中にカカシ。[LR]
 //広い田んぼの中…[LR]
 //ひとりの カカシ。[LR]
@@ -724,7 +1200,22 @@ get scolded…<END>
 //ひとりじゃないニャ。[LR]
 //きっと誰か待ってる。<END>
 
+#JMP($8F9E8)
+#FIXEDLENGTH(138,0)
+A scarecrow in a rice field.[LR]
+In the middle of a wide rice field…[LR]
+A scarecrow alone.[LR]
+He looks lonely.[LR]
+I gave $_W1[LR]
+a pat.[LR]
+He's not alone.[LR]
+Someone is probably waiting for him.<END>
+
+//------------
 //車<END>
+#JMP($8FA73)
+#FIXEDLENGTH(2,0)
+Car<END>
 
 //長い階段 発見！[LR]
 //一番上まで登ろう！[LR]
@@ -735,6 +1226,18 @@ get scolded…<END>
 //怖くなったから、[LR]
 //途中で引き返した。<END>
 
+#JMP($8FA76)
+#FIXEDLENGTH(138,0)
+I found a long staircase![LR]
+Let's climb to the top![LR]
+Let's go up to the sky![LR]
+When I looked back halfway,[LR]
+$_W1[LR]
+looked really small.[LR]
+I got scared, so[LR]
+I turned back halfway.<END>
+
+//------------
 //鍋って おいしい！[LR]
 //$_W1を[LR]
 //いっしょに入れたら[LR]
@@ -744,6 +1247,17 @@ get scolded…<END>
 //みんないっしょが[LR]
 //うれしい。<END>
 
+#JMP($8FB01)
+#FIXEDLENGTH(131,0)
+Hot pot is delicious![LR]
+If I put $_W1[LR]
+in together[LR]
+it will taste even better.[LR]
+I'm sure of it…[LR]
+It's better to be together[LR]
+than alone.<END>
+
+//------------
 //焼き肉 食べた。[LR]
 //モリモリ食べて、[LR]
 //スタミナ付けよう。[LR]
@@ -753,6 +1267,17 @@ get scolded…<END>
 //できるのニャ。[LR]
 //でも、太るのが心配…<END>
 
+#JMP($8FB85)
+#FIXEDLENGTH(119,0)
+I ate grilled meat.[LR]
+Let's eat a lot,[LR]
+and build up our stamina.[LR]
+With this, I can do a lot of[LR]
+$_W1[LR]
+tomorrow, meow.[LR]
+But I'm worried about getting fat…<END>
+
+//------------
 //おいしい魚 食べた。[LR]
 //お魚の[LR]
 //$_W1には[LR]
@@ -762,9 +1287,25 @@ get scolded…<END>
 //人間のように[LR]
 //ハシで食べるのニャ！<END>
 
+#JMP($8FBFD)
+#FIXEDLENGTH(126,0)
+I ate some delicious fish.[LR]
+$_W1[LR]
+is full of nutrients.[LR]
+Eat it all, meow![LR]
+But don't bite into it whole.[LR]
+Be like humans[LR]
+Eat with chopsticks!<END>
+
+//------------
 //オトナ<END>
+#JMP($8FC7C)
+#FIXEDLENGTH(6,0)
+Adults<END>
 
 //コドモ<END>
+#JMP($8FC83)
+Kids<END>
 
 //おいしい ゴハン[LR]
 //食べさせてくれる人。[LR]
@@ -775,7 +1316,22 @@ get scolded…<END>
 //「ごちそうさま」は[LR]
 //ありがとうのキモチ♥<END>
 
+#JMP($8FC8A)
+#FIXEDLENGTH(130,0)
+Delicious food[LR]
+Someone who feeds you.[LR]
+Great job ♥[LR]
+$_W1,[LR]
+$_W2,[LR]
+Everyone smiles.[LR]
+"Thank you for the meal"[LR]
+Feelings of gratitude ♥<END>
+
+//------------
 //プリン<END>
+#JMP($8FD0D)
+#FIXEDLENGTH(6,0)
+cheese<END>
 
 //ハンバーガー食べた。[LR]
 //パンとパンの間に[LR]
@@ -786,7 +1342,20 @@ get scolded…<END>
 //いっしょに食べる。[LR]
 //いっしょは幸せの味♥<END>
 
+#JMP($8FD14)
+#FIXEDLENGTH(127,0)
+I ate a hamburger.[LR]
+There's a lot of[LR]
+$_W1 and[LR]
+$_W2 between the buns ♥[LR]
+Opening my mouth wide[LR]
+The taste of happiness ♥<END>
+
+//------------
 //みそ汁<END>
+#JMP($8FD94)
+#FIXEDLENGTH(6,0)
+soup<END>
 
 //お茶した。[LR]
 //混んでたので相席。[LR]
@@ -797,6 +1366,16 @@ get scolded…<END>
 //注文してみた。[LR]
 //お上品に飲まないと。<END>
 
+#JMP($8FD9B)
+#FIXEDLENGTH(130,0)
+I had tea.[LR]
+It was crowded so I shared a table[LR]
+with a stranger.[LR]
+I'm a little nervous.[LR]
+For now, I ordered $_W1.[LR]
+I have to drink it elegantly.<END>
+
+//------------
 //お風呂屋さん行った。[LR]
 //クロネコさんがいた。[LR]
 //$_W1の[LR]
@@ -806,7 +1385,20 @@ get scolded…<END>
 //いつか $_YOUとも[LR]
 //ハダカのつきあい♥<END>
 
+#JMP($8FE1E)
+#FIXEDLENGTH(131,0)
+I went to the spa.[LR]
+A black cat was there.[LR]
+$_W1[LR]
+We helped each other.[LR]
+This is[LR]
+companionship. ♥<END>
+
+//------------
 //生中<END>
+#JMP($8FEA2)
+#FIXEDLENGTH(4,0)
+raw<END>
 
 //お風呂屋さんで[LR]
 //体重はかった。[LR]
@@ -817,6 +1409,18 @@ get scolded…<END>
 //そーっと乗れば[LR]
 //元に戻るかも…<END>
 
+#JMP($8FEA7)
+#FIXEDLENGTH(113,0)
+At the bathhouse[LR]
+I was weighed.[LR]
+Oh no, I've gained weight…[LR]
+I ate before going to bed.[LR]
+Was $_W1 food[LR]
+wrong?[LR]
+If I get on it gently[LR]
+it might go back to normal…<END>
+
+//------------
 //ピカピカのトイレ。[LR]
 //キモチイイ。[LR]
 //きっと[LR]
@@ -826,7 +1430,19 @@ get scolded…<END>
 //そういう お仕事[LR]
 //見つけたいニャ。<END>
 
+#JMP($8FF19)
+#FIXEDLENGTH(130,0)
+A sparkling toilet.[LR]
+Feels good.[LR]
+I'm sure they clean it with the user in mind.[LR]
+[LR]
+Someone would be happy to find a job like that, meow.<END>
+
+//------------
 //パトカー<END>
+#JMP($8FF9C)
+#FIXEDLENGTH(8,0)
+cruiser<END>
 
 //ひとりで お茶した。[LR]
 //少しオトナな気分ｪ…[LR]
@@ -837,7 +1453,22 @@ get scolded…<END>
 //つまんにゃい。[LR]
 //オトナはまだイイや。<END>
 
+#JMP($8FFA5)
+#FIXEDLENGTH(130,0)
+Having tea alone.[LR]
+Feeling a little more grown-up…[LR]
+Outside the window[LR]
+I gazed at a $_W1[LR]
+for a while…[LR]
+I can't talk[LR]
+Boring.[LR]
+I'm still good with being an adult.<END>
+
+//------------
 //カレーライス<END>
+#JMP($90028)
+#FIXEDLENGTH(12,0)
+Curry rice<END>
 
 //気になってたお店。[LR]
 //$_W1の[LR]
@@ -848,7 +1479,21 @@ get scolded…<END>
 //ランチタイムだった。[LR]
 //ホッ、助かった～<END>
 
+#JMP($90035)
+#FIXEDLENGTH(142,0)
+I've been interested in a restaurant.[LR]
+The $_W1[LR]
+had a delicious smell that[LR]
+took me by surprise…[LR]
+I was a little shocked by the price[LR]
+but it was lunchtime.[LR]
+Phew, what a relief～<END>
+
+//------------
 //マクラ<END>
+#JMP($900C4)
+#FIXEDLENGTH(6,0)
+Pillow<END>
 
 //ステキなお店発見！[LR]
 //おもちゃ箱みたい。[LR]
@@ -859,7 +1504,22 @@ get scolded…<END>
 //宝さがしみたい！[LR]
 //きっとどこかにある！<END>
 
+#JMP($900CB)
+#FIXEDLENGTH(107,0)
+I found a great restaurant![LR]
+It looks like a toy box.[LR]
+$_W1[LR]
+I wonder if it's there?[LR]
+$_W2[LR]
+Do they have that?[LR]
+It's like a treasure hunt![LR]
+It must be somewhere!<END>
+
+//------------
 //お姫さま<END>
+#JMP($90137)
+#FIXEDLENGTH(8,0)
+Princess<END>
 
 //結婚式 見ちゃった♥[LR]
 //すごくドキドキ♥[LR]
@@ -870,9 +1530,24 @@ get scolded…<END>
 //家族になれるんだ…。[LR]
 //人間って ステキ♥<END>
 
-//しっぽ<END>
+#JMP($90140)
+#FIXEDLENGTH(127,0)
+I saw a wedding ♥[LR]
+I'm so excited ♥[LR]
+Your bride is beautiful![LR]
+Just like[LR]
+$_W1 ♥[LR]
+This is how we can become a new[LR]
+family…[LR]
+Humans are wonderful ♥<END>
 
-//マ}ッサージ屋さん。[LR]
+//------------
+//しっぽ<END>
+#JMP($901C0)
+#FIXEDLENGTH(6,0)
+tail<END>
+
+//マッサージ屋さん。[LR]
 //$_W1を[LR]
 //グイグイギュー！[LR]
 //痛たたたた、だけど[LR]
@@ -881,7 +1556,22 @@ get scolded…<END>
 //マクラがまた何とも…[LR]
 //ぐー ぐー…<END>
 
+#JMP($901C7)
+#FIXEDLENGTH(127,0)
+Massage parlor.[LR]
+Squeezing $_W1[LR]
+Pushing![LR]
+It hurts, but[LR]
+it feels nice～[LR]
+This soft[LR]
+pillow is just…[LR]
+Ahh…<END>
+
+//------------
 //お魚<END>
+#JMP($90247)
+#FIXEDLENGTH(4,0)
+Fish<END>
 
 //歯医者さんに行った。[LR]
 //ドリル ぎゅい～ん…[LR]
@@ -892,6 +1582,17 @@ get scolded…<END>
 //[LR]
 //って こんなキモチ？<END>
 
+#JMP($9024C)
+#FIXEDLENGTH(106,0)
+I went to the dentist.[LR]
+The drill is squeezing…[LR]
+Woohoo! I'm scared…[LR]
+[LR]
+"$_W1 on the chopping board"[LR]
+[LR]
+Is this how it feels?<END>
+
+//------------
 //お医者さんに行ったｽ。[LR]
 //人間になるために[LR]
 //$_W1を[LR]
@@ -901,6 +1602,14 @@ get scolded…<END>
 //人間になれないの。[LR]
 //胃腸薬もらったニャ。<END>
 
+#JMP($902B7)
+#FIXEDLENGTH(128,0)
+I ate a lot of $_W1 to become a human.[LR]
+But…[LR]
+No matter how much I eat, it didn't work.[LR]
+I needed some stomach medicine.<END>
+
+//------------
 //オバケ魚 発見…。[LR]
 //あ、コドモが危ない。[LR]
 //「その子を離すニャ！[LR]
@@ -910,9 +1619,25 @@ get scolded…<END>
 //返事がない。[LR]
 //$_MEの勝ちニャ。<END>
 
+#JMP($90338)
+#FIXEDLENGTH(130,0)
+I found a ghost fish…[LR]
+Oh, a child is in danger.[LR]
+"Stay away! If you don't…[LR]
+I'll attack with $_W1!"[LR]
+No response.[LR]
+$_ME wins, meow.<END>
+
+//------------
 //おにぎり<END>
+#JMP($903BB)
+#FIXEDLENGTH(8,0)
+Rice ball<END>
 
 //おこづかい<END>
+#JMP($903C4)
+#FIXEDLENGTH(10,0)
+Pocket money<END>
 
 //おまいり おまいり。[LR]
 //ネコのお願いも[LR]
@@ -923,6 +1648,17 @@ get scolded…<END>
 //$_W2。[LR]
 //よろしくお願いニャ。<END>
 
+#JMP($903CF)
+#FIXEDLENGTH(116,0)
+Prayer, prayer.[LR]
+Will the cat's request be heard?[LR]
+Please help me become human.[LR]
+I offered them[LR]
+$_W1 and
+$_W2.[LR]
+Thank you, meow.<END>
+
+//------------
 //ぐるぐる ＵＦＯ発見！[LR]
 //ぐるぐる ぐるぐる[LR]
 //目が回る～[LR]
@@ -931,7 +1667,20 @@ get scolded…<END>
 //きっと空を飛べる！[LR]
 //雲の上まで行ける！ <END>
 
+#JMP($90444)
+#FIXEDLENGTH(119,0)
+Spinning, I found a UFO![LR]
+Spinning, spinning[LR]
+I'm dizzy～[LR]
+$_W1 is spinning too～[LR]
+If I spin faster[LR]
+I'm sure I can fly above the clouds!<END>
+
+//------------
 //勉強<END>
+#JMP($904BC)
+#FIXEDLENGTH(4,0)
+Study<END>
 
 //ちょっとﾆ ひとやすみ。[LR]
 //はぁ～お茶がうまい。[LR]
@@ -942,9 +1691,27 @@ get scolded…<END>
 //ゆっくり ゆっくり[LR]
 //人間になればイイ。<END>
 
+#JMP($904C1)
+#FIXEDLENGTH(134,0)
+A little break.[LR]
+Ah～ the tea is delicious.[LR]
+Let's take it easy.[LR]
+There's no need to rush[LR]
+$_W1.[LR]
+[LR]
+Slowly, slowly[LR]
+It's good to become a human.<END>
+
+//------------
 //クロネコさん<END>
+#JMP($90548)
+#FIXEDLENGTH(12,0)
+Mr. Kuro<END>
 
 //おじいさん<END>
+#JMP($90555)
+#FIXEDLENGTH(10,0)
+Grandpa<END>
 
 //何か物音がした…[LR]
 //だぁれ？ 誰かいるの？[LR]
@@ -955,9 +1722,27 @@ get scolded…<END>
 //困るケド～[LR]
 //誰もいない。真っ暗…<END>
 
+#JMP($90560)
+#FIXEDLENGTH(125,0)
+I heard some noise…[LR]
+Who's that? Is someone there?[LR]
+$_W1?[LR]
+$_W2?[LR]
+If you're there, please reply～[LR]
+Even if you reply[LR]
+it's a problem though～[LR]
+There's no one here. It's pitch black…<END>
+
+//------------
 //週刊ヤングこねこ<END>
+#JMP($905DE)
+#FIXEDLENGTH(16,0)
+Kittens Weekly<END>
 
 //かっぱまき<END>
+#JMP($905EF)
+#FIXEDLENGTH(10,0)
+Best Sushi<END>
 
 //本屋さんへ行った。[LR]
 //「$_W1」[LR]
@@ -966,7 +1751,20 @@ get scolded…<END>
 //でも ２冊も買えない…[LR]
 //どっちにしよう…<END>
 
+#JMP($905FA)
+#FIXEDLENGTH(113,0)
+I went to the bookstore.[LR]
+There's "$_W1"[LR]
+and "$_W2"[LR]
+I want to read both…[LR]
+But I can't buy two…[LR]
+Which one should I choose…<END>
+
+//------------
 //おスシ屋さん<END>
+#JMP($9066C)
+#FIXEDLENGTH(12,0)
+Sushi shop<END>
 
 //夜の街は キラキラ。[LR]
 //この光のどれかが[LR]
@@ -977,6 +1775,18 @@ get scolded…<END>
 //いちばん 明るくて[LR]
 //いちばん 温かい。<END>
 
+#JMP($90679)
+#FIXEDLENGTH(124,0)
+All the lights warm[LR]
+the night city.[LR]
+One of these lights[LR]
+is from $_W1.[LR]
+But I'm sure[LR]
+$_YOU's light[LR]
+is the brightest[LR]
+and the warmest.<END>
+
+//------------
 //知らない道、探検！[LR]
 //どこへ出る道かニャ？[LR]
 //$_W1へ[LR]
@@ -986,7 +1796,22 @@ get scolded…<END>
 //きっと…[LR]
 //新しい場所に着ける！<END>
 
+#JMP($906F6)
+#FIXEDLENGTH(124,0)
+Exploring unknown roads![LR]
+Where does this road lead?[LR]
+To $_W1[LR]
+Are you going out?[LR]
+Straight, straight[LR]
+Let's walk![LR]
+Surely…[LR]
+We'll get to a new place!<END>
+
+//------------
 //秋葉原<END>
+#JMP($90773)
+#FIXEDLENGTH(6,0)
+stores<END>
 
 //雨あがりの街角に[LR]
 //電気スタンド発見！[LR]
@@ -997,6 +1822,17 @@ get scolded…<END>
 //あ、値段書いてある。[LR]
 //４円だって、安いッ！<END>
 
+#JMP($9077A)
+#FIXEDLENGTH(145,0)
+On a street corner after the rain[LR]
+I found a lamp![LR]
+I want one like this.[LR]
+Do they sell them[LR]
+in $_W1?[LR]
+Oh, the price is here.[LR]
+It's cheap, only 4 yen!<END>
+
+//------------
 //ヒミツ基地に潜入！[LR]
 //メーターの調子ＯＫ！[LR]
 //$_W1、[LR]
@@ -1006,6 +1842,18 @@ get scolded…<END>
 //$_W2に[LR]
 //向けて発進しますニャ！<END>
 
+#JMP($9080C)
+#FIXEDLENGTH(127,0)
+Infiltrate the secret base![LR]
+The meter is OK![LR]
+$_W1,[LR]
+Please respond.[LR]
+This is $_ME.[LR]
+Spaceship $_ME,[LR]
+Departing for[LR]
+$_W2, nya!<END>
+
+//------------
 //芝生の上でゴロゴロ。[LR]
 //芝生のニオイ[LR]
 //うっとり♥[LR]
@@ -1015,7 +1863,21 @@ get scolded…<END>
 //いつのまにか[LR]
 //ぐーぐー 寝てた。<END>
 
+#JMP($9088C)
+#FIXEDLENGTH(124,0)
+Rolling around on the grass.[LR]
+The smell of the grass[LR]
+Enchanting ♥[LR]
+Taking a break during work[LR]
+Is $_W1[LR]
+like this?[LR]
+Before I knew it, I was asleep.<END>
+
+//------------
 //ダンプカー<END>
+#JMP($90909)
+#FIXEDLENGTH(10,0)
+Dump truck<END>
 
 //ナゾのうずまき出現！[LR]
 //宇宙から来た[LR]
@@ -1026,6 +1888,16 @@ get scolded…<END>
 //$_W1の[LR]
 //乗組員かもしれない！<END>
 
+#JMP($90914)
+#FIXEDLENGTH(123,0)
+A mysterious whirlpool appears![LR]
+The place where $_W1[LR]
+from space lands.[LR]
+I feel like I'm going to be sucked in[LR]
+Oh, is there someone inside?[LR]
+Maybe it's a crew member of $_W1[LR]!<END>
+
+//------------
 //商店街をお散歩。[LR]
 //$_W1屋さんに[LR]
 //$_W2屋さん。[LR]
@@ -1034,6 +1906,17 @@ get scolded…<END>
 //人間にしてくれる店も[LR]
 //この辺に あるかも。<END>
 
+#JMP($90990)
+#FIXEDLENGTH(105,0)
+A walk through the shopping district.[LR]
+At the $_W1 store[LR]
+At the $_W2 store.[LR]
+There are all kinds of stores.[LR]
+[LR]
+There might also be a store that will turn you into a human[LR]
+around here.<END>
+
+//------------
 //赤や黄色のお魚、[LR]
 //みんな どこから[LR]
 //泳いできたのかニャ？[LR]
@@ -1043,7 +1926,21 @@ get scolded…<END>
 //きっと ここは…[LR]
 //お魚たちの高速道路。<END>
 
+#JMP($909FA)
+#FIXEDLENGTH(115,0)
+Red and yellow fish,[LR]
+Where did they all swim from?[LR]
+Did you come from[LR]
+$_W1?[LR]
+[LR]
+This must be…[LR]
+A highway for fish.<END>
+
+//------------
 //ダイエット<END>
+#JMP($90A6E)
+#FIXEDLENGTH(10,0)
+Diet<END>
 
 //屋根の上の道。[LR]
 //ネコの道。[LR]
@@ -1054,7 +1951,22 @@ get scolded…<END>
 //もう出来なくなﾈる。[LR]
 //ちょっと 残念ニャ。<END>
 
+#JMP($90A79)
+#FIXEDLENGTH(104,0)
+Rooftop road.[LR]
+Cat road.[LR]
+On the rooftop[LR]
+$_W1 and[LR]
+$_W2.[LR]
+When you become a human[LR]
+You won't be able to do this anymore.[LR]
+That's a bit disappointing.<END>
+
+//------------
 //タクシー<END>
+#JMP($90AE2)
+#FIXEDLENGTH(8,0)
+Taxi<END>
 
 //お買い物に行った。[LR]
 //人間の道具いろいろ。[LR]
@@ -1065,7 +1977,21 @@ get scolded…<END>
 //$_W1より[LR]
 //速いかニャ？<END>
 
+#JMP($90AEB)
+#FIXEDLENGTH(125,0)
+Went shopping.[LR]
+Various human tools.[LR]
+What is this…?[LR]
+A vehicle for $_ME?[LR]
+The perfect size for[LR]
+cats. Is it faster[LR]
+than $_W1?<END>
+
+//------------
 //トモダチ<END>
+#JMP($90B69)
+#FIXEDLENGTH(8,0)
+Friends<END>
 
 //広いおうちを 見学。[LR]
 //ろうか長い長い、[LR]
@@ -1076,6 +2002,18 @@ get scolded…<END>
 //ひとりで住むのは[LR]
 //きっと さびしい。 <END>
 
+#JMP($90B72)
+#FIXEDLENGTH(121,0)
+Visiting a large house.[LR]
+It's long and has[LR]
+Lots of shoji screens.[LR]
+$_W1[LR]
+It'd be fit for 100 people.[LR]
+But…[LR]
+living alone here[LR]
+would be lonely.<END>
+
+//------------
 //ステキなお部屋。[LR]
 //新しいタタミのニオイ[LR]
 //なつかしい感じする。[LR]
@@ -1085,6 +2023,18 @@ get scolded…<END>
 //$_W1、[LR]
 //してみたいニャ♥<END>
 
+#JMP($90BEC)
+#FIXEDLENGTH(117,0)
+A lovely room.[LR]
+The smell of new tatami[LR]
+feels nostalgic.[LR]
+[LR]
+I'd like to live[LR]
+in a room like this[LR]
+with $_YOU and[LR]
+$_W1, meow ♥<END>
+
+//------------
 //ネコ人形の団体さん。[LR]
 //おいでおいでしてる…[LR]
 //ちょっと怖い…[LR]
@@ -1094,6 +2044,17 @@ get scolded…<END>
 //そっちの世界には[LR]
 //絶対 行かない！<END>
 
+#JMP($90C62)
+#FIXEDLENGTH(118,0)
+A group of cat dolls.[LR]
+Come on over…[LR]
+It's a little scary…[LR]
+[LR]
+$_ME is[LR]
+becoming human…[LR]
+I'll never go to that world!<END>
+
+//------------
 //かわいいお花。[LR]
 //$_YOUにプレゼント[LR]
 //しようと思った。[LR]
@@ -1103,6 +2064,16 @@ get scolded…<END>
 //イヤだと思ったから…[LR]
 //そのままにしたニャ。<END>
 
+#JMP($90CD9)
+#FIXEDLENGTH(134,0)
+A cute flower.[LR]
+I thought I'd give it to $_YOU[LR]
+But…[LR]
+I didn't want to be the one to[LR]
+pick them away, so[LR]
+I left it as it was.<END>
+
+//------------
 //ゴーカな ゴハン。[LR]
 //$_W1に[LR]
 //$_W2。[LR]
@@ -1112,6 +2083,18 @@ get scolded…<END>
 //え？ 持ち帰っちゃ[LR]
 //ダメにゃの…？<END>
 
+#JMP($90D60)
+#FIXEDLENGTH(108,0)
+A delicious meal.[LR]
+$_W1[LR]
+$_W2.[LR]
+The plate is full[LR]
+Take it home[LR]
+Let's eat it with $_YOU ♥[LR]
+Eh? You can't take it home[LR]
+Can't you…?<END>
+
+//------------
 //新鮮な野菜を買った！[LR]
 //おいしい料理作ろう！[LR]
 //最近 $_YOU、[LR]
@@ -1121,6 +2104,17 @@ get scolded…<END>
 //ツヤツヤ、モリモリ、[LR]
 //元気出してもらおう！<END>
 
+#JMP($90DCD)
+#FIXEDLENGTH(135,0)
+I bought fresh vegetables![LR]
+Let's make a delicious meal![LR]
+You seem tired lately $_YOU[LR]
+so eat this[LR]
+$_W1[LR]
+Shine, sprout,[LR]
+and cheer you up!<END>
+
+//------------
 //イヌ好きのおじさん。[LR]
 //ネコ好きの銅像は？[LR]
 //ネコと いっしょに[LR]
@@ -1130,7 +2124,20 @@ get scolded…<END>
 //$_YOUの銅像[LR]
 //作ってﾄほしいニャ♥<END>
 
+#JMP($90E55)
+#FIXEDLENGTH(128,0)
+An old man who likes dogs.[LR]
+Are there statues of cat lovers?[LR]
+Are there statues of people[LR]
+who did $_W1?[LR]
+I want a statue of[LR]
+$_YOU, meow ♥<END>
+
+//------------
 //オバケ<END>
+#JMP($90ED6)
+#FIXEDLENGTH(6,0)
+Ghosts<END>
 
 //かけっこした。[LR]
 //$_ME １位！[LR]
@@ -1141,7 +2148,20 @@ get scolded…<END>
 //想像して、[LR]
 //必死で逃げるのニャ！<END>
 
+#JMP($90EDD)
+#FIXEDLENGTH(112,0)
+We ran a race.[LR]
+I got 1st place![LR]
+The trick to running fast is…[LR]
+Imagine $_W1[LR]
+chasing you from behind,[LR]
+and run away as fast as you can!<END>
+
+//------------
 //逆上がり<END>
+#JMP($90F4E)
+#FIXEDLENGTH(8,0)
+Backflip<END>
 
 //小学生の団体さん。[LR]
 //ランドセルしょって[LR]
@@ -1150,9 +2170,23 @@ get scolded…<END>
 //でも、[LR]
 //$_W1とか[LR]
 //まだ下手だし…[LR]
-//やっぱ あ<$A0>きらめた。<END>
+//やっぱ あきらめた。<END>
 
+#JMP($90F57)
+#FIXEDLENGTH(124,0)
+A group of elementary school students[LR]
+carrying their backpacks.[LR]
+If I sneak in[LR]
+I might be able to get into school…[LR]
+But $_W1[LR]
+I'm still not very good at it…[LR]
+I gave up.<END>
+
+//------------
 //クジラ<END>
+#JMP($90FD4)
+#FIXEDLENGTH(6,0)
+Whale<END>
 
 //鳥、ネコ、イヌ…[LR]
 //えっと、一番下が[LR]
@@ -1163,9 +2197,26 @@ get scolded…<END>
 //泣いたりしないで[LR]
 //がんばった動物たち♥<END>
 
+#JMP($90FDB)
+#FIXEDLENGTH(129,0)
+Birds, cats, dogs…[LR]
+Um, the one at the bottom is[LR]
+a $_W1?[LR]
+Animal music band.[LR]
+Even if they call you useless[LR]
+and walked away…[LR]
+Don't cry[LR]
+The animals tried their best ♥<END>
+
+//------------
 //太陽<END>
+#JMP($9105D)
+#FIXEDLENGTH(4,0)
+sun<END>
 
 //人間<END>
+#JMP($91062)
+humans<END>
 
 //何だか すごく[LR]
 //走りたい気分。[LR]
@@ -1176,7 +2227,22 @@ get scolded…<END>
 //ダイエットにも[LR]
 //なるしｵニャ。<END>
 
+#JMP($91067)
+#FIXEDLENGTH(104,0)
+I feel like running[LR]
+for some reason.[LR]
+Let's run towards[LR]
+$_W1![LR]
+Let's run towards[LR]
+$_W2![LR]
+It'll also help you lose weight[LR]
+meow.<END>
+
+//------------
 //地底人<END>
+#JMP($910D0)
+#FIXEDLENGTH(6,0)
+Monster<END>
 
 //だ、だれ？[LR]
 //$_W1？[LR]
@@ -1187,6 +2253,16 @@ get scolded…<END>
 //$_W2は、[LR]
 //固くてマズイのニャ。<END>
 
+#JMP($910D7)
+#FIXEDLENGTH(89,0)
+Who's that?[LR]
+$_W1?[LR]
+[LR]
+Eating $_ME doesn't taste good.[LR]
+$_ME's $_W2[LR]
+is hard and tastes bad.<END>
+
+//------------
 //何をしてるのニャ？[LR]
 //人間のために[LR]
 //仕事してるんだって。[LR]
@@ -1196,7 +2272,19 @@ get scolded…<END>
 //働けるんだニャ…[LR]
 //見習わなくっちゃ。<END>
 
+#JMP($91131)
+#FIXEDLENGTH(125,0)
+What are you doing?[LR]
+He's working for the people.[LR]
+He's carrying $_W1.[LR]
+He can work as an animal…[LR]
+I need to learn from him.<END>
+
+//------------
 //公務員<END>
+#JMP($911AF)
+#FIXEDLENGTH(6,0)
+Worker<END>
 
 //ベンチでひとやすみ。[LR]
 //いろんな人がいる。[LR]
@@ -1207,7 +2295,20 @@ get scolded…<END>
 //$_MEだけ、ネコ？[LR]
 //ちょっと さみしい…<END>
 
+#JMP($911B6)
+#FIXEDLENGTH(116,0)
+Taking a rest on a bench.[LR]
+There are all kinds of people.[LR]
+$_W1 & $_W2.[LR]
+are taking a rest too.[LR]
+Is $_ME the only cat?[LR]
+I'm a little lonely…<END>
+
+//------------
 //山<END>
+#JMP($9122B)
+#FIXEDLENGTH(2,0)
+Mt<END>
 
 //カッコイイ車 発見！[LR]
 //こんな車で[LR]
@@ -1217,6 +2318,14 @@ get scolded…<END>
 //$_YOUとドライブ、[LR]
 //いっしょに行きたい♥<END>
 
+#JMP($9122E)
+#FIXEDLENGTH(106,0)
+Found a cool car today![LR]
+It can go to places like $_W1 and $_W2.[LR]
+I want to drive in a car like this.[LR]
+I want to go for a drive with $_YOU. ♥[LR]<END>
+
+//------------
 //$_W1に[LR]
 //なれますように♥[LR]
 //ユメをかなえるのは[LR]
@@ -1226,6 +2335,16 @@ get scolded…<END>
 //不安になった時は。[LR]
 //お願いしてもイイ？<END>
 
+#JMP($91299)
+#FIXEDLENGTH(127,0)
+I hope I can become $_W1.[LR]
+[LR]
+I'm the one who can make dreams come true.[LR]
+I can't ask others.[LR]
+But when I feel anxious.[LR]
+Can I ask you?<END>
+
+//------------
 //ひなたぼっこ。[LR]
 //$_W1を[LR]
 //しなくちゃって…[LR]
@@ -1235,6 +2354,16 @@ get scolded…<END>
 //時間を気にせず[LR]
 //のんびりポカポカ♥<END>
 
+#JMP($91319)
+#FIXEDLENGTH(130,0)
+Basking in the sun.[LR]
+I have to do $_W1.[LR]
+I'm nervous every day.[LR]
+Sometimes I want to relax like this.[LR]
+Without worrying about time.[LR]
+Relaxing and warm. ♥<END>
+
+//------------
 //動物園すごいニャ！[LR]
 //鼻が長いのが、[LR]
 //ゾウさん。[LR]
@@ -1244,7 +2373,20 @@ get scolded…<END>
 //長いのは…[LR]
 //$_W2？<END>
 
+#JMP($9139C)
+#FIXEDLENGTH(97,0)
+The zoo is amazing![LR]
+The one with the long nose is the elephant.[LR]
+The one with the long neck is the giraffe.[LR]
+$_W1 is[LR]
+The longer one is…[LR]
+$_W2?<END>
+
+//------------
 //東京<END>
+#JMP($913FE)
+#FIXEDLENGTH(4,0)
+Tokyo<END>
 
 //電車の窓の外は[LR]
 //夜の$_W1[LR]
@@ -1255,7 +2397,21 @@ get scolded…<END>
 //このまま、月まで[LR]
 //乗って行こう！<END>
 
+#JMP($91403)
+#FIXEDLENGTH(119,0)
+Outside the train window is[LR]
+$_W1.[LR]
+The night view is sparkling.[LR]
+It looks like space.[LR]
+Maybe this train is a spaceship!?[LR]
+Let's ride like this to the moon!
+<END>
+
+//------------
 //バキュームカー<END>
+#JMP($9147B)
+#FIXEDLENGTH(14,0)
+Monster truck<END>
 
 //遊園地ギュイーン！[LR]
 //ジェットコースター[LR]
@@ -1266,7 +2422,22 @@ get scolded…<END>
 //替えのパンツ、[LR]
 //無いと大変ニャ！<END>
 
+#JMP($9148A)
+#FIXEDLENGTH(129,0)
+Amusement park![LR]
+Roller coaster is[LR]
+fast and scary![LR]
+More than $_W1[LR]
+More than $_W2[LR]
+Too fast! Ahh![LR]
+Change of pants,[LR]
+it's a problem!<END>
+
+//------------
 //よっぱらい<END>
+#JMP($9150C)
+#FIXEDLENGTH(10,0)
+a drunk<END>
 
 //夜道を歩いてたら…[LR]
 //白い影が ふわふわ～[LR]
@@ -1277,7 +2448,21 @@ get scolded…<END>
 //オバケじゃない。[LR]
 //…といいニャ。<END>
 
+#JMP($91517)
+#FIXEDLENGTH(108,0)
+Walking home at night…[LR]
+A white shadow appears.[LR]
+Could it be,[LR]
+$_W1?[LR]
+Or $_W2?[LR]
+It's not a ghost.[LR]
+… I say so.<END>
+
+//------------
 //トロ<END>
+#JMP($91584)
+#FIXEDLENGTH(4,0)
+Toro<END>
 
 //公園でボール遊び。[LR]
 //犬にボール取られた…[LR]
@@ -1288,7 +2473,20 @@ get scolded…<END>
 //$_W1って[LR]
 //名前の犬だった…<END>
 
+#JMP($91589)
+#FIXEDLENGTH(114,0)
+Playing ball in the park.[LR]
+A dog took my ball…[LR]
+Give it back～[LR]
+"Hey![LR]
+$_W1,[LR]
+Stop it!"[LR]
+There was a dog named $_W1…<END>
+
 //めんたいこ<END>
+#JMP($915FC)
+#FIXEDLENGTH(10,0)
+Mentaiko<END>
 
 //海の中でお魚発見。[LR]
 //そんなユメを見た。[LR]
@@ -1299,6 +2497,17 @@ get scolded…<END>
 //食べる前に、[LR]
 //目が覚めちゃった…<END>
 
+#JMP($91607)
+#FIXEDLENGTH(132,0)
+I found a fish in the ocean.[LR]
+I had a dream like that.[LR]
+That's sashimi～[LR]
+Get some salt～[LR]
+Put them all together, make some broth and[LR]
+$_W1 hotpot![LR]
+Before I could eat it,[LR]
+I woke up…<END>
+
 //おいしい お魚、[LR]
 //ごちそうに なった。[LR]
 //人間には[LR]
@@ -1307,6 +2516,16 @@ get scolded…<END>
 //食後には[LR]
 //$_W1♥[LR]
 //ごちそうさま。<END>
+
+#JMP($9168C)
+#FIXEDLENGTH(111,0)
+Delicious fish,[LR]
+It was a feast.[LR]
+There are people who[LR]
+give you food and people who don't.[LR]
+After dinner[LR]
+$_W1 ♥[LR]
+Thanks for the meal.<END>
 
 //ボートに乗って[LR]
 //お魚を釣ってみよう！[LR]
@@ -1317,6 +2536,17 @@ get scolded…<END>
 //あれれ？[LR]
 //またエサ 取られた…<END>
 
+#JMP($916FC)
+#FIXEDLENGTH(139,0)
+Let's go on a boat[LR]
+and try fishing![LR]
+Catch lots[LR]
+and eat with $_YOU♥[LR]
+Do you like grilled fish?[LR]
+Do you like sashimi?[LR]
+What?[LR]
+They took my bait again…<END>
+
 //赤い風船、お気に入り[LR]
 //屋根の上から[LR]
 //ネコさんが狙ってる…[LR]
@@ -1326,7 +2556,21 @@ get scolded…<END>
 //おろおろしてたら、[LR]
 //風船、飛んでった…<END>
 
+#JMP($91788)
+#FIXEDLENGTH(132,0)
+My favorite red balloon[LR]
+From the roof[LR]
+The cat is aiming for it…[LR]
+At this rate[LR]
+$_W1[LR]
+will get bitten…[LR]
+If I panic,[LR]
+the balloon will fly away…<END>
+
 //チョコレート<END>
+#JMP($9180D)
+#FIXEDLENGTH(12,0)
+Chocolate<END>
 
 //お買い物カート♥[LR]
 //お買い物専用自動車！[LR]
@@ -1337,7 +2581,20 @@ get scolded…<END>
 //あ、サイフ忘れた…[LR]
 //全部戻さなくっちゃ…<END>
 
+#JMP($9181A)
+#FIXEDLENGTH(132,0)
+A cart for shopping![LR]
+$_W1 and[LR]
+$_W2[LR]
+Putting them all together♥[LR]
+I feel happy～[LR]
+Oh, I forgot my wallet…[LR]
+I have to put everything back…<END>
+
 //ストッキング<END>
+#JMP($9189F)
+#FIXEDLENGTH(12,0)
+Stockings<END>
 
 //ボタンを付けよう。[LR]
 //白シャツにﾉ赤いボタン[LR]
@@ -1348,6 +2605,15 @@ get scolded…<END>
 //そしたら きっと[LR]
 //お花畑に見えるニャ♥<END>
 
+#JMP($918AC)
+#FIXEDLENGTH(134,0)
+Let's put red buttons on a white shirt[LR]
+Maybe it looks like a flower♥[LR]
+Let's put buttons on $_W1[LR]
+and $_W2[LR]
+Then it will definitely[LR]
+look like a flower field ♥<END>
+
 //歩道橋を渡った。[LR]
 //橋の下には、[LR]
 //車がビュンビュン。[LR]
@@ -1356,6 +2622,16 @@ get scolded…<END>
 //上を歩いちゃうなんて[LR]
 //なんだかキモチいい♥[LR]
 //人間ってアタマいい♥<END>
+
+#JMP($91933)
+#FIXEDLENGTH(133,0)
+We crossed the footbridge.[LR]
+Cars are whizzing by.[LR]
+$_W1[LR]
+also passing by.[LR]
+Walking on it[LR]
+feels good.[LR]
+Humans are smart ♥<END>
 
 //天気のイイ日は[LR]
 //おにぎり持って[LR]
@@ -1366,7 +2642,20 @@ get scolded…<END>
 //持って 今度は[LR]
 //$_YOUと来よう！<END>
 
+#JMP($919B9)
+#FIXEDLENGTH(109,0)
+Having lunch in the park[LR]
+on a nice day.[LR]
+Holding rice balls[LR]
+Feeling good and warm～[LR]
+[LR]
+Take $_W1[LR]
+Next time, let's come with $_YOU!<END>
+
 //スーパー<END>
+#JMP($91A27)
+#FIXEDLENGTH(8,0)
+Shops<END>
 
 //夕暮れの駐車場に[LR]
 //キラリと光る目！[LR]
@@ -1377,6 +2666,17 @@ get scolded…<END>
 //値上がりしたみャ～」[LR]
 //うにゃあ 大変だ…<END>
 
+#JMP($91A30)
+#FIXEDLENGTH(125,0)
+In the parking lot at dusk[LR]
+Sparkling eyes![LR]
+Kuros gathering.[LR]
+What's on the agenda today?[LR]
+"The price of $_W1[LR]
+in $_W2[LR]
+has gone up"[LR]
+Meow, this is tough…<END>
+
 //中トロ～ しゃこ～[LR]
 //なっとうまきも[LR]
 //おみやげに イイの？[LR]
@@ -1386,7 +2686,20 @@ get scolded…<END>
 //なんだか なつかしい[LR]
 //ユメを見ちゃった…<END>
 
+#JMP($91AAE)
+#FIXEDLENGTH(121,0)
+Shako～ Medium fatty tuna～[LR]
+Is it a good souvenir?[LR]
+I'll feed $_YOU[LR]
+too![LR]
+[LR]
+Somehow I feel nostalgic[LR]
+I had a dream…<END>
+
 //知らない街<END>
+#JMP($91B28)
+#FIXEDLENGTH(10,0)
+a new town<END>
 
 //今日は[LR]
 //$_W1まで[LR]
@@ -1397,6 +2710,17 @@ get scolded…<END>
 //おうちが いちばん[LR]
 //落ち着くニャ♥<END>
 
+#JMP($91B33)
+#FIXEDLENGTH(109,0)
+Today[LR]
+I took a walk to[LR]
+$_W1.[LR]
+$_W2[LR]
+I'm exhausted.[LR]
+Meow～ As expected[LR]
+Home is the best[LR]
+I feel calm ♥<END>
+
 //$_YOUのマクラ[LR]
 //こっそり ギュッ♥[LR]
 //$_YOUのニオイ[LR]
@@ -1406,12 +2730,30 @@ get scolded…<END>
 //みんなが いる。[LR]
 //そばに いてくれる♥<END>
 
+#JMP($91BA1)
+#FIXEDLENGTH(139,0)
+I Secretly hug[LR]
+$_YOU's pillow ♥[LR]
+I feel like I'll[LR]
+have a good dream.[LR]
+Mom and Dad,[LR]
+$_YOU is here[LR]
+by my side. ♥<END>
+
 //植木に水を あげた。[LR]
 //早くお花、[LR]
 //咲かないかニャ？[LR]
 //お水より、[LR]
 //$_W1の方が 喜んでくれる？[LR]
 //$_W2も土に 入れた方がイイ？<END>
+
+#JMP($91C2D)
+#FIXEDLENGTH(112,0)
+I watered the flowers.[LR]
+Will they bloom soon?[LR]
+Will $_W1 be happier?[LR]
+[LR]
+Should we put $_W2 in the soil too?<END>
 
 //ダンボール箱の中に…[LR]
 //[LR]
@@ -1422,7 +2764,19 @@ get scolded…<END>
 //[LR]
 //箱の中には何もない…<END>
 
+#JMP($91C9E)
+#FIXEDLENGTH(115,0)
+Inside the cardboard box…[LR]
+[LR]
+I can see the sky.[LR]
+I can hear the sound of rain.[LR]
+[LR]
+There's nothing in the box…<END>
+
 //運動会のマーチ<END>
+#JMP($91D12)
+#FIXEDLENGTH(14,0)
+Sports Parade<END>
 
 //$_W1を[LR]
 //聞きながら お散歩。[LR]
@@ -1433,6 +2787,15 @@ get scolded…<END>
 //[LR]
 //ノリノリで お散歩！<END>
 
+#JMP($91D21)
+#FIXEDLENGTH(93,0)
+Taking a walk while listening to $_W1[LR]
+[LR]
+Taking the rhythm with $_W2[LR]
+♪ Meow meow meow[LR]
+[LR]
+Let's take a walk with enthusiasm!<END>
+
 //いらっしゃいませ～[LR]
 //$_W1が[LR]
 //おすすめですニャ！[LR]
@@ -1442,7 +2805,19 @@ get scolded…<END>
 //ただいま スマイルが[LR]
 //セットでついてます♥<END>
 
+#JMP($91D7F)
+#FIXEDLENGTH(122,0)
+Welcome～[LR]
+$_W1[LR]
+is recommended![LR]
+Let's join together[LR]
+How about $_W2?[LR]
+Now we're both smiling ♥<END>
+
 //梅こぶ茶<END>
+#JMP($91DFA)
+#FIXEDLENGTH(8,0)
+Plum tea<END>
 
 //うぃ～ ひぃっく！[LR]
 //先につぶれた方が[LR]
@@ -1453,7 +2828,20 @@ get scolded…<END>
 //持ってきてニャ～[LR]
 //まだまだ平気にゃろ♪<END>
 
+#JMP($91E03)
+#FIXEDLENGTH(118,0)
+Whee～ hiccup![LR]
+The first one to[LR]
+collapse loses～[LR]
+$_W1 and[LR]
+$_W2,[LR]
+Bring it meow～[LR]
+I'm still okay ♪<END>
+
 //足のウラ<END>
+#JMP($91E7A)
+#FIXEDLENGTH(8,0)
+My feet<END>
 
 //ブクブク、泡風呂♥[LR]
 //$_W1が[LR]
@@ -1464,6 +2852,17 @@ get scolded…<END>
 //$_W2人形[LR]
 //持ってこよっと♥<END>
 
+#JMP($91E83)
+#FIXEDLENGTH(110,0)
+Bubbly, bubble bath ♥[LR]
+$_W1 is[LR]
+ticklish.[LR]
+Dolphin and duck[LR]
+toys are also bubbling～[LR]
+Next time[LR]
+I'll bring a[LR]
+$_W2 doll ♥<END>
+
 //回転寿司でバイト。[LR]
 //おスシが目の前を[LR]
 //ぐるぐる～[LR]
@@ -1472,6 +2871,17 @@ get scolded…<END>
 //$_W1寿司[LR]
 //$_W2寿司[LR]
 //おあずけ、もうイヤ…<END>
+
+#JMP($91EF2)
+#FIXEDLENGTH(117,0)
+Working at a conveyor belt sushi restaurant.[LR]
+Sushi is in front of me[LR]
+spinning around～[LR]
+I want to eat it, but I'll hold back.[LR]
+Spinning around[LR]
+$_W1 and[LR]
+$_W2 sushi[LR]
+No more waiting…<END>
 
 //塀の上を歩こう！[LR]
 //ネコだから平気♪[LR]
@@ -1482,9 +2892,26 @@ get scolded…<END>
 //もう歩けないから[LR]
 //いっぱい歩いとこう♥<END>
 
+#JMP($91F68)
+#FIXEDLENGTH(129,0)
+Let's walk on the wall![LR]
+Because I'm a cat, it's fine ♪[LR]
+At $_W1[LR]
+I keep my balance[LR]
+I walk smoothly, meow.[LR]
+When I become a human[LR]
+I can't do it anymore[LR]
+So I'll play a lot ♥<END>
+
 //香港にゃんこ映画<END>
+#JMP($91FEA)
+#FIXEDLENGTH(16,0)
+Hong Kong movie<END>
 
 //宇宙人<END>
+#JMP($91FFB)
+#FIXEDLENGTH(6,0)
+aliens<END>
 
 //「$_W1」[LR]
 //見に行った。[LR]
@@ -1495,6 +2922,17 @@ get scolded…<END>
 //おやつ食べるのも[LR]
 //忘れて見てた。<END>
 
+#JMP($92002)
+#FIXEDLENGTH(109,0)
+"$_W1"[LR]
+I went to see it.[LR]
+The big screen is full of[LR]
+$_W2[LR]
+flying and jumping.[LR]
+Very impressive![LR]
+I forgot to eat snacks[LR]
+while watching.<END>
+
 //今は山なか 今は川♪[LR]
 //[LR]
 //おなかが すいたら[LR]
@@ -1504,9 +2942,25 @@ get scolded…<END>
 //$_W1には[LR]
 //まだ着かなﾈいのニャ？<END>
 
+#JMP($92070)
+#FIXEDLENGTH(99,0)
+Now in the mountains, now in the river♪[LR]
+[LR]
+When I get hungry[LR]
+$_W2 bento[LR]
+The best part of traveling, meow![LR]
+[LR]
+We haven't reached $_W1 yet?<END>
+
 //グラビアモデル<END>
+#JMP($920D4)
+#FIXEDLENGTH(14,0)
+Gravure model<END>
 
 //プロレスラー<END>
+#JMP($920E3)
+#FIXEDLENGTH(12,0)
+wrestler<END>
 
 //人間になった夢見た。[LR]
 //顔は[LR]
@@ -1516,6 +2970,16 @@ get scolded…<END>
 //目が覚めたら[LR]
 //ネコのままだった。[LR]
 //ちょっと ガッカリ…<END>
+
+#JMP($920F0)
+#FIXEDLENGTH(96,0)
+I had a dream that I was human.[LR]
+My face was[LR]
+$_W1 ♥[LR]
+My body was[LR]
+$_W2 ♥[LR]
+When I woke up, I was still a cat.[LR]
+I was a little disappointed…<END>
 
 //$_OYOU お元気ですニャ？[LR]
 //まだネコだけど $_OMEは元気。[LR]
@@ -1528,6 +2992,17 @@ get scolded…<END>
 //こっそり[LR]
 //しまっておこう…<END>
 
+#JMP($92151)
+#FIXEDLENGTH(146,0)
+A picture postcard[LR]
+from the last Pokepi:[LR]
+$_OYOU, how are you?[LR]
+$_OME is still a cat, but doing well.[LR]
+How is $_ME?[LR]
+[LR]
+I don't want to show it,[LR]
+so I'll put it away secretly…<END>
+
 //ハァイ $_OYOU、元気？[LR]
 //$_OMEは元気！心配しないでネ★[LR]
 //前の子から[LR]
@@ -1538,6 +3013,18 @@ get scolded…<END>
 //見せたくないから[LR]
 //こっそり[LR]
 //しまっておこう…<END>
+
+#JMP($921E4)
+#FIXEDLENGTH(145,0)
+Postcard from[LR]
+the previous Pokepi:[LR]
+Hi $_OYOU, how are you?[LR]
+$_OME is doing well! Don't worry ★[LR]
+How are things going[LR]
+with $_ME?[LR]
+[LR]
+I don't want to show it[LR]
+Let's keep it safe here…<END>
 
 //$_OYOU、お元気かしら？[LR]
 //$_OMEはとーても元気だわン！[LR]
@@ -1550,6 +3037,19 @@ get scolded…<END>
 //こっそり[LR]
 //しまっておこう…<END>
 
+#JMP($92276)
+#FIXEDLENGTH(144,0)
+Postcard from[LR]
+the previous Pokepi:[LR]
+$_OYOU, how are you?[LR]
+$_OME is doing great![LR]
+Do you like $_ME[LR]
+More than me?[LR]
+[LR]
+I don't want to show you[LR]
+Let's put it away[LR]
+secretly…<END>
+
 //$_OYOU！ガンバってるケロ？[LR]
 //オラも毎日 ガンバってるダスよ！[LR]
 //前の子から[LR]
@@ -1560,6 +3060,18 @@ get scolded…<END>
 //見せたくないから[LR]
 //こっそり[LR]
 //しまっておこう…<END>
+
+#JMP($92307)
+#FIXEDLENGTH(152,0)
+Postcard from[LR]
+the previous Pokepi:[LR]
+$_OYOU! Are you trying your best?[LR]
+I'm trying my best every day too![LR]
+Do you like $_ME[LR]
+More than me?[LR]
+[LR]
+I don't want to show you[LR]
+Let's keep it safe here…<END>
 
 //$_OYOUよ元気か？[LR]
 //$_OMEは元気だ♪[LR]
@@ -1572,376 +3084,947 @@ get scolded…<END>
 //こっそり[LR]
 //しまっておこう…<END>
 
+#JMP($923A0)
+#FIXEDLENGTH(126,0)
+Picture postcard from[LR]
+the last Pokepi:[LR]
+$_OYOU, how are you?[LR]
+$_OME is doing well ♪[LR]
+How are things going[LR]
+with $_ME?[LR]
+[LR]
+I don't want to show you[LR]
+Let's put it away[LR]
+secretly…<END>
+
+// Mochimono - Item names
+
 //$_WORD愛用の壁紙<END>
+#JMP($9241F)
+#FIXEDLENGTH(16,0)
+$_WORD wallpaper<END>
 
 //$_WORDも愛用している 恐竜模様の壁紙<END>
+#JMP($92430)
+#FIXEDLENGTH(35,0)
+$_WORD's dinosaur wallpaper<END>
 
 //だれか ひとり 有名人<END>
+#JMP($92454)
+#FIXEDLENGTH(20,0)
+Famous person statue<END>
 
 //$_WORDも愛用している 無難な感じの壁紙<END>
+#JMP($92469)
+#FIXEDLENGTH(37,0)
+$_WORD's plain wallpaper<END>
 
 //$_WORDも愛用している ちょっとファンシー系の壁紙<END>
+#JMP($9248F)
+#FIXEDLENGTH(47,0)
+$_WORD's slightly fancy wallpaper<END>
 
 //$_WORDも愛､用している 花柄の壁紙<END>
+#JMP($924BF)
+#FIXEDLENGTH(31,0)
+$_WORD's floral wallpaper<END>
 
 //$_WORDも愛用している パステルドットの壁紙<END>
+#JMP($924DF)
+#FIXEDLENGTH(41,0)
+$_WORD's pastel dot wallpaper<END>
 
 //$_WORDも愛用している 洋風クラシカルな壁紙<END>
+#JMP($92509)
+$_WORD's western-style wallpaper<END>
 
 //$_WORD愛用のカーペット<END>
+#JMP($92533)
+#FIXEDLENGTH(22,0)
+$_WORD's fav carpet<END>
 
 //$_WORDも愛用している さわやかな感触のカーペット<END>
+#JMP($9254A)
+#FIXEDLENGTH(47,0)
+$_WORD's refreshing carpet<END>
 
 //$_WORDも愛用している ゴザのカーペット<END>
+#JMP($9257A)
+#FIXEDLENGTH(37,0)
+$_WORD's mat carpet<END>
 
 //$_WORDも愛用している 無難なカンジのカーペyット<END>
+#JMP($925A0)
+#FIXEDLENGTH(45,0)
+$_WORD's plain carpet<END>
 
 //$_WORDも愛用している 幾何学模様のカーペット<END>
+#JMP($925CE)
+#FIXEDLENGTH(43,0)
+$_WORD's geometric carpet<END>
 
 //$_WORDも愛用している モダンなカーペット<END>
+#JMP($925FA)
+#FIXEDLENGTH(39,0)
+$_WORD's modern carpet<END>
 
 //$_WORDも愛用している なつかしい感じのカーペット<END>
+#JMP($92622)
+#FIXEDLENGTH(47,0)
+$_WORD's nostalgic carpet<END>
 
 //$_WORDも愛用している ビミョーな模様のカーペット<END>
+#JMP($92652)
+#FIXEDLENGTH(47,0)
+$_WORD's strange carpet<END>
 
 //$_WORDも愛用している ハイソなご家庭な感じのカーペット<END>
+#JMP($92682)
+#FIXEDLENGTH(53,0)
+$_WORD's home-like carpet<END>
 
+#JMP($926B8)
+#FIXEDLENGTH(20,0)
 //$_WORD愛用のカーテン<END>
+$_WORD's curtains<END>
 
+#JMP($926CD)
+#FIXEDLENGTH(39,0)
 //$_WORDも愛用している チェックのカーテン<END>
+$_WORD's checkered curtains<END>
 
 //$_WORDも愛用している シックなカーテン<END>
+#JMP($926F5)
+#FIXEDLENGTH(37,0)
+$_WORD's elegant curtains<END>
 
 //$_WORDも愛用している グリーンのカーテン<END>
+#JMP($9271B)
+#FIXEDLENGTH(39,0)
+$_WORD's green curtains<END>
 
 //$_WORDも愛用している 手書き風イラスト入りカーテン<END>
+#JMP($92743)
+#FIXEDLENGTH(49,0)
+$_WORD's hand-drawn curtains<END>
 
 //$_WORDも愛用している さわやか系のカーテン<END>
+#JMP($92775)
+#FIXEDLENGTH(41,0)
+$_WORD's refreshing curtains<END>
 
 //$_WORDも愛用している ミッドセンチュリーなカーテン<END>
+#JMP($9279F)
+#FIXEDLENGTH(49,0)
+$_WORD's mid-century curtains<END>
 
 //$_WORDのティッシュ<END>
+#JMP($927D1)
+#FIXEDLENGTH(18,0)
+$_WORD's tissues<END>
 
 //$_WORDの使用済みティッシュペーパー<END>
+#JMP($927E4)
+#FIXEDLENGTH(34,0)
+$_WORD's used tissue paper<END>
 
 //好きな $_OPPの有名人を ひとり<END>
+#JMP($92807)
+#FIXEDLENGTH(29,0)
+Favorite celebrity $_OPP<END>
 
 //$_WORDの消火器<END>
+#JMP($92825)
+#FIXEDLENGTH(14,0)
+Extinguisher<END>
 
 //$_WORDの家にあった消火器<END>
+#JMP($92834)
+#FIXEDLENGTH(24,0)
+$_WORD fire extinguisher<END>
 
 //$_WORDの牛乳瓶入れ<END>
+#JMP($9284D)
+#FIXEDLENGTH(18,0)
+$_WORD's milk case<END>
 
 //$_WORDの実家で使われていた 牛乳瓶入れ<END>
+#JMP($92860)
+#FIXEDLENGTH(37,0)
+A bottle holder from $_WORD's parents<END>
 
 //ガシャンと回すとコロンと出るアレ<END>
+#JMP($92886)
+#FIXEDLENGTH(32,0)
+$_WORD's pencil sharpener<END>
 
 //カプセルの中に $_WORD消しゴムとかが入ってるヤツ<END>
+#JMP($928A7)
+#FIXEDLENGTH(47,0)
+It has $_WORD's eraser and stuff in it<END>
 
 //マンガや アニメに 出てくる 有名人<END>
+#JMP($928D7)
+#FIXEDLENGTH(33,0)
+Famous manga and anime characters<END>
 
 //$_WORDのアイロン<END>
+#JMP($928F9)
+#FIXEDLENGTH(16,0)
+$_WORD's iron<END>
 
 //$_WORDの実家で10年愛用していたアイロン<END>
+#JMP($9290A)
+#FIXEDLENGTH(38,0)
+An iron used by $_WORD for 10 years<END>
 
 //$_WORDの電気スタンド<END>
+#JMP($92931)
+#FIXEDLENGTH(20,0)
+$_WORD's desk lamp<END>
 
 //$_WORDが つい最近まで 寝室で使っていた電気スタンド<END>
+#JMP($92946)
+#FIXEDLENGTH(50,0)
+Desk lamp used in $_WORD's bedroom until recently<END>
 
 //$_WORDの手紙入れ<END>
+#JMP($92979)
+#FIXEDLENGTH(16,0)
+$_WORD's mailbox<END>
 
 //$_WORDの実家の台所で 長年愛用されていたモノ<END>
+#JMP($9298A)
+#FIXEDLENGTH(43,0)
+This was used for many years in $_WORD's parents' house<END>
 
 //$_WORDのシール<END>
+#JMP($929B6)
+#FIXEDLENGTH(14,0)
+$_WORD's stamp<END>
 
 //$_WORDが 学習机に貼っていたシール<END>
+#JMP($929C5)
+#FIXEDLENGTH(33,0)
+A stamp that was on $_WORD's desk<END>
 
 //$_WORDのわたあめ<END>
+#JMP($929E7)
+#FIXEDLENGTH(16,0)
+Cotton candy<END>
 
 //$_WORDの絵のついた わたあめ<END>
+#JMP($929F8)
+#FIXEDLENGTH(27,0)
+It bears an image of $_WORD<END>
 
 //カエルちゃん人形<END>
+#JMP($92A14)
+#FIXEDLENGTH(16,0)
+Frog doll<END>
 
 //70年代に $_WORDで大流行したという カエルちゃん人形<END>
+#JMP($92A25)
+#FIXEDLENGTH(50,0)
+These dolls were all the rage with $_WORD in the 70s<END>
 
 //どこか 外国の国名<END>
+#JMP($92A58)
+#FIXEDLENGTH(17,0)
+Foreign country<END>
 
 //$_WORDの金魚ちゃん<END>
+#JMP($92A6A)
+#FIXEDLENGTH(18,0)
+$_WORD's goldfish<END>
 
 //$_WORDで行われる祭りで 毎年 売られているモノ<END>
+#JMP($92A7D)
+#FIXEDLENGTH(44,0)
+Items sold every year at the $_WORD festival<END>
 
 //ウーパーさん<END>
+#JMP($92AAA)
+#FIXEDLENGTH(12,0)
+A Wooper<END>
 
 //80年代に $_WORDで一世を風靡した 愛らしい生き物<END>
+#JMP($92AB7)
+#FIXEDLENGTH(46,0)
+Cute axolotl toy that $_WORD liked in the 80s<END>
 
 //$_WORDのはっぴ<END>
+#JMP($92AE6)
+#FIXEDLENGTH(14,0)
+$_WORD's coat<END>
 
 //$_WORDが 地元のお祭りに参加する時 いつも着ている一品<END>
+#JMP($92AF5)
+#FIXEDLENGTH(52,0)
+A happi that $_WORD always wears at local festivals<END>
 
 //$_WORD名物のぼんぼり<END>
+#JMP($92B2A)
+#FIXEDLENGTH(20,0)
+$_WORD fest lantern<END>
 
 //$_WORDのお祭りで使われた 職人の手作りぼんぼり<END>
+#JMP($92B3F)
+#FIXEDLENGTH(45,0)
+Handmade lanterns used at $_WORD's festivals<END>
 
 //$_WORDの激レアグッズ<END>
+#JMP($92B6D)
+#FIXEDLENGTH(20,0)
+$_WORD rare goods<END>
 
 //$_WORDマニア垂涎の 超稀少 激レアお宝グッズ<END>
+#JMP($92B82)
+#FIXEDLENGTH(42,0)
+Treasure that $_WORD fans will drool over<END>
 
 //２人組の女性アイドル<END>
+#JMP($92BAD)
+#FIXEDLENGTH(20,0)
+Female idol duo<END>
 
 //$_WORDのお面<END>
+#JMP($92BC2)
+#FIXEDLENGTH(12,0)
+$_WORD masks<END>
 
 //60年代に流行ったテレビ時代劇の主人公 $_WORDのお面<END>
+#JMP($92BCF)
+#FIXEDLENGTH(49,0)
+$_WORD masks from TV historical dramas in the 60s<END>
 
 //マンガや アニメに 出てくる 男の人<END>
+#JMP($92C01)
+#FIXEDLENGTH(33,0)
+Men who appear in manga and anime<END>
 
 //60年代頃 少女達に人気のあった $_WORDのお面<END>
+#JMP($92C23)
+#FIXEDLENGTH(42,0)
+$_WORD masks popular with girls in the 60s<END>
 
 //マンガや アニメに 出てくる 女の人<END>
+#JMP($92C4E)
+#FIXEDLENGTH(33,0)
+Women from manga and anime<END>
 
 //$_WORDのサイン色紙<END>
+#JMP($92C70)
+#FIXEDLENGTH(18,0)
+$_WORD's autograph<END>
 
 //$_WORDが 駆け出しだった頃の 手形付き激レアサイン色紙<END>
+#JMP($92C83)
+#FIXEDLENGTH(52,0)
+Colored paper with handprint from a young $_WORD<END>
 
 //$_WORDが 無名だっﾁた頃の 座右の銘入りサイン色紙<END>
+#JMP($92CB8)
+#FIXEDLENGTH(46,0)
+Autographed colored paper with motto from when $_WORD was unknown<END>
 
 //$_WORDのタヌキの置物<END>
+#JMP($92CE7)
+#FIXEDLENGTH(20,0)
+$_WORD's raccoon toy<END>
 
 //$_WORDがバイトしてた おスシ屋さんの 店頭にいたタヌキ<END>
+#JMP($92CFC)
+#FIXEDLENGTH(52,0)
+A figure from a sushi place $_WORD used to work at<END>
 
 //$_WORDのまねき猫<END>
+#JMP($92D31)
+#FIXEDLENGTH(16,0)
+Beckoning cat<END>
 
 //$_WORDが ひいきにしている焼き肉屋さんの まねき猫<END>
+#JMP($92D42)
+#FIXEDLENGTH(48,0)
+Cat from $_WORD's favorite yakiniku restaurant<END>
 
 //$_WORDのダルマ<END>
+#JMP($92D73)
+#FIXEDLENGTH(14,0)
+Daruma doll<END>
 
 //$_WORDが 足繁く通うラーメン屋さんの ダルマ<END>
+#JMP($92D82)
+#FIXEDLENGTH(42,0)
+A doll from the ramen shop $_WORD eats at<END>
 
 //$_WORDのこけし<END>
+#JMP($92DAD)
+#FIXEDLENGTH(14,0)
+Kokeshi doll<END>
 
 //$_WORDの実家で 長年 テレビの上に飾られていたこけし<END>
+#JMP($92DBC)
+#FIXEDLENGTH(50,0)
+It was sitting above the TV at $_WORD's parents' house for years<END>
 
 //$_WORDのサインボール<END>
+#JMP($92DEF)
+#FIXEDLENGTH(20,0)
+$_WORD's prized ball<END>
 
 //$_WORDの ホームラン756号 記念サインボール<END>
+#JMP($92E04)
+#FIXEDLENGTH(41,0)
+$_WORD's 756th home run commemorative autographed ball<END>
 
 //$_WORDのカモ時計<END>
+#JMP($92E2E)
+#FIXEDLENGTH(16,0)
+$_WORD's clock<END>
 
 //$_WORDの実家で 長年愛用されてきた カモ時計<END>
+#JMP($92E3F)
+#FIXEDLENGTH(42,0)
+The clock that has been used for many years at $_WORD's parents' house<END>
 
 //$_WORDのペナント<END>
+#JMP($92E6A)
+#FIXEDLENGTH(16,0)
+$_WORD's pennant<END>
 
 //$_WORDの お兄さんが 旅先で買ってきてくれたペナント<END>
+#JMP($92E7B)
+#FIXEDLENGTH(50,0)
+A pennant $_WORD's older brother bought on a trip<END>
 
 //$_WORDの御用提灯<END>
+#JMP($92EAE)
+#FIXEDLENGTH(16,0)
+Official lantern<END>
 
 //$_WORDが、A修学旅行の時 勢いで買ってしまった御用提灯<END>
+#JMP($92EBF)
+#FIXEDLENGTH(51,0)
+A lantern that $_WORD bought during a school trip<END>
 
 //$_WORDのピンクの電話<END>
+#JMP($92EF3)
+#FIXEDLENGTH(20,0)
+$_WORD's pink phone<END>
 
 //$_WORDの所属事務所に置いてあった ピンクの電話<END>
+#JMP($92F08)
+#FIXEDLENGTH(45,0)
+A pink phone at $_WORD's agency<END>
 
 //だれか ひとり 好きな有名人<END>
+#JMP($92F36)
+#FIXEDLENGTH(26,0)
+Some favorite celebrity<END>
 
 //$_WORDの大皿<END>
+#JMP($92F51)
+#FIXEDLENGTH(12,0)
+$_WORD plate<END>
 
 //$_WORDの社長が所有していた 古伊万里の大皿<END>
+#JMP($92F5E)
+#FIXEDLENGTH(41,0)
+An old Imari plate owned by $_WORD's president<END>
 
 //$_YOUの知ってる 会社名<END>
+#JMP($92F88)
+#FIXEDLENGTH(22,0)
+A company $_YOU knows<END>
 
 //$_WORDの柱時計<END>
+#JMP($92F9F)
+#FIXEDLENGTH(14,0)
+$_WORD's clock<END>
 
 //$_WORDのおじいさんご自慢の 100年経っても動いてる時計<END>
+#JMP($92FAE)
+#FIXEDLENGTH(52,0)
+$_WORD's grandfather clock that's still working after 100 years<END>
 
 //$_WORDのコップ<END>
+#JMP($92FE3)
+#FIXEDLENGTH(14,0)
+$_WORD's cup<END>
 
 //$_WORDの使用済みコップ<END>
+#JMP($92FF2)
+#FIXEDLENGTH(22,0)
+$_WORD's used cup<END>
 
 //だれか ひとり 好きな $_OPPの有名人<END>
+#JMP($93009)
+#FIXEDLENGTH(34,0)
+Someone's favorite $_OPP celebrity<END>
 
 //$_WORDの器<END>
+#JMP($9302C)
+#FIXEDLENGTH(10,0)
+$_WORD pot<END>
 
 //$_WORDが静物画のモチーフとして 好んで描いていた器<END>
+#JMP($93037)
+#FIXEDLENGTH(49,0)
+Pottery that $_WORD liked to paint as a motif for his still life paintings<END>
 
+// TODO: Find addresses and lengths for all this text
 //$_WORDのLP<END>
+#JMP($93069)
+#FIXEDLENGTH(10,0)
+$_WORDs LP<END>
 
 //昔 $_WORDがボサノバ歌手だった頃のアルバム<END>
+#JMP($93074)
+#FIXEDLENGTH(41,0)
+An album from when $_WORD was a bossa nova singer<END>
 
 //歌手以外で…[LR]
 //有名人を ひとり<END>
+#JMP($9309E)
+#FIXEDLENGTH(28,0)
+Other than singers…[LR]
+One famous person<END>
 
 //昔 $_WORDがインディーズレーベルで発表した 幻のアルバム<END>
+#JMP($930BB)
+#FIXEDLENGTH(54,0)
+A long time ago, $_WORD released an album on an indie label<END>
 
 //歌手以外の 有名人<END>
+#JMP($930F2)
+#FIXEDLENGTH(17,0)
+A famous person who is not a singer<END>
 
 //$_WORDの祖母のラジオ<END>
+#JMP($93104)
+#FIXEDLENGTH(20,0)
+Grandma's radio<END>
 
 //$_WORDのおばあちゃんが 終戦の詔を拝聴したというラジオ<END>
+#JMP($93119)
+#FIXEDLENGTH(53,0)
+Radio that $_WORD's grandma listened to during a War<END>
 
 //$_WORDの置き看板<END>
+#JMP($9314F)
+#FIXEDLENGTH(16,0)
+$_WORD signboard<END>
 
 //$_WORDが 足繁く通う お店の置き看板<END>
+#JMP($93160)
+#FIXEDLENGTH(34,0)
+Sign of a shop that $_WORD visits<END>
 
 //$_WORDの絵画<END>
+#JMP($93183)
+#FIXEDLENGTH(12,0)
+$_WORD's art<END>
 
 //バブル全盛期、$_WORDが１億円で落札したという絵画<END>
+#JMP($93190)
+#FIXEDLENGTH(48,0)
+A painting $_WORD won at auction for 100 million<END>
 
-//知ってる<$E9> 会社名<END>
+//知ってる 会社名<END>
+#JMP($931C1)
+#FIXEDLENGTH(15,0)
+Company I know<END>
 
 //$_WORDのチラシ<END>
+#JMP($931D1)
+#FIXEDLENGTH(14,0)
+$_WORD's flyer<END>
 
 //$_WORDの シークレットライブのチラシ<END>
+#JMP($931E0)
+#FIXEDLENGTH(35,0)
+Secret flyer for a live concert<END>
 
 //だれでも いいから 有名人<END>
+#JMP($93204)
+#FIXEDLENGTH(24,0)
+Whoever is famous<END>
 
 //ネコのポストカード<END>
+#JMP($9321D)
+#FIXEDLENGTH(18,0)
+Cat postcards<END>
 
 //$_WORDが集めた セクシーなネコの ポストカード集<END>
+#JMP($93230)
+#FIXEDLENGTH(46,0)
+Collection of silly postcards from $_WORD<END>
 
 //$_WORDのミラーボール<END>
+#JMP($9325F)
+#FIXEDLENGTH(20,0)
+$_WORD's disco ball<END>
 
 //お立ち台で踊る $_WORDを 照らし出していた ミラーボール<END>
+#JMP($93274)
+#FIXEDLENGTH(53,0)
+A disco ball that lit up $_WORD dancing on the stage<END>
 
 //$_WORDのマラカス<END>
+#JMP($932AA)
+#FIXEDLENGTH(16,0)
+$_WORD's maracas<END>
 
 //$_WORDが カラオケの時 必ず使っているというマラカス<END>
+#JMP($932BB)
+#FIXEDLENGTH(50,0)
+Maracas always used by $_WORD when singing karaoke<END>
 
 //$_WORDのカーテン<END>
+#JMP($932EE)
+#FIXEDLENGTH(16,0)
+$_WORD's curtain<END>
 
 //$_WORDの部屋に差す 西日を遮っていた レースのカーテン<END>
+#JMP($932FF)
+#FIXEDLENGTH(52,0)
+Curtains that blocked sun shining into $_WORD's room<END>
 
 //$_WORDの賞状<END>
+#JMP($93334)
+#FIXEDLENGTH(12,0)
+$_WORD award<END>
 
 //$_WORDが勤め人時代の ハンダ付け大会2位の賞状<END>
+#JMP($93341)
+#FIXEDLENGTH(44,0)
+$_WORD got 2nd place in a worker competition<END>
 
 //$_WORD検定第一級<END>
+#JMP($9336E)
+#FIXEDLENGTH(16,0)
+$_WORD's diploma<END>
 
 //持ってると就職に役に立つ $_WORD検定第一級の認定書<END>
+#JMP($9337F)
+#FIXEDLENGTH(49,0)
+A certificate that helps $_WORD apply for a job<END>
 
 //$_YOUが 好きな するコト<END>
+#JMP($933B1)
+#FIXEDLENGTH(23,0)
+Stuff $_YOU likes doing<END>
 
 //$_WORDの観葉植物<END>
+#JMP($933C9)
+#FIXEDLENGTH(16,0)
+$_WORD pot plant<END>
 
 //$_WORDのお宅の リビングに置いてあった観葉植物<END>
+#JMP($933DA)
+#FIXEDLENGTH(45,0)
+The potted plants in $_WORD's living room<END>
 
 //$_WORDのモニター<END>
+#JMP($93408)
+#FIXEDLENGTH(16,0)
+$_WORD's monitor<END>
 
 //$_WORDが使ってた パソコンのモニター<END>
+#JMP($93419)
+#FIXEDLENGTH(35,0)
+The monitor of the computer that $_WORD used<END>
 
 //$_WORDのファイル<END>
+#JMP($9343D)
+#FIXEDLENGTH(16,0)
+$_WORD's files<END>
 
 //$_WORDが確定申告の書類を作る時に使用したファイル<END>
+#JMP($9344E)
+#FIXEDLENGTH(48,0)
+Files $_WORD used for their tax return documents<END>
 
 //$_WORDのコーヒーサーバ<END>
+#JMP($9347F)
+#FIXEDLENGTH(22,0)
+$_WORD's coffee server<END>
 
 //$_WORDも愛用の 使い勝手のいいコーヒーサーバ<END>
+#JMP($93496)
+#FIXEDLENGTH(43,0)
+$_WORD's favorite, simple coffee machine<END>
 
 //$_WORDのやかん<END>
+#JMP($934C2)
+#FIXEDLENGTH(14,0)
+$_WORDs kettle<END>
 
 //$_WORDのリウマチを治したという 聖水が入った やかん<END>
+#JMP($934D1)
+#FIXEDLENGTH(50,0)
+A kettle filled with holy water that is said to have cured $_WORD's rheumatism<END>
 
 //$_WORDのノルマの表<END>
+#JMP($93504)
+#FIXEDLENGTH(18,0)
+$_WORD's quota list<END>
 
 //$_WORDがサラリーマンだった頃 課せられていたノルマ<END>
+#JMP($93517)
+#FIXEDLENGTH(49,0)
+The quotas that $_WORD was required to meet when he was an office worker<END>
 
 //だれか ひとり 男の有名人<END>
+#JMP($93549)
+#FIXEDLENGTH(24,0)
+Some famous man<END>
 
 //$_WORDのポスター<END>
+#JMP($93562)
+#FIXEDLENGTH(16,0)
+Poster of $_WORD<END>
 
 //$_WORDの部屋に なぜか長年貼ってあったポスター<END>
+#JMP($93573)
+#FIXEDLENGTH(45,0)
+Poster that had been hanging in $_WORD's room for some reason<END>
 
 //$_WORDののれん<END>
+#JMP($935A1)
+#FIXEDLENGTH(14,0)
+$_WORD curtain<END>
 
 //$_WORDが草津で買ってきたおみやげ<END>
+#JMP($935B0)
+#FIXEDLENGTH(32,0)
+Souvenirs that $_WORD bought in Kusatsu<END>
 
 //$_WORDのいす＆おけ<END>
+#JMP($935D1)
+#FIXEDLENGTH(18,0)
+$_WORD's wash tub<END>
 
 //$_WORDが風呂で使用してるのと同じモノ<END>
+#JMP($935E4)
+#FIXEDLENGTH(36,0)
+It's just like using a real bathtub<END>
 
 //ライオンの口から水出るヤツ<END>
+#JMP($93609)
+#FIXEDLENGTH(26,0)
+Lion-shaped water fountain<END>
 
 //$_WORDの豪邸の 大理石風呂に付いてたライオン<END>
+#JMP($93623)
+#FIXEDLENGTH(44,0)
+A sacred marble fountain from $_WORD's home<END>
 
 //$_WORDのタイル画<END>
+#JMP($93650)
+#FIXEDLENGTH(16,0)
+$_WORDs painting<END>
 
 //$_WORDの豪邸のお風呂に なぜか描いてあったタイル画<END>
+#JMP($93661)
+#FIXEDLENGTH(49,0)
+A tile painting $_WORD made in the bath somehow<END>
 
 //$_WORDのレトロ体重計<END>
+#JMP($93693)
+#FIXEDLENGTH(20,0)
+$_WORD's retro scale<END>
 
 //$_WORDの減量に一役買ったという 年N代物の体重計<END>
+#JMP($936A8)
+#FIXEDLENGTH(45,0)
+An old scale that helped $_WORD lose weight<END>
 
 //$_WORDのお風呂セット<END>
+#JMP($936D6)
+#FIXEDLENGTH(20,0)
+$_WORD's bath set<END>
 
 //$_WORDがよく行く銭湯で販売している 手ぶら一式セット<END>
+#JMP($936EB)
+#FIXEDLENGTH(51,0)
+A complete set sold at the public bath that $_WORD often visits<END>
 
 //$_WORDのネオン看板<END>
+#JMP($9371F)
+#FIXEDLENGTH(18,0)
+$_WORD's neon sign<END>
 
 //$_WORDが足繁く通っているコトで有名な アヤシイ店の看板<END>
+#JMP($93732)
+#FIXEDLENGTH(53,0)
+A sign from a shady store that $_WORD once visited<END>
 
 //床屋さんのぐるぐる<END>
+#JMP($93768)
+#FIXEDLENGTH(18,0)
+Barber shop pole<END>
 
 //$_WORDがひいきにしてる床屋さんの ぐるぐるするアレ<END>
+#JMP($9377B)
+#FIXEDLENGTH(49,0)
+The spinning pole from a barber shop $_WORD likes<END>
 
 //床屋さんの看板<END>
+#JMP($937AD)
+#FIXEDLENGTH(14,0)
+Barber's sign<END>
 
 //$_WORDがひいきにしてる床屋さんの 粋な看板<END>
+#JMP($937BC)
+#FIXEDLENGTH(41,0)
+Stylish sign at $_WORDs local barber shop<END>
 
 //レトロ看板<END>
+#JMP($937E6)
+#FIXEDLENGTH(10,0)
+Retro sign<END>
 
 //$_WORDが行きつけのレトロ系居酒屋さんの看板<END>
+#JMP($937F1)
+#FIXEDLENGTH(42,0)
+A sign from the old tavern $_WORD visits<END>
 
 //レトロ看板ボンバー<END>
+#JMP($9381C)
+#FIXEDLENGTH(18,0)
+Retro bomber sign<END>
 
 //レトロ看板好きで 有名な、$_WORD お気に入りの一品<END>
+#JMP($9382F)
+#FIXEDLENGTH(48,0)
+A cherished old sign like the ones $_WORD enjoys<END>
 
 //売れない演歌歌手をやっていた頃の $_WORDのポスター<END>
+#JMP($93860)
+#FIXEDLENGTH(49,0)
+Poster from when $_WORD tried to become a singer<END>
 
 //だれか ひとり 歌手以外の 男の有名人<END>
+#JMP($93892)
+#FIXEDLENGTH(35,0)
+He was famous but not a good singer<END>
 
 //$_WORDの赤ちょうちん<END>
+#JMP($938B6)
+#FIXEDLENGTH(20,0)
+$_WORD's red lantern<END>
 
 //$_WORDが、焼き鳥屋さんの開業を夢みて準備してた一品<END>
+#JMP($938CB)
+#FIXEDLENGTH(50,0)
+A yakitori restaurant-style dish $_WORD prepared<END>
 
 //$_WORDのとっくり<END>
+#JMP($938FE)
+#FIXEDLENGTH(16,0)
+$_WORD's bottle<END>
 
 //ものすごく美味しい $_WORDの地酒が入っている とっくり<END>
+#JMP($9390F)
+#FIXEDLENGTH(52,0)
+A bottle filled with delicious $_WORD local sake<END>
 
 //$_WORDの黒電話<END>
+#JMP($93944)
+#FIXEDLENGTH(14,0)
+Black phone<END>
 
 //$_WORDの おばあちゃんちで ずっと使われていた黒電話<END>
+#JMP($93953)
+#FIXEDLENGTH(50,0)
+A telephone once used at $_WORD's grandma's house<END>
 
 //$_WORDの風呂敷<END>
+#JMP($93986)
+#FIXEDLENGTH(14,0)
+$_WORD's cloth<END>
 
 //$_WORDのおばあちゃんが愛用していた 唐草の風呂敷<END>
+#JMP($93995)
+#FIXEDLENGTH(47,0)
+A wrapping cloth $_WORD's grandma used to love<END>
 
-//レトgロ系のトランク<END>
+//レトロ系のトランク<END>
+#JMP($939C5)
+#FIXEDLENGTH(18,0)
+Retro-style trunk<END>
 
 //$_WORDのお母さんが 娘時代に愛用していたトランク<END>
+#JMP($939D8)
+#FIXEDLENGTH(47,0)
+A trunk that $_WORD's mother used to love when she was a girl<END>
 
 //$_WORDの ホッピング<END>
+#JMP($93A08)
+#FIXEDLENGTH(19,0)
+$_WORD's pogo stick<END>
 
 //$_WORDが 子供の頃よく遊んだ ホッピング<END>
+#JMP($93A1C)
+#FIXEDLENGTH(38,0)
+$_WORD used to play on this as a child<END>
 
 //$_WORDの スケボー<END>
+#JMP($93A43)
+#FIXEDLENGTH(17,0)
+$_WORD skateboard<END>
 
 //$_WORDの お気に入りのスケボー<END>
+#JMP($93A55)
+#FIXEDLENGTH(29,0)
+$_WORD's favorite skateboard<END>
 
 //$_WORDの手さげバッグ<END>
+#JMP($93A73)
+#FIXEDLENGTH(20,0)
+$_WORD's handbag<END>
 
 //街のセレブも愛用している $_WORDの手さげバッグ<END>
+#JMP($93A88)
+#FIXEDLENGTH(45,0)
+$_WORD handbag, loved by many celebrities<END>
 
 //ブランド店のような 有名なお店<END>
+#JMP($93AB6)
+#FIXEDLENGTH(29,0)
+Famous name-brand stores<END>
 
 //$_WORDの ブックバンド<END>
+#JMP($93AD4)
+#FIXEDLENGTH(21,0)
+$_WORD's bookband<END>
 
 //$_WORD愛用の ブックバンド<END>
+#JMP($93AEA)
+#FIXEDLENGTH(25,0)
+$_WORD's loved bookband<END>
 
 //ラケット＆ボストンバッグ<END>
+#JMP($93B04)
+#FIXEDLENGTH(24,0)
+Racket & Boston bag<END>
 
 //$_WORD愛用の ラケット＆ボストンバッグ<END>
+#JMP($93B1D)
+#FIXEDLENGTH(37,0)
+$_WORD's favorite Racket & Boston bag<END>
 
 //$_WORDの紙袋<END>
+#JMP($93B43)
+#FIXEDLENGTH(12,0)
+Paper bag<END>
 
 //街のセレブも愛用している $_WORDの紙袋<END>
+#JMP($93B50)
+#FIXEDLENGTH(37,0)
+A paper bag given by $_WORD's parents.<END>
 
 //$_WORDの傘<END>
 
@@ -1992,8 +4075,15 @@ get scolded…<END>
 //$_WORDの通っていた学校にもある 時計<END>
 
 //$_WORDの カモ人形<END>
+#JMP($93E00)
+#FIXEDLENGTH(17,0)
+$_WORD's toy duck<END>
 
 //$_WORDが お風呂で一緒に遊んだという カモの人形<END>
+#JMP($93E12)
+#FIXEDLENGTH(46,0)
+$_WORD sometimes plays with[LR]
+this in the bath<END>
 
 //アンモナイトの化石<END>
 
@@ -8264,6 +10354,8 @@ Dec <END>
 //露天風呂の日<END>
 
 //６月２６日の？<END>
+#JMP($9E5D7)
+#FIXEDLENGTH(14,0)
 On June 26th? <END>
 
 //語呂合わせ？<END>
