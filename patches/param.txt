@@ -9,4 +9,4 @@
 
 #FIXEDLENGTH(128,0)
 #JMP($158)
-Doko Demo Issyo PSP English Translation Project | https://github.com/pumpkinhasapatch/dokodemo-psp-english<END>
+Doko Demo Issyo PSP English Translation Project v0.2.0 | github.com/pumpkinhasapatch/dokodemo-psp-english<END>
