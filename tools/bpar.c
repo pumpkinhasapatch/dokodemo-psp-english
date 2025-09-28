@@ -1,4 +1,37 @@
-//#!/usr/local/bin/tcc -run
+#ifdef _WIN32
+#include <io.h> // For _access, _setmode
+#include <fcntl.h> // For _O_BINARY
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
+#include <stdbool.h>
+#include <errno.h>
+#include <sys/stat.h> // For _S_IREAD, _S_IWRITE
+#include <direct.h> // For _mkdir
+#include <windows.h> // For VirtualAlloc, VirtualFree
+
+// Define mmap and munmap for Windows
+#define PROT_READ 1
+#define MAP_PRIVATE 2
+#define MAP_FAILED ((void*)-1)
+
+void* mmap(void* addr, size_t length, int prot, int flags, int fd, off_t offset) {
+    HANDLE hFile = (HANDLE)_get_osfhandle(fd);
+    HANDLE hMapping = CreateFileMapping(hFile, NULL, PAGE_READONLY, 0, 0, NULL);
+    if (hMapping == NULL) {
+        return MAP_FAILED;
+    }
+    void* map = MapViewOfFile(hMapping, FILE_MAP_READ, 0, offset, length);
+    CloseHandle(hMapping);
+    return map;
+}
+
+int munmap(void* addr, size_t length) {
+    return UnmapViewOfFile(addr) ? 0 : -1;
+}
+
+#else
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -10,9 +43,13 @@
 #include <dirent.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
+#endif
 
 static int deep_debug = 0;
 char const* help =	\
+	"BeXide Package Archiving Tool for Doko Demo Issyo Portable\n"	\
+	"Original code by swagtoys, modified by pumpkinhasapatch\n"	\
+	"\n"	\
 	"Usage: bpar [xd] DATA.BP ...\n"	\
 	"       bpar id DATA.BP NEKO.KSC ..."	\
 	"\nArguments:\n"	\
@@ -165,6 +202,19 @@ debugfp(FILE* FP, int offset)
 void
 nested_mkdir(char* path, mode_t mode)
 {
+#ifdef _WIN32
+    for (int i = 0; i < strlen(path); ++i)
+    {
+        if (path[i] == '\\')
+        {
+            char temp = path[i];
+            path[i] = '\0';
+            _mkdir(path);
+            path[i] = temp;
+        }
+    }
+    _mkdir(path);
+#else
 	for (int i = 0; i < strlen(path); ++i)
 	{
 		if (path[i] == '/')
@@ -176,6 +226,7 @@ nested_mkdir(char* path, mode_t mode)
 	}
 	// Always makes the last one
 	mkdir(path, mode);
+#endif
 }
 
 char*
@@ -190,7 +241,7 @@ char*
 windir_to_unixdir(char* filename)
 {
 	for (int i = 0; i < strlen(filename); ++i)
-		if (filename[i] == '\\') filename[i] = '//';
+		if (filename[i] == '\\') filename[i] = '/';
 	return filename;
 }
 
@@ -270,7 +321,7 @@ create_file(struct bp_file* file, char* data)
 	close(fd);
 	munmap(map, file->filesize);
 #endif
-	FILE* outfile = fopen(filename, "w+");
+	FILE* outfile = fopen(filename, "wb");
 	if (!outfile)
 	{
 		printf("fopen: %s: %s\n", filename, strerror(errno));
@@ -547,7 +598,7 @@ create_bp_archive(char const* output,
  *  utilize function pointers or state in some way to not write as much code soon? */
 void
 inject_update_offsets(FILE* FP,
-                      const const* real_filename,
+                      const char* real_filename,
                       unsigned new_origin_size,
                       char const* origin,
                       struct bp_file* origin_file,
@@ -702,7 +753,7 @@ inject_to_new_file(char const* real_filename,
 
 void
 inject_files(unsigned deep,
-             char const** in_files,
+             char** in_files,
              size_t in_len,
              struct bp_file* deep_file)
 {
