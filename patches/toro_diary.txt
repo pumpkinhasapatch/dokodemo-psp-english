@@ -241,12 +241,14 @@ I feel lonely after all,nya…<END>
 
 #JMP($8E63F)
 #FIXEDLENGTH(86,0)
-Goodbye…[LR]
+Goodbye[LR]
 [LR]
-I'm going to find another way to become human.[LR]
+I'm going to find[LR]
+another way to[LR]
+become human.[LR]
 [LR]
-[LR]
-I wanted to talk more, meow…<END>
+I wanted to talk[LR]
+more, meow…<END>
 
 //------------
 //人間に なって[LR]
@@ -5182,8 +5184,15 @@ this in the bath<END>
 //食べモノ<END>
 
 //料理<END>
+#JMP($977D4)
+#FIXEDLENGTH(4,0)
+Meal<END>
 
+// Ingredient
 //食材<END>
+#JMP($977D9)
+#FIXEDLENGTH(4,0)
+Side<END>
 
 //生き物<END>
 
@@ -5336,6 +5345,9 @@ this in the bath<END>
 //びょうき<END>
 
 //やりなおし<END>
+#JMP($97A46)
+#FIXEDLENGTH(10,0)
+Re-enter<END>
 
 //ことばメモ？<END>
 
@@ -5352,20 +5364,45 @@ this in the bath<END>
 //残してったんだ<END>
 
 //呼び捨てでイイ<END>
+#JMP($97AA8)
+#FIXEDLENGTH(14,0)
+Use name only<END>
 
 //その他<END>
+#JMP($97AB7)
+#FIXEDLENGTH(7,0)
+Other<END>
 
 //さん<END>
+#JMP($97ABE)
+#FIXEDLENGTH(4,0)
+-san<END>
 
-//ちゃん<$F1><END>
+//ちゃん<END>
+#JMP($97AC3)
+#FIXEDLENGTH(6,0)
+-chan<END>
 
 //くん<END>
+#JMP($97ACA)
+#FIXEDLENGTH(4,0)
+-kun<END>
 
 //さま<END>
+#JMP($97ACF)
+#FIXEDLENGTH(4,0)
+sama<END>
 
 //先生<END>
+#JMP($97AD4)
+#FIXEDLENGTH(4,0)
+-sei<END>
 
+// something looks like, agreeable
 //そう<END>
+#JMP($97AD9)
+#FIXEDLENGTH(4,0)
+Yes
 
 //まちがい<END>
 
@@ -5796,6 +5833,9 @@ Dec <END>
 //誕生日<END>
 
 //いいよ<END>
+#JMP($9830B)
+#FIXEDLENGTH(6,0)
+Sure<END>
 
 //電話番号<END>
 
@@ -7866,6 +7906,9 @@ Dec <END>
 //青いね<END>
 
 //イヤだ<END>
+#JMP($9B007)
+#FIXEDLENGTH(6,0)
+No way<END>
 
 //すいか<END>
 
@@ -10737,10 +10780,19 @@ On June 26th? <END>
 //誰から？<END>
 
 //めいし交換<END>
+#JMP($9EE77)
+#FIXEDLENGTH(10,0)
+name card<END>
 
 //しりとり<END>
+#JMP($9EE82)
+#FIXEDLENGTH(8,0)
+wordgame<END>
 
 //プレゼント交換<END>
+#JMP($9EE8B)
+#FIXEDLENGTH(14,0)
+gift exchange<END>
 
 //あちこち<END>
 

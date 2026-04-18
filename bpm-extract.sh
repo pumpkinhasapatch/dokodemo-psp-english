@@ -3,7 +3,7 @@ cd extract
 
 echo Extracting BPMs from DATA.BP, this will take a minute
 # Hide output while bpar spams "magic number" warnings for unknown files
-../tools/bpar -x ../build/PSP_GAME/USRDIR/data/DATA.BP > /dev/null 2>&1
+../tools/bpar/bpar -x ../build/PSP_GAME/USRDIR/data/DATA.BP > /dev/null 2>&1
 
 # Delete font files because's thousands and they take forever to extract
 echo Skipping font textures
@@ -14,7 +14,7 @@ echo Extracting BPM archives in the current directory
 # Use ./KS*.BPM to only extract KSC/DIC archives or ./*.BPM to extract everything
 for file in ./KS*.BPM; do
     if [ -f "$file" ]; then
-        ../tools/bpar -x "$file"
+        ../tools/bpar/bpar -x "$file"
     fi
 done
 

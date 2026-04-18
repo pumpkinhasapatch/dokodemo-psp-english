@@ -1,12 +1,7 @@
-// Doko Demo Issyo PSP English Translation Project
-// © pumpkinhasapatch 2024 <https://github.com/pumpkinhasapatch/dokodemo-psp-english>
-// PARAM.SFO Atlas script - (Game information)
-
 #SETTARGETFILE("build/PSP_GAME/PARAM.SFO")
 #VAR(Table, TABLE)
 #ADDTBL("shiftjis.tbl", Table)
 #ACTIVETBL(Table)
-
 #FIXEDLENGTH(128,0)
 #JMP($158)
-Doko Demo Issyo PSP English Translation Project v0.2.0 | github.com/pumpkinhasapatch/dokodemo-psp-english<END>
+Doko Demo Issyo PSP English Fan Translation (build 27-Mar-26 14:04)<END>

@@ -1,37 +1,4 @@
-#ifdef _WIN32
-#include <io.h> // For _access, _setmode
-#include <fcntl.h> // For _O_BINARY
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <assert.h>
-#include <stdbool.h>
-#include <errno.h>
-#include <sys/stat.h> // For _S_IREAD, _S_IWRITE
-#include <direct.h> // For _mkdir
-#include <windows.h> // For VirtualAlloc, VirtualFree
-
-// Define mmap and munmap for Windows
-#define PROT_READ 1
-#define MAP_PRIVATE 2
-#define MAP_FAILED ((void*)-1)
-
-void* mmap(void* addr, size_t length, int prot, int flags, int fd, off_t offset) {
-	HANDLE hFile = (HANDLE)_get_osfhandle(fd);
-	HANDLE hMapping = CreateFileMapping(hFile, NULL, PAGE_READONLY, 0, 0, NULL);
-	if (hMapping == NULL) {
-		return MAP_FAILED;
-	}
-	void* map = MapViewOfFile(hMapping, FILE_MAP_READ, 0, offset, length);
-	CloseHandle(hMapping);
-	return map;
-}
-
-int munmap(void* addr, size_t length) {
-	return UnmapViewOfFile(addr) ? 0 : -1;
-}
-
-#else
+//#!/usr/local/bin/tcc -run
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -43,15 +10,11 @@ int munmap(void* addr, size_t length) {
 #include <dirent.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
-#endif
 
 static int deep_debug = 0;
 char const* help =	\
-	"BeXide Package Archiving Tool for Doko Demo Issyo Portable\n"	\
-	"Original code by swagtoys, modified by pumpkinhasapatch\n"	\
-	"\n"	\
 	"Usage: bpar [xd] DATA.BP ...\n"	\
-	"	   bpar id DATA.BP NEKO.KSC ..."	\
+	"       bpar id DATA.BP NEKO.KSC ..."	\
 	"\nArguments:\n"	\
 	"   -x\t\tExtract the .BP{M,} archive.\n"	\
 	"   -i\t\tInject a file into the .BP{M,} archive.\n"	\
@@ -105,7 +68,7 @@ uchar* F_head = NULL;
 void F_close();
 
 unsigned char FF[4] = { 0xFF, 0xFF, 0xFF, 0xFF };
-
+	
 struct opts
 {
 	short c/*reate*/ : 1;
@@ -118,9 +81,9 @@ struct opts
 struct bp_filepack_header
 {
 	unsigned num_files,
-			 file_info,
-			 filenames_length,
-			 header_size;
+	         file_info,
+	         filenames_length,
+	         header_size;
 	uchar* initial_pos; // Worth noting!
 };
 
@@ -147,8 +110,8 @@ dec_uint(unsigned char* arr, size_t len)
 void
 enc_uint(unsigned long value, size_t length, unsigned char* data)
 {
-	for (unsigned i = 0; i < length; ++i)
-		data[i] = (value >> (i * 8)) & 0xFF;
+    for (unsigned i = 0; i < length; ++i)
+        data[i] = (value >> (i * 8)) & 0xFF;
 }
 
 // Prints out hex dump, file position, etc.
@@ -158,17 +121,17 @@ debug()
 	return;
 	uchar* initial_pos = F_head;
 	DEBUGF("=================== Debug : %08u ===================\n|  ", initial_pos);
-
+	
 
 	for (int i = 0; i < 16 * 6; ++i)
 	{
 		int last = i != (16 * 6) - 1;
 		DEBUGF("%02hhX %s", initial_pos[i], (i+1) % 4 == 0 && last ? " " : "");
-
+		
 		if ((i+1) % 16 == 0 && last)
 			DEBUGF("| \n|  ");
 	}
-
+	
 	DEBUGF(" |\n========================================================\n");
 }
 
@@ -177,21 +140,21 @@ debugfp(FILE* FP, int offset)
 {
 	long initial_pos = ftell(FP);
 	printf("=================== Debug : %08u ===================\n|  ", ftell(FP));
-
+	
 
 	fseek(FP, -offset, SEEK_CUR);
-
+	
 	for (int i = 0; i < 16 * 7; ++i)
 	{
 		int last = i != (16 * 7) - 1;
 		printf("%s%02hhX %s", i == 0 ? "\x1b[31m" : "",
-			   fgetc(FP), (i+1) % 4 == 0 && last ? " " : "");
-
+		       fgetc(FP), (i+1) % 4 == 0 && last ? " " : "");
+		
 		if ((i+1) % 16 == 0 && last)
 			printf("\x1b[0m| \n|  ");
 	}
 	fseek(FP, offset, SEEK_CUR);
-
+	
 	printf(" |\n========================================================\n");
 	fseek(FP, initial_pos, SEEK_SET);
 }
@@ -202,19 +165,6 @@ debugfp(FILE* FP, int offset)
 void
 nested_mkdir(char* path, mode_t mode)
 {
-#ifdef _WIN32
-	for (int i = 0; i < strlen(path); ++i)
-	{
-		if (path[i] == '\\')
-		{
-			char temp = path[i];
-			path[i] = '\0';
-			_mkdir(path);
-			path[i] = temp;
-		}
-	}
-	_mkdir(path);
-#else
 	for (int i = 0; i < strlen(path); ++i)
 	{
 		if (path[i] == '/')
@@ -226,7 +176,6 @@ nested_mkdir(char* path, mode_t mode)
 	}
 	// Always makes the last one
 	mkdir(path, mode);
-#endif
 }
 
 char*
@@ -241,7 +190,7 @@ char*
 windir_to_unixdir(char* filename)
 {
 	for (int i = 0; i < strlen(filename); ++i)
-		if (filename[i] == '\\') filename[i] = '/';
+		if (filename[i] == '\\') filename[i] = '//';
 	return filename;
 }
 
@@ -260,12 +209,12 @@ verify_magic(FILE* FP)
 {
 	int ret = 1;
 	for (struct common_header* hdr = common_headers;
-		  hdr->s != -1 && ret != 0;
-		  ++hdr)
+	      hdr->s != -1 && ret != 0;
+	      ++hdr)
 	{
 		unsigned char magic[12];
 		fread(magic, 1, hdr->s, FP); 
-
+		
 		if (memcmp(magic, hdr->magic, hdr->s) == 0)
 		{
 			ret = 0;
@@ -295,20 +244,20 @@ create_file(struct bp_file* file, char* data)
 			{ filename[i] = '/'; nested = 1; }
 		else if (filename[i] == '/')
 			nested = 1; // You Stupid Fucking Bitch. (this is with Let's Gakkou)
-
+	
 	if (nested)
 	{
 		// Go backwards and find the first '\';
 		char* x = strrchr(filename, '/');
 		unsigned i = x - filename;
-
+		
 		filename[i] = '\0';
 		/////////
 		nested_mkdir(filename, 0700);
 		///////// Revert back to file path
 		filename[i] = '/';
 	}
-
+	
 	DEBUGF("Writing to %s...\n", filename);
 
 #if 0	
@@ -321,23 +270,23 @@ create_file(struct bp_file* file, char* data)
 	close(fd);
 	munmap(map, file->filesize);
 #endif
-	FILE* outfile = fopen(filename, "wb");
+	FILE* outfile = fopen(filename, "w+");
 	if (!outfile)
 	{
 		printf("fopen: %s: %s\n", filename, strerror(errno));
 		free(filename);
 		return;
 	}
-
+	
 	if (file->filesize > 0)
 		fwrite(data, 1, file->filesize, outfile);
-
+	
 	if (verify)
 	{
 		fseek(outfile, 0, SEEK_SET);
 		verify_magic(outfile);
 	}
-
+	
 	fclose(outfile);
 cleanup:
 	free(filename);
@@ -345,21 +294,21 @@ cleanup:
 
 size_t
 read_filepack_header(struct bp_filepack_header* hd,
-					 struct bp_file** files)
+                     struct bp_file** files)
 {
 	*files = NULL;
 	size_t f = 0; // files counter
 	// Need for return and seek...
 	hd->initial_pos = F_head;
-
+	
 	hd->num_files = dec_uint(F_head, 4);
 	hd->file_info = dec_uint(F_head+4, 4);
 	hd->filenames_length = dec_uint(F_head+8, 4);
 	hd->header_size = dec_uint(F_head+12,4);
 	F_head += 16;
-
+	
 	DEBUGF("[ Entering filepack header ]");
-
+	
 	//DEBUGF("%d\n", hd->file_info);
 	//fseek(FP, file_info*16, SEEK_CUR);
 	for (unsigned i = 0; i < hd->file_info; ++i)
@@ -445,22 +394,22 @@ read_files(unsigned deep)
 	deep_debug = deep;
 	size_t files_len = read_filepack_header(&header, &files);
 	read_filenames(files, files_len);
-
+	
 	for (int i = 0; i < files_len; ++i)
 	{
 		header_seek_begin(&header);
 		//fseek(FP, files[i].offset, SEEK_CUR); // Go to file
 		F_head += files[i].offset;
-
+		
 		DEBUGF("Filename: %s - Filesize: %d at offset %d\n",
-			   files[i].filename, files[i].filesize, (int)F_head - (int)F);
-
-
+		       files[i].filename, files[i].filesize, (int)F_head - (int)F);
+		
+		
 		if (deep)
 			read_files(0);
 		else {
 			uchar* data = files[i].data = F_head;
-
+		
 			create_file(files + i, data);
 			debug();
 		}
@@ -478,7 +427,7 @@ read_files(unsigned deep)
  * \param output  Output file for packing.
  * \param dirname Directory to read.
  * \param files	  Files.
- * \param i	   Files length.
+ * \param i       Files length.
  */
 #if 0
 void // TODO reupdate for realloc, not like it's used 
@@ -497,12 +446,12 @@ deep_readdir(int offset, char* output, char* dirname, struct bp_file** files, si
 			DEBUGF("<D>: %s [stepping]\n", filename);
 			deep_readdir(offset, output, filename, files, i);
 			closedir(d);
-
+			
 			//DEBUGF("Is dir: %s\n", dp->d_name);
 		}
 		else {
 			files[*i].filename = unixdir_to_windir(strdup(filename + offset));
-
+			
 			// Read contents
 			struct stat s;
 			FILE* outfile = fopen(filename, "r");
@@ -511,7 +460,7 @@ deep_readdir(int offset, char* output, char* dirname, struct bp_file** files, si
 			// Reading a lot of data
 			fread(data, 1, s.st_size, outfile);
 			fclose(outfile);
-
+			
 			DEBUGF(" F : %s\n", filename);
 			++*i;
 		}
@@ -522,45 +471,45 @@ deep_readdir(int offset, char* output, char* dirname, struct bp_file** files, si
 
 void
 create_bp_archive(char const* output,
-				  struct bp_file* files,
-				  size_t len)
+                  struct bp_file* files,
+                  size_t len)
 {
 	puts("Sony Ninjas have been dispatched to your location.\n\n"	\
-		 "Use injection.");
+	     "Use injection.");
 	exit(42);
-
+	
 #if 0
 	FILE* FP = fopen(output, "w");
-
+	
 	// Create filenames data
 	unsigned char filenames[555555] = { 0 };
 	int filenames_len = 0;
 	for (int i = 0, pos = 0; i < len; 
-		  (filenames_len += strlen(files[i].filename)+1, ++i))
+	      (filenames_len += strlen(files[i].filename)+1, ++i))
 	{
 		memcpy(filenames + filenames_len, files[i].filename, strlen(files[i].filename)+1);
 		;
 	}
-
+	
 	// SEC: Initial header
 	unsigned char buf[4];
 	enc_uint(len, 4, buf);
 	fwrite(buf, 1, 4, FP);
-
+	
 	enc_uint(len, 4, buf);
 	fwrite(buf, 1, 4, FP);
-
+	
 	enc_uint(filenames_len, 4, buf);
 	fwrite(buf, 1, 4, FP);
-
+	
 	// We'll go back to these later
 	long head_size_pos = ftell(FP);
 	enc_uint(len, 4, buf);
 	fwrite(buf, 1, 4, FP);
-
+	
 	// SEC: File info
 	size_t fn_size_offset = 0,
-		   f_size_offset = 0;
+	       f_size_offset = 0;
 	for (int i = 0; files[i].filename != NULL; ++i)
 	{
 		enc_uint(fn_size_offset, 4, buf);
@@ -577,14 +526,14 @@ create_bp_archive(char const* output,
 	}
 	// SEC: File names
 	fwrite(filenames, 1, filenames_len, FP);
-
+	
 	// Go back to head size position, write data
 	long data_pos = ftell(FP);
 	fseek(FP, head_size_pos, SEEK_SET);
 	enc_uint(data_pos, 4, buf);
 	fwrite(buf, 1, 4, FP);
 	fseek(FP, data_pos, SEEK_SET);
-
+	
 	// SEC: Data
 	for (int i = 0; files[i].filename != NULL; ++i)
 	{
@@ -598,11 +547,11 @@ create_bp_archive(char const* output,
  *  utilize function pointers or state in some way to not write as much code soon? */
 void
 inject_update_offsets(FILE* FP,
-					  const char* real_filename,
-					  unsigned new_origin_size,
-					  char const* origin,
-					  struct bp_file* origin_file,
-					  struct bp_file* deep_file)
+                      char const* real_filename,
+                      unsigned new_origin_size,
+                      char const* origin,
+                      struct bp_file* origin_file,
+                      struct bp_file* deep_file)
 {
 	long o_pos = ftell(FP);
 	uchar buf[4];
@@ -615,7 +564,7 @@ inject_update_offsets(FILE* FP,
 		fread(buf, 1, 4, FP);
 		unsigned fileheader_size = dec_uint(buf, 4);
 		unsigned o_data = o_pos + fileheader_size;
-
+		
 		for (int i = 0; i < num_files; ++i)
 		{
 			// Not interested in filename
@@ -626,16 +575,16 @@ inject_update_offsets(FILE* FP,
 				--i;
 				continue;
 			}
-
+			
 			// Get offset
 			fread(buf, 1, 4, FP);
 			unsigned offset = dec_uint(buf, 4);
 
 			struct bp_file* _file = deep_file ? deep_file : origin_file;
-
+			
 			if (_file == origin_file && origin_file->offset == offset)
 				printf("Found Self : %d\n", i);
-
+			
 			int new_size_diff = new_origin_size - origin_file->filesize;
 			if (_file && offset > _file->offset)
 			{
@@ -648,29 +597,29 @@ inject_update_offsets(FILE* FP,
 				printf("OLD : %d | NEW : %d\n", offset, offset + new_size_diff);
 				fseek(FP, -4, SEEK_CUR);
 				fwrite(buf, 1, 4, FP);
-
+				
 				//debugfp(FP, 8); 
-
+				
 				fseek(FP, 8, SEEK_CUR);
-
-
+				
+				
 				continue;
 			}
-
+			
 			if (_file && offset == _file->offset)
 			{
 				printf("Self : %d at offset %u\n", i, offset);
 
 				debugfp(FP, 8);
-
+				
 				if (deep_file)
 				{
 					enc_uint(deep_file->filesize + new_size_diff, 4, buf);
-
+					
 					long o_pos_2 = ftell(FP);
 					fseek(FP, o_data + offset, SEEK_SET);
 					inject_update_offsets(FP, real_filename, new_origin_size,
-										  origin, origin_file, NULL);
+					                      origin, origin_file, NULL);
 					fseek(FP, o_pos_2, SEEK_SET);
 				}
 				else {
@@ -678,7 +627,7 @@ inject_update_offsets(FILE* FP,
 				}
 				fwrite(buf, 1, 4, FP);
 				debugfp(FP, 12);
-
+					
 				fseek(FP, 4, SEEK_CUR);
 			}
 			else
@@ -689,20 +638,20 @@ inject_update_offsets(FILE* FP,
 
 void
 inject_to_new_file(char const* real_filename,
-				   char const* origin,
-				   struct bp_file* origin_file,
-				   struct bp_file* deep_file)
+                   char const* origin,
+                   struct bp_file* origin_file,
+                   struct bp_file* deep_file)
 {
 	FILE* new_origin = fopen(real_filename, "r");
 	long new_origin_size = fsize(new_origin);
-
+	
 	// Intentionally using fwrite / fread here because he can easily append
 	FILE* outfile = fopen("/tmp/bpar_work", "w+");
-
+	
 	int entry_point = (int)F_head - (int)F;
 	// Read everything up to here
 	fwrite(F, 1, entry_point, outfile);
-
+	
 	// BEGIN Read the new file into tmp file
 	char* tmpptr = malloc(new_origin_size);
 	fread(tmpptr, 1, new_origin_size, new_origin);
@@ -710,52 +659,52 @@ inject_to_new_file(char const* real_filename,
 	free(tmpptr);
 	fclose(new_origin);
 	// END Read the new file into tmp file
-
+	
 	// Read rest of the file
 	if (new_origin_size >= origin_file->filesize)
 	{
 		size_t offset = (size_t)F_head + origin_file->filesize;
 		printf("Reading %zu bytes from %zu\n", (size_t)F_size - (size_t)(F_head + origin_file->filesize), offset);
 		fwrite(F_head + origin_file->filesize, 1,
-			   F_size - (entry_point + origin_file->filesize), outfile);
-
+		       F_size - (entry_point + origin_file->filesize), outfile);
+		
 	}
 	else if (new_origin_size < origin_file->filesize)
 	{
-			// Broken.
+	        // Broken.
 		fwrite(F_head + origin_file->filesize, 1,
-			   (int)F_size - (entry_point + origin_file->filesize), outfile);
+		       (int)F_size - (entry_point + origin_file->filesize), outfile);
 	}
 	// Rest of file is read! We're done, right?
 	printf("%zu - %zu = %zu\n", F_size, entry_point, F_size - entry_point);
 	long final_pos = ftell(outfile);
-
-
+	
+	
 	// If new file is bigger, we need to update all indexes within file
 	fseek(outfile, 0, SEEK_SET);
 	inject_update_offsets(outfile, real_filename, new_origin_size,
-						  origin, origin_file, deep_file);
-
+	                      origin, origin_file, deep_file);
+	
 	// Start copying over
 	F_close(); // Reading from file now. Spare some memory
 	fseek(outfile, 0, SEEK_SET);
 	FILE* infile = fopen(F_name, "w");
-
+	
 	tmpptr = malloc(final_pos + 1);
 	fread(tmpptr, 1, final_pos + 1, outfile);
 	fclose(outfile);
 	fwrite(tmpptr, 1, final_pos, infile);
 	free(tmpptr);
-
+	
 	fclose(infile);
 	exit(0);
 }
 
 void
 inject_files(unsigned deep,
-			 char** in_files,
-			 size_t in_len,
-			 struct bp_file* deep_file)
+             char const** in_files,
+             size_t in_len,
+             struct bp_file* deep_file)
 {
 	uchar* initial_pos = F_head;
 	//////
@@ -763,16 +712,16 @@ inject_files(unsigned deep,
 	struct bp_filepack_header header;
 	size_t files_len = read_filepack_header(&header, &files);
 	read_filenames(files, files_len);
-
+	
 	for (int i = 0; i < files_len; ++i)
 	{
 		header_seek_begin(&header);
 		//fseek(FP, files[i].offset, SEEK_CUR); // Go to file
 		F_head += files[i].offset;
-
+		
 		DEBUGF("Filename: %s - Filesize: %d at offset %d\n",
-			   files[i].filename, files[i].filesize, (int)F_head - (int)F);
-
+		       files[i].filename, files[i].filesize, (int)F_head - (int)F);
+		
 		for (int j = 0; j < in_len; ++j)
 		{
 			char* real_file = strchr(in_files[j], '/');
@@ -782,7 +731,7 @@ inject_files(unsigned deep,
 				++real_file; // Skip slash character
 				unixdir_to_windir(real_file);
 			}
-
+			
 			if (strstr(files[i].filename, real_file) != NULL)
 			{
 				char input = strcmp(files[i].filename, real_file) == 0 ? 'y' : 0;
@@ -791,18 +740,18 @@ inject_files(unsigned deep,
 					printf("Is \"%s\" correct? [y/n]: ", files[i].filename);
 					input = getchar();
 				}
-
+				
 				if (input == 'y')
 				{
 					windir_to_unixdir(real_file);
 					inject_to_new_file(in_files[j], real_file, files + i,
-									   deep_file);
+					                   deep_file);
 					printf("Injected \"%s\" into \"%s\". =^)\n",
-						   real_file, deep_file->filename);
+					       real_file, deep_file->filename);
 				}
 			}
 		}
-
+		
 		if (deep)
 			inject_files(0, in_files, in_len, files + i);
 	}
@@ -824,14 +773,14 @@ F_close()
 }
 
 int
-main(int argc, char** argv)
+main(int argc, char const** argv)
 {
 	if (argc <= 2)
 	{
 		puts(help);
 		return EXIT_FAILURE;
 	}
-
+	
 	/* Tar-like switches */
 	for (char* i = argv[1]; *i != '\0'; ++i)
 	{
@@ -854,32 +803,32 @@ main(int argc, char** argv)
 	if (opts.x)
 	{
 		int fd = open(argv[2], O_RDONLY);
-
+		
 		if (fd == -1)
 		{
 			perror("open");
 			return errno;
 		}
-
+		
 		struct stat s;
 		fstat(fd, &s);
 		F_size = s.st_size;
-
+			
 		F_head = F = mmap(0, F_size, PROT_READ, MAP_PRIVATE, fd, 0);
 #ifdef MMAP_MEMCPY
 		uchar* F_map = F;
-
+	
 		F = malloc(F_size);
 		memcpy(F, F_map, F_size);
 		F_head = F;
 #endif	
-
+	
 		if (!F)
 		{
 			perror("mmap");
 			return errno;
 		}
-
+	
 		/* First header sometimes contains .BPM's (BeXide Package Metadata?)
 		 *  These headers contain more filepack headers... not sure why it's
 		 *  like this? */
@@ -905,25 +854,25 @@ main(int argc, char** argv)
 			return EXIT_FAILURE;
 		}
 		char const* output = argv[2];
-
+		
 		int fd = open(output, O_RDONLY);
-
+		
 		F_name = output;
-
+		
 		if (fd == -1)
 		{
 			perror("open");
 			return errno;
 		}
-
+		
 		struct stat s;
 		fstat(fd, &s);
 		F_size = s.st_size;
-
+			
 		F_head = F = mmap(0, F_size, PROT_READ, MAP_PRIVATE, fd, 0);
 #ifdef MMAP_MEMCPY
 		F_map = F;
-
+	
 		F = malloc(F_size);
 		memcpy(F, F_map, F_size);
 		F_head = F;
@@ -933,7 +882,7 @@ main(int argc, char** argv)
 			perror("mmap");
 			return errno;
 		}
-
+	
 		/* First header sometimes contains .BPM's (BeXide Package Metadata?)
 		 *  These headers contain more filepack headers... not sure why it's
 		 *  like this? */
@@ -954,23 +903,23 @@ main(int argc, char** argv)
 			return EXIT_FAILURE;
 		}
 		char const* output = argv[2];
-
+		
 		// Ur seein' it :^)
 		struct bp_file* files;
 		size_t files_len = 0;
-
+		
 		//char* rem_slash = strchr(argv[argc-1], '/');
 		//if (rem_slash) *rem_slash = '\0';
 
 		/*deep_readdir(strlen(argv[argc-1])+1,
-					 output,
-					 argv[argc-1],
-					 &files,
-					 &files_len);*/
-
+		             output,
+		             argv[argc-1],
+		             &files,
+		             &files_len);*/
+		
 		create_bp_archive(output, files, files_len);
-
-
+		
+		
 		return EXIT_SUCCESS;
 	}
 	puts(help);

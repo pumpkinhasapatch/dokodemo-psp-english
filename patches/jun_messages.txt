@@ -8,13 +8,23 @@
 #ADDTBL("shiftjis.tbl", Table)
 #ACTIVETBL(Table)
 
+//う～ん、[WORD0]…<END>
+#JMP($5F95D)
+#FIXEDLENGTH(15,0)
+Hmm, [WORD0]…<END>
+
+//あっ そうそう[LR]<END>
+#JMP($5FA81)
+#FIXEDLENGTH(14,0)
+That's right.[LR]<END>
+
 // New game introduction
 #JMP($5F988)
 #FIXEDLENGTH(39,0)
 //はじめまして、[LR]
-//ウサギの [POKEPI]です[NYA]♥[LR]<END>
+//ウサギの [WORD1]です[NYA]♥[LR]<END>
 Nice to see[LR]
-you, I'm [POKEPI][LR]
+you, I'm [WORD1][LR]
 the rabbit![LR]<END>
 
 #JMP($5F9BA)
@@ -25,7 +35,7 @@ I had a sudden idea to go on a solo trip…[LR]<END>
 
 #JMP($5F9F9)
 #FIXEDLENGTH(48,0)
-//[PLAYER]さんのトコ…[LR]
+//[WORD0]さんのトコ…[LR]
 //なんだか居心地 よさそうだし…[LR]<END>
 and your[LR]
 place here,[LR]
@@ -68,6 +78,11 @@ it's a gift from me moving in…[LR]<END>
 #JMP($6313C)
 #FIXEDLENGTH(11,0)
 Here it is!<END>
+
+//ピョン / pyon
+#JMP($67F6C)
+#FIXEDLENGTH(6,0)
+squeak<END>
 
 // Finished talking
 #JMP($7200A)

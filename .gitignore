@@ -1,18 +1,24 @@
-# Encrypted game files
+# Original game files
 build/
 extract/
 insert/
-
-# Software dependencies
-tools/GimConv/
 
 # BeXide file formats
 *.KSC
 *.DIC
 *.GIM
 
-# File checksums and settings
-*.csv
+# Game isos
+*.iso
 
-# GIMP editor layered images
+# Source image files (Paint.NET, GIMP, vector)
+*.pdn
 *.xcf
+*.svg
+
+# pngquant converted images
+*-fs8.png
+
+# Excel spreadsheets
+*.xlsx
+*.ods

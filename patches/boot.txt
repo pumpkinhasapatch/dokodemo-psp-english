@@ -246,6 +246,24 @@ Is this correct?<END>
 %2d<END>
 
 //------------
+//Memory Stick save data errors
+
+#JMP($D8BAC)
+#FIXEDLENGTH(53,0)
+//このゲームのデータをセーブするには800KB以上必要です。
+Save data for this game requires more than 800KB.<END>
+
+#JMP($D8C28)
+#FIXEDLENGTH(50,0)
+//"メモリースティック"が正しく差し込まれていません。
+The Memory Stick is not inserted correctly.<END>
+
+#JMP($D8C64)
+#FIXEDLENGTH(48,0)
+//"メモリースティック"の空き容量が不足しています。
+There is not enough space on your Memory Stick.<END>
+
+//------------
 //Appears for a second when exiting to the title screen
 
 #JMP($D8EA4)
@@ -309,7 +327,6 @@ Are you sure on this?<END>
 //本当にすてますか？
 Really delete this?<END>
 
-//------------
 //Date the decoration was received
 
 #JMP($DA6D8)
@@ -320,3 +337,140 @@ Really delete this?<END>
 #JMP($DA6E0)
 // Day format
 %2d<END>
+
+//------------
+// enikki/diary
+
+//上書きしますか？
+#JMP($DBCB0)
+#FIXEDLENGTH(19,0)
+Overwrite?<END>
+
+//データなし
+#JMP($DBCCC)
+#FIXEDLENGTH(11,0)
+No data<END>
+
+//%d月%d日
+#JMP($DBCD8)
+#FIXEDLENGTH(8,0)
+%d/%d<END>
+
+//%2d月%2d日
+#JMP($DBCE8)
+#FIXEDLENGTH(10,0)
+%2d/%2d<END>
+
+//------------
+// tsuushin/Connection screen
+
+//残り
+#JMP($DBF84)
+#FIXEDLENGTH(7,0)
+Left<END>
+
+#JMP($DBF8C)
+#FIXEDLENGTH(4,0)
+%d<END>
+
+//-----------
+// meishi
+// date format
+//%2d月%2d日
+#JMP($DC064)
+#FIXEDLENGTH(10,0)
+%2d/%2d<END>
+
+//-----------
+// shiritori
+
+//参加者
+#JMP($DC2A0)
+#FIXEDLENGTH(7,0)
+Users<END>
+
+//%d人
+#JMP($DC2A8)
+#FIXEDLENGTH(4,0)
+%d<END>
+
+//ラリー
+#JMP($DC2B0)
+#FIXEDLENGTH(7,0)
+Rounds<END>
+
+//%d回
+#JMP($DC2B8)
+#FIXEDLENGTH(4,0)
+%d<END>
+
+//-----------
+//tomodachi note / friend list
+
+//詳細を見る
+#JMP($D9D70)
+#FIXEDLENGTH(11,0)
+View card<END>
+
+//やっぱヤメ
+#JMP($D9D7C)
+#FIXEDLENGTH(11,0)
+Never mind<END>
+
+//ともだちを消す
+#JMP($D9D88)
+#FIXEDLENGTH(15,0)
+Delete friend<END>
+
+//この人ですか？
+#JMP($D9D98)
+#FIXEDLENGTH(15,0)
+This person?<END>
+
+//本当に消しますか？
+#JMP($D9DA8)
+#FIXEDLENGTH(19,0)
+Delete friend?<END>
+
+//%2d月
+#JMP($D9DBC)
+#FIXEDLENGTH(5,0)
+%2d/<END>
+
+//%2d日
+#JMP($D9DC4)
+#FIXEDLENGTH(5,0)
+%2d<END>
+
+//%4d年%2d月%2d日
+#JMP($D9DCC)
+#FIXEDLENGTH(15,0)
+%4d/%2d/%2d<END>
+
+//%2d月%2d日
+#JMP($D9DDC)
+#FIXEDLENGTH(10,0)
+%2d/%2d<END>
+
+//-----------
+//kotoba memo / words
+
+//よみを直す
+#JMP($D9EF0)
+#FIXEDLENGTH(11,0)
+Change word<END>
+
+//やっぱヤメ
+#JMP($D9EFC)
+#FIXEDLENGTH(11,0)
+Never mind<END>
+
+//単語を消す
+#JMP($D9F08)
+#FIXEDLENGTH(11,0)
+Delete word<END>
+
+//本当に消しますか？
+#JMP($D9F20)
+#FIXEDLENGTH(19,0)
+Delete word?<END>

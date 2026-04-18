@@ -1,0 +1,16 @@
+ENIKKI = Notebook -> Diary
+ENIKKI_OMOIDE = Save Diary (when Pokepi leaves)
+KOTOBA_MEMO = Notebook -> Words
+MAIN_MENU = Pop-up menu when pressing Right button
+MEISHI = Name card exchange?
+MOCHIMONO = Items/Inventory menu
+MOVING = Loading screen when using "Go out"
+OPTION = System -> Options
+PRESENT = Gift exchange
+QUICK = Quick startup loading screen
+SHIRITORI = Friends -> Word game -> ???
+SOFTKEY = On-screen keyboard/keypad
+SYOUKAI = Friends -> Intro / Talk button
+TITLE = Title screen graphics
+TOMODACHI_NOTE = Notebook -> Pokepi Log/Friends
+TSUUSHIN = Ad-hoc Connection screen? Friends -> Name card/Gift swap -> Any option

@@ -1,0 +1,112 @@
+// Doko Demo Issyo PSP English Translation Project - ROBO.KSC Atlas script (Suzuki messages)
+// © pumpkinhasapatch 2024 <https://github.com/pumpkinhasapatch/dokodemo-psp-english>
+
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+#SETTARGETFILE("insert/ROBO.KSC")
+#VAR(Table, TABLE)
+#ADDTBL("shiftjis.tbl", Table)
+#ACTIVETBL(Table)
+
+
+// Introduction
+
+//<$16><$14><$05><$00><$16>の 夢は～[LR]
+#JMP($5AD8F)
+#FIXEDLENGTH(15,0)
+My dream is～[LR]<END>
+
+//いつの日か <$16><$14><$02><$00><$16>の原理の全てを、[LR]
+#JMP($5ADA0)
+#FIXEDLENGTH(33,0)
+One day, to understand all <$16><$14><$02><$00><$16>,<END>
+
+//解き明かすコトなのだ！[LR]
+#JMP($5ADCC)
+#FIXEDLENGTH(23,0)
+I will unravel it all![LR]<END>
+
+//<$16><$14><$05><$00><$16>と 仲良くなれる確率…[LR]
+// 1614050016 = Player name
+#JMP($5AFAF)
+#FIXEDLENGTH(27,0)
+Chance of befriending <$16><$14><$05><$00><$16><END>
+
+//「<$14><$07><$00>％」という計算結果[NYA]♪[LR]
+#JMP($5AFD5)
+#FIXEDLENGTH(29,0)
+ is calculated as <$14><$07><$00>% ♪[LR]<END>
+
+// 初対面にしては[LR]イイ数値[NYA][LR]
+#JMP($5AFFD)
+#FIXEDLENGTH(27,0)
+Good for our first meeting[LR]<END>
+
+// If Suzuki's percenctage is exactly 100% ....
+// TODO
+
+//さて、自己紹介は
+#JMP($5B023)
+#FIXEDLENGTH(17,0)
+Well, that's all[LR]<END>
+
+//このくらいにして～[LR]
+#JMP($5B03F)
+#FIXEDLENGTH(19,0)
+for introductions.[LR]<END>
+
+//これから、よろしく[NYA]♪[LR]
+#JMP($5B05D)
+#FIXEDLENGTH(24,0)
+Best regards from me.[LR]<END>
+
+//あ！[LR]
+#JMP($671B7)
+#FIXEDLENGTH(5,0)
+Ah! [LR]<END>
+
+//つまらないモノ なのだが～[LR]
+#JMP($671C7)
+#FIXEDLENGTH(26,0)
+This thing is boring, but[LR]<END>
+
+//引越しの ごあいさつに…[LR]
+#JMP($671E3)
+#FIXEDLENGTH(24,0)
+As a moving-in greeting,<END>
+
+//これを 受け取って[LR]くれたまえ♪
+#JMP($67203)
+#FIXEDLENGTH(30,0)
+please accept this gift! ♪<END>
+
+//バイバイ
+#JMP($75ECC)
+#FIXEDLENGTH(8,0)
+Bye bye <END>
+
+//<$16><$14><$00><$00><$16> なのだ[LR]
+#JMP($5BE16)
+#FIXEDLENGTH(13,0)
+That is all.[LR]<END>
+
+//<$16><$14><$00><$00><$16> なのだ[LR]
+#JMP($5BF20)
+#FIXEDLENGTH(13,0)
+That is all.[LR]<END>
+
+//ロボ / robo
+#JMP($6C088)
+#FIXEDLENGTH(4,0)
+beep<END>

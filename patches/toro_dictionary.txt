@@ -1,0 +1,22 @@
+// Doko Demo Issyo PSP English Translation Project
+// © pumpkinhasapatch 2024 <https://github.com/pumpkinhasapatch/dokodemo-psp-english>
+// NEKO.DIC Atlas script - (Toro dictionary)
+
+#SETTARGETFILE("insert/NEKO.DIC")
+#VAR(Table, TABLE)
+#ADDTBL("shiftjis.tbl", Table)
+#ACTIVETBL(Table)
+
+//ふっきん - Kanji form: 腹筋
+#FIXEDLENGTH(8,0)
+#JMP($1C4A)
+abs<END>
+#JMP($1C53)
+abs<END>
+
+//バイバイ - Often used when Pokepi is finished talking
+#FIXEDLENGTH(8,0)
+#JMP($2026)
+Bye bye <END>
+#JMP($202F)
+Bye bye <END>

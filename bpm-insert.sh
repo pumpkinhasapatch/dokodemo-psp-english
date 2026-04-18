@@ -8,7 +8,7 @@ echo Replace files in DATA.BP
 # TODO: Ask user to close any conflicting programs and try again
 
 echo Inserting NEKO.KSC...
-./tools/bpar id build/PSP_GAME/USRDIR/data/DATA.BP insert/NEKO.KSC
+./tools/bpar/bpar id build/PSP_GAME/USRDIR/data/DATA.BP insert/NEKO.KSC
 
 cd textures
 
@@ -19,7 +19,8 @@ for file in $(find . -type f -name '*.GIM')
 do
     echo Inserting $file...
     # write to null to hide Debug output when shifting other files
-    ../tools/bpar id ../build/PSP_GAME/USRDIR/data/DATA.BP "$file"> /dev/null 2>&1
+    ../tools/bpar/bpar id ../build/PSP_GAME/USRDIR/data/DATA.BP "$file"> /dev/null 2>&1
 done;
+
 
 cd ..

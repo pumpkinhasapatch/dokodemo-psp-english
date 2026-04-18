@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# First thing entered after "./build.sh " in the Terminal
+iso=$1
+
 echo ========================================================
 echo "     ~ Doko Demo Issyo PSP Patcher (Shell script) ~"
 echo https://github.com/pumpkinhasapatch/dokodemo-psp-english
@@ -17,7 +20,7 @@ if [ ! -d tools ]; then mkdir tools; fi
 error=0
 echo Checking for required files/programs...
 
-if [ ! -f ./tools/bpar ]; then
+if [ ! -f ./tools/bpar/bpar ]; then
   echo "bpar is missing (needed to read/write to the game's DATA.BP file)."
   echo "If you have bpar.c you can build it as a Linux program using 'cc bpar.c -O0 -g -o bpar'."
   echo " "
@@ -38,13 +41,46 @@ if [ ! -f ./tools/abcde/abcde.pl ]; then
   error=1
 fi
 
-if [ ! -f ./build/PSP_GAME/USRDIR/data/DATA.BP ]; then
-  echo "Game files are missing from the 'build' folder or are not from Doko Demo Issyo."
-  echo "Please extract your game ISO and place the PSP_GAME folder and UMD_DATA.BIN inside the 'build' folder."
-  echo "You can use PeaZip, 7-Zip, Windows Explorer and many other programs to open or extract an ISO."
-  echo "Note that some Linux software extracts the game with lowercase file names which will not work."
-  echo " "
+if [ ! -f ./tools/7zip/7zz ]; then
+  echo tools/7zip/7zz was not found
+  echo Attempting to download it from GitHub...
+  cd tools
+    curl -L https://github.com/ip7z/7zip/releases/download/24.08/7z2408-linux-x64.tar.xz -o 7zip.tar.xz
+    mkdir 7zip
+    cd 7zip
+      tar -xf ../7zip.tar.xz
+    cd ..
+  cd ..
+fi
+
+if [ ! -f ./tools/7zip/7zz ]; then
+  echo 7zip is still not found, download/extraction failed!
   error=1
+else
+  if [ -z "$iso" ]; then
+    echo Command argument is empty. Use a Dokodemo UMD .iso file with './build.sh path/to/ddipsp.iso' or extract it to the 'build' folder to apply game patches.
+    echo " "
+
+    if [ ! -f ./build/PSP_GAME/USRDIR/data/DATA.BP ]; then
+      echo "Game files are missing from the 'build' folder or are not from Doko Demo Issyo."
+      echo "Please extract your game ISO and place the PSP_GAME folder and UMD_DATA.BIN inside the 'build' folder."
+      echo "You can use PeaZip, 7-Zip, Windows Explorer and many other programs to open or extract an ISO."
+      echo "Note that some Linux software extracts the game with lowercase file names which will not work."
+      echo " "
+      error=1
+    else
+      echo Patching on top of existing build folder. You should delete the build folder first if your game is corrupted.
+    fi
+  else
+    if [ -f $iso ]; then
+      echo Trying to extract game into build folder
+      cd build
+        ../tools/7zip/7zz x -y "../$iso"
+      cd ..
+    else
+      echo $iso is not a file
+    fi
+  fi
 fi
 
 # https://stackoverflow.com/a/7522866
@@ -88,7 +124,7 @@ if [ ! -f ./insert/NEKO.KSC ]; then
   cd extract
   echo Extracting original game files from DATA.BP, this will take a minute
   # Hide output while bpar spams "magic number" warnings for unknown files
-  ../tools/bpar -x ../build/PSP_GAME/USRDIR/data/DATA.BP > /dev/null 2>&1
+  ../tools/bpar/bpar -x ../build/PSP_GAME/USRDIR/data/DATA.BP > /dev/null 2>&1
 
   # Delete font files because's thousands and they take forever to extract
   echo Skipping font textures
@@ -98,7 +134,7 @@ if [ ! -f ./insert/NEKO.KSC ]; then
   echo Extracting BPM archives in the current directory
   # Use ./KS*.BPM to only extract KSC/DIC archives or ./*.BPM to extract everything
   for file in ./KS*.BPM; do
-    ../tools/bpar -x "$file" 
+    ../tools/bpar/bpar -x "$file"
   done
 
   echo Cleaning up BPM archives
@@ -116,25 +152,40 @@ perl tools/abcde/abcde.pl --artificial-end-token "<END>" -cm abcde::Atlas insert
 echo Writing patches/toro_dialogue.txt to insert/NEKO.KSC...
 perl tools/abcde/abcde.pl --artificial-end-token "<END>" -cm abcde::Atlas insert/NEKO.KSC patches/toro_dialogue.txt
 echo Writing insert/NEKO.KSC to build/PSP_GAME/USRDIR/data/DATA.BP...
-./tools/bpar id build/PSP_GAME/USRDIR/data/DATA.BP insert/NEKO.KSC
+./tools/bpar/bpar id build/PSP_GAME/USRDIR/data/DATA.BP insert/NEKO.KSC
+
+
+echo Patching patches/suzuki_messages.txt to insert/ROBO.KSC...
+perl tools/abcde/abcde.pl --artificial-end-token "<END>" -cm abcde::Atlas insert/ROBO.KSC patches/suzuki_messages.txt
+echo Inserting insert/ROBO.KSC to build/PSP_GAME/USRDIR/data/DATA.BP...
+./tools/bpar/bpar id build/PSP_GAME/USRDIR/data/DATA.BP insert/ROBO.KSC
 
 echo Patching patches/jun_messages.txt to insert/USAGI.KSC...
 perl tools/abcde/abcde.pl --artificial-end-token "<END>" -cm abcde::Atlas insert/USAGI.KSC patches/jun_messages.txt
 echo Inserting insert/USAGI.KSC to build/PSP_GAME/USRDIR/data/DATA.BP...
-./tools/bpar id build/PSP_GAME/USRDIR/data/DATA.BP insert/USAGI.KSC
+./tools/bpar/bpar id build/PSP_GAME/USRDIR/data/DATA.BP insert/USAGI.KSC
 
 cd textures
 
-for file in $(find . -type f -name '*.png')
-do
-    echo Converting png image $file to GIM...
-    wine ../tools/GimConv/GimConv.exe $file -o "${file%.png}.GIM"
-done
-
+# Delete existing GIM images from previous build
 for file in $(find . -type f -name '*.GIM')
 do
-    echo "Inserting GIM image $file..."
-    ../tools/bpar id ../build/PSP_GAME/USRDIR/data/DATA.BP "$file" # %> /dev/null # Hide bpar debug text
+    rm "$file"
+done
+
+from=png
+to=GIM
+
+for file in $(find . -type f -name "*.${from}")
+do
+    echo Converting ${from} image $file to ${to}...
+    wine ../tools/GimConv/GimConv.exe $file -bpp4 -o "${file%.${from}}.${to}"
+done
+
+for file in $(find . -type f -name "*.${to}")
+do
+    echo "Inserting ${to} image $file..."
+    ../tools/bpar/bpar id ../build/PSP_GAME/USRDIR/data/DATA.BP "$file"
 done
 
 cd ..

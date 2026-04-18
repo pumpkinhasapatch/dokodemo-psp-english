@@ -29,12 +29,12 @@
 #FIXEDLENGTH(4,0)
 meow<END>
 
-//[POKEPI]の名前
+//[WORD1]の名前
 #FIXEDLENGTH(11,0)
 #JMP($C2D)
-[POKEPI]s name
+[WORD1]s name
 #JMP($C76)
-[POKEPI]s name
+[WORD1]s name
 
 // [LR] is a line return break (Tell the game to move down to a new line).
 //それは おいといて…[LR]<END>
@@ -118,7 +118,8 @@ Nya ♥[LR]<END>
 //何を おしえて くれるの[NYA]？[LR]
 #FIXEDLENGTH(28,0)
 #JMP($3E4A)
-What can you tell me?[LR]<END>
+What can you[LR]
+tell me about?[LR]<END>
 
 //なぁに？ なぁに？[LR]何を おしえて くれるの[NYA]～[LR]<END>
 #FIXEDLENGTH(46,0)
@@ -171,7 +172,7 @@ Oh nya～[LR]<END>
 Tut～[LR]<END>
 
 // If player tries to teach the same word more than once.
-//[POKEPI]は もう 知ってるの[NYA]！[LR]<END>
+//[WORD1]は もう 知ってるの[NYA]！[LR]<END>
 #FIXEDLENGTH(29,0)
 #JMP($3FEC)
 I already know[LR]
@@ -186,7 +187,7 @@ It's <$16><$14><$02><$00><$16>!<END>
 #FIXEDLENGTH(35,0)
 #JMP($4034)
 I've gotten[LR]
-smarter again, nya![LR]<END>
+smarter again, meow![LR]<END>
 
 //これで ちょっと[LR]<END>
 #FIXEDLENGTH(16,0)
@@ -208,7 +209,9 @@ teaching me,[LR]
 //しっかり 覚えないと[NYA]…[LR]<END>
 #FIXEDLENGTH(25,0)
 #JMP($40E0)
-I have to remember [NYA]…[LR]<END>
+I have to[LR]
+remember[LR]
+[NYA]…[LR]<END>
 
 //おぼえた [NYA]！[LR]どうも ありがとう[NYA]！[LR]<END>
 #FIXEDLENGTH(37,0)
@@ -219,7 +222,8 @@ Thanks a lot![LR]<END>
 //がんばって 覚えないと[NYA]～[LR]<END>
 #FIXEDLENGTH(27,0)
 #JMP($4144)
-It's hard to learn [NYA]～[LR]<END>
+It's hard to[LR]
+learn [NYA]～[LR]<END>
 
 //これでまた…[LR]人間に 近づいた[NYA]！[LR]<END>
 #FIXEDLENGTH(34,0)
@@ -230,8 +234,8 @@ being a human [NYA]！[LR]<END>
 //他のが 知りたい[NYA]～[LR]<END>
 #FIXEDLENGTH(21,0)
 #JMP($41A7)
-//I want to know about another place
-Let's go somewhere～[LR]<END>
+// I want to know the others
+I know that already.[LR]<END>
 
 //今度は ちがうのを おしえて[NYA]～[LR]<END>
 #FIXEDLENGTH(32,0)
@@ -311,28 +315,94 @@ I'm a bit scared…[LR]
 You said to call them <$14><$00><$00>…[LR]<END>
 
 //<$14><$00><$00><$14><$01><$00> なの[NYA]？<END>
-#FIXEDLENGTH(16,0)
 #JMP($43CD)
+#FIXEDLENGTH(16,0)
 It's <$14><$00><$00><$14><$01><$00> [NYA]?<END>
 
 //<$14><$00><$00>、[LR]なんだ～[LR]<END>
-#FIXEDLENGTH(15,0)
 #JMP($43E8)
-What is <$14><$00><$00>?[LR]<END>
+#FIXEDLENGTH(15,0)
+So it's[LR]
+<$14><$00><$00>～[LR]<END>
 
-//<$14><$00><$00>って [POKEPI]と 比べたら どんな人？<END>
-#FIXEDLENGTH(35,0)
+//<$14><$00><$00>って [WORD1]と 比べたら どんな人？<END>
 #JMP($440B)
-What kind of person is <$14><$00><$00>?<END>
+#FIXEDLENGTH(35,0)
+What rank is[LR]
+<$14><$00><$00>[LR]
+compared[LR]
+to [WORD1]?<END>
+
+//エライ人
+#JMP($97AE7)
+#FIXEDLENGTH(8,0)
+Greatest<END>
+
+//上の人
+#JMP($97AF0)
+#FIXEDLENGTH(6,0)
+Higher<END>
+
+//同じぐらいの人
+#JMP($97AF7)
+#FIXEDLENGTH(14,0)
+Same ranking<END>
+
+//下の人
+#JMP($97B06)
+#FIXEDLENGTH(6,0)
+Lower<END>
+
+//<$16><$14><$02><$00><$16>、好き？
+#JMP($7772)
+#FIXEDLENGTH(13,0)
+Liking[LR]
+<$16><$14><$02><$00><$16>?<END>
+
+//大好き
+#JMP($97D62)
+#FIXEDLENGTH(6,0)
+Loved<END>
+
+//好き
+#JMP($97D69)
+#FIXEDLENGTH(4,0)
+Like<END>
+
+//ふつう
+#JMP($97D6E)
+#FIXEDLENGTH(6,0)
+Normal<END>
+
+//キライ
+// Dislike
+#JMP($97D75)
+#FIXEDLENGTH(6,0)
+Dislke<END>
+
+//大キライ
+#JMP($97D7C)
+#FIXEDLENGTH(8,0)
+Hated<END>
+
+//男の人
+#JMP($9753D)
+#FIXEDLENGTH(6,0)
+man<END>
+
+//女の人
+#JMP($97544)
+#FIXEDLENGTH(6,0)
+woman<END>
 
 //ちがうよ～[LR]<END>
-#FIXEDLENGTH(11,0)
 #JMP($445B)
+#FIXEDLENGTH(11,0)
 Different[LR]<END>
 
 //<$16><$14><$03><$00><$16>は <$16><$14><$02><$00><$16> なの[NYA]～[LR]<END>
-#FIXEDLENGTH(24,0)
 #JMP($4468)
+#FIXEDLENGTH(24,0)
 <$16><$14><$03><$00><$16> is <$16><$14><$02><$00><$16> [NYA]～[LR]<END>
 
 //そうじゃ なくって…[LR]<END>
@@ -340,23 +410,23 @@ Different[LR]<END>
 #JMP($4493)
 That's not it…[LR]<END>
 
-//[PLAYER]って…[LR]
-//[POKEPI]と カンケーのある <$14><$02><$00>？<END>
+//[WORD0]って…[LR]
+//[WORD1]と カンケーのある <$14><$02><$00>？<END>
 #FIXEDLENGTH(40,0)
 #JMP($44BA)
-[PLAYER] huh…[LR]
-Is <$14><$02><$00> related to [POKEPI]？<END>
+[WORD0] huh…[LR]
+Is <$14><$02><$00> related to [WORD1]？<END>
 
 //ふむふむ…[LR]<END>
 #FIXEDLENGTH(11,0)
 #JMP($44ED)
 Hmmmm…[LR]<END>
 
-//[PLAYER]と [POKEPI]は…[LR]
+//[WORD0]と [WORD1]は…[LR]
 //カンケーが あるんだ[NYA]…[LR]<END>
 #FIXEDLENGTH(43,0)
 #JMP($4503)
-[PLAYER] and [POKEPI][LR]
+[WORD0] and [WORD1][LR]
 have a relationship…[LR]<END>
 
 //そっか…[LR]<END>
@@ -377,42 +447,69 @@ Ah![LR]<END>
 //おそわった ことばは…[LR]<END>
 #FIXEDLENGTH(22,0)
 #JMP($4584)
-The words I learned…[LR]<END>
+The words I[LR]
+learned…[LR]<END>
 
 #JMP($459C)
 #FIXEDLENGTH(30,0)
 //ことばメモに 書いておくの[NYA]！<END>
-Write them in your notes, [NYA]!<END>
+I write them in[LR]
+the Notebook!<END>
+
+//ことばメモ？
+#JMP($97A51)
+#FIXEDLENGTH(12,0)
+A word memo?<END>
+
+//何それ？
+#JMP($97A5E)
+#FIXEDLENGTH(8,0)
+Really?<END>
 
 #JMP($45CD)
 #FIXEDLENGTH(33,0)
 //もし 読み方とか まちがってたら～[LR]<END>
-Excuse me if I read it wrong～[LR]<END>
+If I ever use a word wrong,[LR]<END>
 
 #JMP($4601)
 #FIXEDLENGTH(25,0)
-//[PLAYER]に 直してほしい[NYA]♥<END>
-I want [PLAYER] to fix it ♥<END>
+//[WORD0]に 直してほしい[NYA]♥<END>
+you can fix it[LR]
+there [NYA].<END>
+
+//読み方とか？
+#JMP($97A67)
+#FIXEDLENGTH(12,0)
+Its meaning?<END>
+
+//直せはいいの？
+#JMP($97A74)
+#FIXEDLENGTH(14,0)
+To change it?<END>
 
 #JMP($462D)
 #FIXEDLENGTH(22,0)
 //ちゃんと 読めないと…[LR]<END>
-If you can't read it…[LR]<END>
+If I don't[LR]
+know it…[LR]<END>
 
 #JMP($4645)
 #FIXEDLENGTH(29,0)
 //しりとりに 使えないもん[NYA]～[LR]<END>
-The word can't be used [NYA]～[LR]<END>
+The word wont[LR]
+make sense～[LR]<END>
 
 #JMP($4675)
 #FIXEDLENGTH(19,0)
-//だから [PLAYER]先生！[LR]<END>
-So, master [PLAYER]！[LR]<END>
+//だから [WORD0]先生！[LR]<END>
+So, master[LR]
+[WORD0]！[LR]<END>
 
 #JMP($468A)
 #FIXEDLENGTH(19,0)
 //よろしく なの[NYA]～[LR]<END>
-Thank you, [NYA]～[LR]<END>
+Take care,[LR]
+[NYA]～[LR]<END>
 
 #JMP($46B1)
 #FIXEDLENGTH(5,0)
@@ -426,8 +523,8 @@ By the way…[LR]<END>
 
 #JMP($46D0)
 #FIXEDLENGTH(21,0)
-//前の子の [PLAYER]から…[LR]<END>
-It's from [PLAYER]…[LR]<END>
+//前の子の [WORD0]から…[LR]<END>
+It's from [WORD0]…[LR]<END>
 
 #JMP($46F0)
 #FIXEDLENGTH(30,0)
@@ -436,38 +533,38 @@ You have the word memo, [NYA]!<END>
 
 #JMP($4721)
 #FIXEDLENGTH(36,0)
-//[PLAYER]が 残してくれた 大切なコトバ…[LR]<END>
-The words that [PLAYER] left behind…[LR]<END>
+//[WORD0]が 残してくれた 大切なコトバ…[LR]<END>
+The words that [WORD0] left behind…[LR]<END>
 
 #JMP($474F)
 #FIXEDLENGTH(37,0)
-//これを 使って [POKEPI]も おぼえるの[NYA]！<END>
-You can also remember [POKEPI] with it!<END>
+//これを 使って [WORD1]も おぼえるの[NYA]！<END>
+You can also remember [WORD1] with it!<END>
 
 #JMP($4787)
 #FIXEDLENGTH(25,0)
-//[PLAYER]に 負けないぐらい～[LR]<END>
-You're as good as [PLAYER]～[LR]<END>
+//[WORD0]に 負けないぐらい～[LR]<END>
+You're as good as [WORD0]～[LR]<END>
 
 #JMP($47B0)
 #FIXEDLENGTH(40,0)
-//[POKEPI]も いっぱい コトバ おぼえるの[NYA]！[LR]<END>
-[POKEPI] also remembers lots of words！[LR]<END>
+//[WORD1]も いっぱい コトバ おぼえるの[NYA]！[LR]<END>
+[WORD1] also remembers lots of words！[LR]<END>
 
 #JMP($47F0)
 #FIXEDLENGTH(18,0)
-//[POKEPI]の おトモダチ<END>
-[POKEPI]'s friends<END>
+//[WORD1]の おトモダチ<END>
+[WORD1]'s friends<END>
 
-#JMP($4810)
+#JMP($480B)
 #FIXEDLENGTH(39,0)
-//[PLAYER]が おしえてくれた コトバなの[NYA]～[LR]<END>
-This is what [PLAYER] taught me, [NYA]～[LR]<END>
+//[WORD0]が おしえてくれた コトバなの[NYA]～[LR]<END>
+This is what [WORD0] taught me, [NYA]～[LR]<END>
 
 #JMP($483D)
 #FIXEDLENGTH(33,0)
-//[PLAYER]は [POKEPI]って 言ってたけど…[LR]<END>
-[PLAYER] said their name was [POKEPI]…[LR]<END>
+//[WORD0]は [WORD1]って 言ってたけど…[LR]<END>
+[WORD0] said their name was [WORD1]…[LR]<END>
 
 #JMP($486B)
 #FIXEDLENGTH(15,0)
@@ -477,9 +574,11 @@ How is <$16><$14><$02><$00><$16>？[LR]<END>
 #JMP($488D)
 #FIXEDLENGTH(46,0)
 //そういや…[LR]
-//[PLAYER]が 好きかどうか 知らない[NYA]♥[LR]<END>
-I see, nya…[LR]
-I'm not sure if I like [PLAYER] [NYA][LR]<END>
+//[WORD0]が 好きかどうか 知らない[NYA]♥[LR]<END>
+// Player did not answer how much they like the word/person
+By the way…[LR]
+I'm not sure if[LR]
+you like them.[LR]<END>
 
 #JMP($48C9)
 #FIXEDLENGTH(9,0)
@@ -498,8 +597,8 @@ I see～[LR]<END>
 
 #JMP($490B)
 #FIXEDLENGTH(17,0)
-//[PLAYER]なんだ[NYA]！[LR]<END>
-It's [PLAYER], [NYA]![LR]<END>
+//[WORD0]なんだ[NYA]！[LR]<END>
+It's [WORD0], [NYA]![LR]<END>
 
 #JMP($4927)
 #FIXEDLENGTH(9,0)
@@ -508,8 +607,8 @@ I see…[LR]<END>
 
 #JMP($4932)
 #FIXEDLENGTH(17,0)
-//[PLAYER]なんだ[NYA]…[LR]<END>
-It's [PLAYER], nya,[LR]<END>
+//[WORD0]なんだ[NYA]…[LR]<END>
+It's [WORD0], meow,[LR]<END>
 
 // Person's name pronouns/honorifics
 
@@ -569,18 +668,109 @@ sama<END>
 //先生<END>
 -sei<END>
 
+#JMP($97A46)
+#FIXEDLENGTH(10,0)
+//やりなおし
+Re-enter<END>
+
+#JMP($97AA8)
+#FIXEDLENGTH(14,0)
+//呼び捨てでイイ
+Use name only<END>
+
+#JMP($97AB7)
+#FIXEDLENGTH(7,0)
+//その他
+Other<END>
+
+#JMP($97ABE)
+#FIXEDLENGTH(4,0)
+//さん
+-san<END>
+
+#JMP($97AC3)
+#FIXEDLENGTH(6,0)
+//ちゃん
+-chan<END>
+
+#JMP($97ACA)
+#FIXEDLENGTH(4,0)
+//くん
+-kun<END>
+
+#JMP($97ACF)
+#FIXEDLENGTH(4,0)
+//さま
+sama<END>
+
+#JMP($97AD4)
+#FIXEDLENGTH(4,0)
+-sei<END>
+
+#JMP($97AD9)
+#FIXEDLENGTH(4,0)
+//そう
+// seems right, you got it
+Sure<END>
+
+#JMP($97ADE)
+#FIXEDLENGTH(8,0)
+//まちがい
+Mistake<END>
+
 #JMP($4FBE)
 #FIXEDLENGTH(22,0)
 //<$16><$14><$02><$00><$16>って…[LR]
 //どんな人？<END>
-What person is <$16><$14><$02><$00><$16>?<END>
+What type is <$16><$14><$02><$00><$16>?<END>
+
+//家族
+// Family
+#JMP($975D7)
+#FIXEDLENGTH(4,0)
+Fami<END>
+
+//結婚相手
+#JMP($975CE)
+#FIXEDLENGTH(8,0)
+Spouse<END>
+
+// Friends, already translated somewhere
+
+//恋人
+#JMP($975DC)
+#FIXEDLENGTH(4,0)
+Love<END>
+
+//知り合い
+// Acquaintance
+#JMP($97B88)
+#FIXEDLENGTH(8,0)
+Aquatnce<END>
 
 #JMP($5074)
 #FIXEDLENGTH(31,0)
 //<$16><$14><$02><$00><$16>って…[LR]
 //ひとり？ たくさん？<END>
-Is <$16><$14><$02><$00><$16> alone?[LR]
-A lot?<END>
+// Teach word -> Celebrity -> Idol
+Are they one[LR]
+person or a[LR]
+group?<END>
+
+//ひとり
+#JMP($97B71)
+#FIXEDLENGTH(6,0)
+Alone<END>
+
+//コンビ
+#JMP($97B78)
+#FIXEDLENGTH(6,0)
+Duo<END>
+
+//グループ
+#JMP($97B7F)
+#FIXEDLENGTH(8,0)
+Group<END>
 
 #JMP($51EF)
 #FIXEDLENGTH(22,0)
@@ -606,8 +796,18 @@ Who are they?<END>
 #FIXEDLENGTH(28,0)
 //<$16><$14><$02?><$00><$16>って…[LR]
 //どんな食べモノ？<END>
-<$16><$14><$02?><$00><$16>…[LR]
-What kind of food?<END>
+What type of[LR]
+food is <$16><$14><$02><$00><$16>?<END>
+
+#JMP($977D4)
+#FIXEDLENGTH(4,0)
+//料理
+Meal<END>
+
+#JMP($977D9)
+#FIXEDLENGTH(4,0)
+//食材 - Ingredient
+Side<END>
 
 #JMP($6149)
 #FIXEDLENGTH(20,0)
@@ -748,9 +948,9 @@ Wow, what to do～[LR]<END>
 
 #JMP($99F5)
 #FIXEDLENGTH(32,0)
-//え？ え？[LR][PLAYER]は 強いんだ[NYA]～[LR]<END>
+//え？ え？[LR][WORD0]は 強いんだ[NYA]～[LR]<END>
 Huh? What?[LR]
-[PLAYER] is strong～[LR]<END>
+[WORD0] is strong～[LR]<END>
 
 #JMP($9A33)
 #FIXEDLENGTH(29,0)
@@ -827,9 +1027,9 @@ Ah, so…?[LR]<END>
 
 #JMP($9CF6)
 #FIXEDLENGTH(28,0)
-//え～[LR][POKEPI]、 そんなに大切？[LR]<END>
+//え～[LR][WORD1]、 そんなに大切？[LR]<END>
 Eh～[LR]
-Is [POKEPI] important?[LR]<END>
+Is [WORD1] important?[LR]<END>
 
 #JMP($9D1D)
 #FIXEDLENGTH(15,0)
@@ -873,9 +1073,9 @@ Huh? Hey…?[LR]<END>
 
 #JMP($9F64)
 #FIXEDLENGTH(13,0)
-//え～[LR][POKEPI]？[LR]<END>
+//え～[LR][WORD1]？[LR]<END>
 Eh～[LR]
-[POKEPI]？[LR]<END>
+[WORD1]？[LR]<END>
 
 #JMP($9F7C)
 #FIXEDLENGTH(15,0)
@@ -893,15 +1093,15 @@ Huh, hey?[LR]<END>
 
 #JMP($A887)
 #FIXEDLENGTH(19,0)
-//なるほど～[LR][PLAYER]…[LR]<END>
+//なるほど～[LR][WORD0]…[LR]<END>
 I see～[LR]
-[PLAYER]…[LR]<END>
+[WORD0]…[LR]<END>
 
 #JMP($A8A8)
 #FIXEDLENGTH(17,0)
-//ふにゃ～[LR][PLAYER]…[LR]<END>
+//ふにゃ～[LR][WORD0]…[LR]<END>
 Wow nya～[LR]
-[PLAYER]…[LR]<END>
+[WORD0]…[LR]<END>
 
 #JMP($B168)
 #FIXEDLENGTH(37,0)
@@ -981,17 +1181,17 @@ If you ask me～[LR]<END>
 #JMP($B5BC)
 #FIXEDLENGTH(37,0)
 //そっか♥[LR]
-//なでなでが [PLAYER]の答え[NYA]♥[LR]<END>
+//なでなでが [WORD0]の答え[NYA]♥[LR]<END>
 I see ♥[LR]
-Pet me, [PLAYER] [NYA]♥[LR]<END>
+Pet me, [WORD0] [NYA]♥[LR]<END>
 
 #JMP($B5EF)
 #FIXEDLENGTH(39,0)
 // Dekopin - finger flick to the forehead​, Japanese family culture
 //そっか…[LR]
-//でこピンが [PLAYER]の答えだ[NYA]♥[LR]<END>
+//でこピンが [WORD0]の答えだ[NYA]♥[LR]<END>
 I see…[LR]
-Dekopin me [PLAYER] [NYA]♥[LR]<END>
+Dekopin me [WORD0] [NYA]♥[LR]<END>
 
 #JMP($B621)
 #FIXEDLENGTH(24,0)
@@ -1005,8 +1205,8 @@ I got Dekopinned…[LR]<END>
 
 #JMP($B697)
 #FIXEDLENGTH(22,0)
-//さすが [POKEPI] だよね！[LR]<END>
-As expected of [POKEPI]![LR]<END>
+//さすが [WORD1] だよね！[LR]<END>
+As expected of [WORD1]![LR]<END>
 
 #JMP($B6B8)
 #FIXEDLENGTH(24,0)
@@ -1093,15 +1293,15 @@ Is it better if I call you by your name?[LR]<END>
 
 #JMP($BB8D)
 #FIXEDLENGTH(27,0)
-//わーい！[LR][PLAYER]、おかえり～[LR]<END>
+//わーい！[LR][WORD0]、おかえり～[LR]<END>
 Yay![LR]
-[PLAYER] returned～[LR]<END>
+[WORD0] returned～[LR]<END>
 
 #JMP($BBEA)
 #FIXEDLENGTH(46,0)
-//でもね…[LR][PLAYER]の ルス中に 誰も 来なかったよ？[LR]<END>
+//でもね…[LR][WORD0]の ルス中に 誰も 来なかったよ？[LR]<END>
 But…[LR]
-During [PLAYER]'s absence, nobody came?[LR]<END>
+During [WORD0]'s absence, nobody came?[LR]<END>
 
 #JMP($BC23)
 #FIXEDLENGTH(30,0)
@@ -1126,7 +1326,111 @@ Can you tell me your name?<END>
 //あれれ？[LR]誰だったのか[NYA]？[LR]<END>
 Huh?[LR]Who was that, [NYA]?<END>
 
-#JMP($BD3A,$BD4A)
+// Name entered
+#JMP($C634)
+#FIXEDLENGTH(35,0)
+//はじめまして～[LR]
+//ネコの [WORD0]です[NYA][LR]
+That's a nice[LR]
+name. I'm[LR]
+[WORD0], [NYA].[LR]<END>
+
+#JMP($C665)
+#FIXEDLENGTH(27,0)
+//[WORD0]は…
+//女の人？ 男の人？
+Are you male[LR]
+or female?[LR]<END>
+
+// Male Gender
+#JMP($97979)
+#FIXEDLENGTH(2,0)
+<$81><$89><END>
+
+// Female Gender
+#JMP($9797C)
+<$81><$8A><END>
+
+//わーい！[LR]<$14><$00><$00>の人[NYA]～[LR]<END>
+#JMP($C692)
+#FIXEDLENGTH(22,0)
+Oh![LR]
+[WORD0] is <$14><$00><$00> [NYA].[LR]<END>
+
+//わー[LR]<$14><$00><$00>の人[NYA]～[LR]
+#JMP($C6B4)
+#FIXEDLENGTH(18,0)
+Ah～[LR]
+[WORD0] is <$14><$00><$00>.[LR]<END>
+
+//[WORD0]に 聞きたいコトが あるの[NYA]～
+#JMP($B4A0)
+#FIXEDLENGTH(34,0)
+[WORD0], can I ask you something?<END>
+
+//[WORD1]って 恋愛するのに 必要？ - Shows the player's name, not Pokepi's
+#JMP($5C513)
+#FIXEDLENGTH(29,0)
+Is there any love with [WORD1]?<END>
+
+//恋愛にカンケーある
+#JMP($97F44)
+#FIXEDLENGTH(18,0)
+It's about love<END>
+
+//恋愛のコトじゃ (+ not)
+#JMP($9803F)
+#FIXEDLENGTH(14,0)
+No, it's<END>
+
+//ない - negative ending particle
+#FIXEDLENGTH(4,0)
+#JMP($ABFF)
+ not<END>
+#JMP($13A28)
+ not<END>
+#JMP($13B33)
+ not<END>
+#JMP($99500)
+ not<END>
+
+//わー[LR]
+//いいコト おそわった…[LR]
+#JMP($C2CD)
+#FIXEDLENGTH(27,0)
+Good things[LR]
+I've learned…[LR]<END>
+
+//えっとね…[LR]
+#JMP($C6D1)
+#FIXEDLENGTH(11,0)
+Well see…[LR]<END>
+
+//[WORD1] 人間に なるのが ユメなの…[LR]
+#JMP($C6E6)
+#FIXEDLENGTH(33,0)
+My dream is to become a human…[LR]<END>
+
+//人間に なるために[LR]
+//いろんな 人から[LR]
+//いろんな コトバを[LR]
+//おそわりたいの[NYA]…[LR]
+#JMP($C712)
+#FIXEDLENGTH(72,0)
+I want to learn various words from people so I can talk to humans, [NYA][LR]<END>
+
+//[WORD0]、 何か おしえて～？[LR]
+#JMP($C765)
+#FIXEDLENGTH(26,0)
+[WORD0], will[LR]
+you help me?[LR]<END>
+
+//それじゃあ…[LR]
+#JMP($C7DF)
+#FIXEDLENGTH(13,0)
+Well then…[LR]<END>
+
+#JMP($BD3A)
 #FIXEDLENGTH(17,0)
 //えっと、えっと…[LR]<END>
 Um, err…[LR]<END>
@@ -1134,7 +1438,13 @@ Um, err…[LR]<END>
 #JMP($BD4D)
 #FIXEDLENGTH(21,0)
 //どちらさま です[NYA]？<END>
-Which one is it, [NYA]?<END>
+Who are you,[LR]
+[NYA]?<END>
+
+//はじめての人
+#JMP($9815C)
+#FIXEDLENGTH(12,0)
+New person<END>
 
 #JMP($BD70)
 #FIXEDLENGTH(20,0)
@@ -1151,6 +1461,72 @@ New users cannot write in friend notes, [NYA]～<END>
 //ともだちノートの[LR]整理を してもらって[NYA]…[LR]<END>
 I want you to sort my friend notes, [NYA]…[LR]<END>
 
+// Idle chatter
+
+#JMP($29919)
+#FIXEDLENGTH(26,0)
+//ちょっと 寝すぎちゃった…[LR]
+I overslept this morning.[LR]<END>
+
+#JMP($29935)
+#FIXEDLENGTH(23,0)
+//目が もわもわ するの…[LR]
+My eyes feel itchy…[LR]<END>
+
+#JMP($29957)
+#FIXEDLENGTH(7,0)
+//でも…
+But…[LR]<END>
+
+#JMP($29960)
+#FIXEDLENGTH(41,0)
+//「寝る子は [WORD0]が育つ」って 言うもんね～
+// [WORD0] is a body part. Uses $1C4A (腹筋, abs) from NEKO.DIC if no words taught
+They say a sleeping child gets good [WORD0]<END>
+
+// Selection box
+#JMP($9A434)
+#FIXEDLENGTH(12,0)
+//ま、言うかな
+I guess so<END>
+
+#JMP($9A441)
+#FIXEDLENGTH(12,0)
+//言わないよ～
+Don't say it<END>
+
+// If "I guess so" selected
+#JMP($299A4)
+#FIXEDLENGTH(35,0)
+//いっぱい 寝て いっぱい 育つの[NYA]！[LR]
+Sleep more and you'll grow, [NYA]![LR]<END>
+
+#JMP($299D2)
+#FIXEDLENGTH(43,0)
+//そして [WORD0]の リッパな 人間に なるの[NYA]♥[LR]
+And become a person with good [WORD0], [NYA]♥[LR]<END>
+
+// If "Don't say it" selected
+#JMP($29A0C)
+#FIXEDLENGTH(9,0)
+//はりゃ!?[LR]
+What?![LR]<END>
+
+//寝ても [WORD0]は 大きくならないの～[LR]
+#JMP($29A20)
+#FIXEDLENGTH(34,0)
+My [WORD0] wont improve from sleep?[LR]<END>
+
+$JMP($29A4D)
+#FIXEDLENGTH(18,0)
+//いっぱい 寝れば…[LR]
+I thought sleep…[LR]<END>
+
+#JMP($29A61)
+#FIXEDLENGTH(49,0)
+//[WORD0]の リッパな 人間に なれると 思ったのに[NYA]…
+would make me a person with better [WORD0], [NYA]…[LR]<END>
+
 // New game introduction
 #JMP($7BCB0)
 #FIXEDLENGTH(19,0)
@@ -1160,13 +1536,13 @@ there…[LR]<END>
 
 #JMP($7BCCD)
 #FIXEDLENGTH(19,0)
-//ネコの [POKEPI]です…[LR]<END>
-I'm [POKEPI][LR]
+//ネコの [WORD1]です…[LR]<END>
+I'm [WORD1][LR]
 the cat.[LR]<END>
 
 #JMP($7BCFB)
 #FIXEDLENGTH(19,0)
-//あのね…[LR][POKEPI]ね…[LR]<END>
+//あのね…[LR][WORD1]ね…[LR]<END>
 Listen up[LR]
 please…[LR]<END>
 
@@ -1196,7 +1572,7 @@ my destiny![LR]<END>
 
 #JMP($7BDB2)
 #FIXEDLENGTH(37,0)
-//ここで [POKEPI]と いっしょに 暮らせば！[LR]<END>
+//ここで [WORD1]と いっしょに 暮らせば！[LR]<END>
 I wish I could[LR]
 live here[LR]
 with you![LR]<END>
@@ -1255,3 +1631,654 @@ meow!<END>
 #FIXEDLENGTH(8,0)
 #JMP($983CF)
 Bye bye <END>
+
+//------------
+//夜 お部屋の電気…[LR]
+#FIXEDLENGTH(17,0)
+#JMP($850AD)
+Here at night…[LR]<END>
+//真っ暗にして 寝るのって コワイよね？
+#JMP($850C7)
+#FIXEDLENGTH(36,0)
+Isn't it scary to sleep in the dark?<END>
+
+//怖い…
+#JMP($9EBEF)
+#FIXEDLENGTH(6,0)
+Scary<END>
+//怖くないよ
+#JMP($9BE0A)
+#FIXEDLENGTH(10,0)
+Not scary<END>
+
+//そうだよね！[LR]
+//[WORD0]も コワイよね？[LR]<END>
+#JMP($8510E)
+#FIXEDLENGTH(34,0)
+I know![LR]
+Are you afraid of it too?[LR]<END>
+// [WORD1] is a word from NEKO.DIC (マンガ家) or taught word
+//[WORD1]の オバケが 出たりするもん[NYA]～[LR]<END>
+#JMP($8513B)
+#FIXEDLENGTH(37,0)
+The [WORD1][LR]
+ghosts appear and stuff～[LR]<END>
+//[WORD0]、今夜は いっしょに 寝てくれる？<END>
+#JMP($851C6)
+#FIXEDLENGTH(37,0)
+[WORD0], will you sleep with me tonight?
+
+// Where does the game pull this text from?
+//いいよ
+//Okay
+
+// Alt: Stop acting like a spoiled person!
+//甘えるな！
+#JMP($9EBF6)
+#FIXEDLENGTH(10,0)
+Grow up!<END>
+
+// If Okay selected
+//よかった～[LR]
+#JMP($85206)
+#FIXEDLENGTH(11,0)
+Great!<END>
+//これで [WORD1]が 出ても 安心[NYA]…[LR]<END>
+#JMP($85213)
+#FIXEDLENGTH(32,0)
+Now I won't be afraid of [WORD1].[LR]<END>
+
+// If Grow up! selected
+#JMP($94F6)
+#FIXEDLENGTH(9,0)
+//ガーン！[LR]
+Gah![LR]<END>
+#JMP($85243)
+#FIXEDLENGTH(11,0)
+//そんにゃ…[LR]
+Is that so…[LR]<END>
+#JMP($85250)
+#FIXEDLENGTH(24,0)
+//甘えたさんは キライ…？[LR]
+You hate spoiled people?<END>
+#JMP($85273)
+#FIXEDLENGTH(41,0)
+//夜に なったら [WORD1]に 食べられちゃうよ～[LR]
+[LR]When night comes, [WORD1] will get you～[LR]<END>
+
+//------------
+#JMP($4E0C7)
+#FIXEDLENGTH(33,0)
+//キライな 人って どんな 人のコト？
+Who is a person that you dislike?<END>
+
+//------------
+#JMP($84BD1)
+#FIXEDLENGTH(20,0)
+//お願いが あるの[NYA]♥
+I have a[LR]
+request [NYA]<END>
+
+#JMP($9B02A)
+#FIXEDLENGTH(8,0)
+//お願い？
+Request?<END>
+
+#JMP($981A8)
+#FIXEDLENGTH(8,0)
+//何かな？
+Say it<END>
+
+#JMP($84BF8)
+#FIXEDLENGTH(17,0)
+//<$14><$00><$00>に 行く時は…[LR]
+When you go <$14><$00><$00>,[LR]<END>
+
+#JMP($84C13)
+#FIXEDLENGTH(37,0)
+// 1614030016 = Pokepi name
+//<$16><$14><$03><$00><$16>も いっしょに 連れてってくれる？
+Can you take me with you?<END>
+
+// If yes:
+
+// If no:
+#JMP($84D4C)
+#FIXEDLENGTH(21,0)
+// 1614030016 = Player name
+//<$16><$14><$03><$00><$16>の 身近にいる…[LR]
+I'm close to you…[LR]
+
+#JMP($84D63)
+#FIXEDLENGTH(40,0)
+//<$16><$14><$01><$00><$16>とか <$16><$14><$02><$00><$16>に 会ってみたかった[NYA]…[LR]
+I wanted to meet <$16><$14><$01><$00><$16> and <$16><$14><$02><$00><$16>, [NYA]…[LR]<END>
+
+
+
+//------------
+#JMP($84F98)
+#FIXEDLENGTH(20,0)
+//人間に なるために…[LR]
+To be like a human,[LR]<END>
+
+#JMP($9066C)
+#FIXEDLENGTH(12,0)
+//おスシ屋さん
+Sushi bars<END>
+
+// Two place names - おスシ屋さん and ねぶた祭り
+#JMP($84FB7)
+#FIXEDLENGTH(22,0)
+//[WORD0]とか [WORD1]とか～[LR]
+I go to [WORD0] & [WORD1][LR]<END>
+
+#JMP($84FCF)
+#FIXEDLENGTH(30,0)
+//いろんな場所を 見学したい[NYA]～
+I want to visit more places～<END>
+
+#JMP($9EBC4)
+#FIXEDLENGTH(16,0)
+//いろんな場所かぁ
+More places, huh?<END>
+
+#JMP($9EBD5)
+#FIXEDLENGTH(16,0)
+//見学しに行こうよ
+Let's go see them<END>
+
+#JMP($85000)
+#FIXEDLENGTH(18,0)
+//でも まだコトバ…[LR]
+But the words…[LR]<END>
+
+#JMP($85014)
+#FIXEDLENGTH(34,0)
+//あんまり 知らないから 不安だ[NYA]…[LR]
+I'm worried because I don't know much[LR]<END>
+
+//------------
+/// Word teaching
+//アイドル
+#FIXEDLENGTH(8,0)
+#JMP($9754B)
+Idol<END>
+
+//歌手
+// Singer
+#FIXEDLENGTH(4,0)
+#JMP($97554)
+Sing<END>
+
+//お笑い
+#FIXEDLENGTH(6,0)
+#JMP($97B56)
+Comedy<END>
+
+//おわらい
+#FIXEDLENGTH(8,0)
+#JMP($97559)
+Comedy<END>
+
+//役者
+// Actor/Actress
+#FIXEDLENGTH(4,0)
+#JMP($97562)
+Actr<END>
+
+//スポーツの人
+#FIXEDLENGTH(12,0)
+#JMP($97567)
+Sportsperson<END>
+
+//キャラクター
+#FIXEDLENGTH(12,0)
+#JMP($97B5D)
+Character<END>
+
+//<$16><$14><$02><$00><$16>って…[LR]
+//男の人？ 女の人？[LR]
+#FIXEDLENGTH(30,0)
+#JMP($7453)
+Is <$16><$14><$02><$00><$16> a[LR]
+man or[LR]
+woman?[LR]<END>
+
+// Greetings used at different times of day
+//こんにちはニャ
+#FIXEDLENGTH(14,0)
+#JMP($97909)
+Greetings nya!<END>
+
+// Friend list profile screen?
+//がんばるのニャ
+#JMP($97938)
+#FIXEDLENGTH(14,0)
+Ill do my best
+
+//こんばんわ
+#FIXEDLENGTH(10,0)
+#JMP($9798D)
+Evening[LR]<END>
+
+//おはよう
+#FIXEDLENGTH(8,0)
+#JMP($978A7)
+Morning,<END>
+#JMP($97998)
+Morning <END>
+
+//こんにちは
+#FIXEDLENGTH(10,0)
+#JMP($979A1)
+Hello <END>
+
+//大切に使ってるモノってなあに？
+#FIXEDLENGTH(33,0)
+#JMP($326D6)
+What are the things you cherish?<END>
+
+//オトナの味、ってどんな食べもノ？<END>
+#FIXEDLENGTH(34,0)
+#JMP($2397D)
+What kind of food do adults eat?<END>
+
+// This message is repeated a lot more times in NEKO.KSC, why?
+//<$16><$14><$02><$00><$16>より エライ人の 名前 おしえて～？
+#FIXEDLENGTH(38,0)
+#JMP($6BA5C)
+Tell me the name of someone important.<END>
+#JMP($6BBF1)
+Tell me the name of someone important.<END>
+#JMP($6BD79)
+Tell me the name of someone important.<END>
+#JMP($6BEE5)
+Tell me the name of someone important.<END>
+#JMP($6C042)
+Tell me the name of someone important.<END>
+#JMP($6C1A6)
+Tell me the name of someone important.<END>
+#JMP($6C2F5)
+Tell me the name of someone important.<END>
+#JMP($6C416)
+Tell me the name of someone important.<END>
+#JMP($6C52F)
+Tell me the name of someone important.<END>
+#JMP($6C6B6)
+Tell me the name of someone important.<END>
+#JMP($6C864)
+Tell me the name of someone important.<END>
+#JMP($6CA3C)
+Tell me the name of someone important.<END>
+#JMP($6CC14)
+Tell me the name of someone important.<END>
+#JMP($6CDE6)
+Tell me the name of someone important.<END>
+#JMP($6CF5D)
+Tell me the name of someone important.<END>
+
+//だれか 人のお名前 おしえて～
+#FIXEDLENGTH(28,0)
+#JMP($54D5C)
+Tell me someone's name～<END>
+
+//[WORD1]って…[LR]ゆうめい人？<END> - Is (input name) famous?
+#JMP($55DC)
+#FIXEDLENGTH(24,0)
+Is [WORD1][LR]
+very famous?<END>
+
+#JMP($54A2)
+#FIXEDLENGTH(22,0)
+//[WORD0]って…[LR]どんな人？
+[WORD0]…[LR]
+What are they?<END>
+
+#JMP($5751)
+#FIXEDLENGTH(24,0)
+//<$16><$14><$02><$00><$16>って…[LR]
+//どんなコト？
+<$16><$14><$02><$00><$16>…[LR]
+What's that？<END>
+
+#JMP($57F1)
+#FIXEDLENGTH(26,0)
+//<$16><$14><$02><$00><$16>って…[LR]
+//ひとりでする？
+Can you do[LR]
+<$16><$14><$02><$00><$16> alone?<END>
+
+#JMP($5995)
+#FIXEDLENGTH(20,0)
+//<$16><$14><$02><$00><$16>って…[LR]
+//どっち？
+Which one[LR]
+is <$16><$14><$02><$00><$16>?<END>
+
+//ふつうの人
+#JMP($97B96)
+#FIXEDLENGTH(10,0)
+Not famous<END>
+
+// Ask if the player wants to enter a word - Used in Intro and random conversations
+//えーっとね - Let me see
+#FIXEDLENGTH(10,0)
+#JMP($97DC7)
+Enter word<END>
+
+//おしえない
+#FIXEDLENGTH(10,0)
+#JMP($97DD2)
+Don't know<END>
+
+//え？何？ - Eh? What?
+#FIXEDLENGTH(9,0)
+#JMP($97DDD)
+Say again<END>
+
+// Shows the word being taught, not the player's name
+//[WORD0]って…[LR]どんなモノ？
+#FIXEDLENGTH(24,0)
+#JMP($6CF9)
+[WORD0] huh,[LR]what's that?<END>
+
+#JMP($6E11)
+[WORD0] eh…[LR]What's that?<END>
+
+#JMP($7069)
+[WORD0]?[LR]What kind is it?<END>
+
+//<$16><$14><$02><$00><$16>って…[LR]なあに？
+#JMP($7829)
+#FIXEDLENGTH(18,0)
+<$16><$14><$02><$00><$16>[LR]What's that?<END>
+
+//使うもノ - things you use
+//Items<END>
+
+//東リ物 - Eastern things (Japan?)
+//Places
+
+//もどる - go back - try again
+#JMP($97B6A)
+#FIXEDLENGTH(6,0)
+Return<END>
+
+//うん
+#JMP($97D85)
+#FIXEDLENGTH(4,0)
+Yes<END>
+
+//最初からやリなおし
+#JMP($97D8A)
+#FIXEDLENGTH(19,0)
+Start over<END>
+
+// Teach word menu - what kind of word is it?
+//ゆうめい人
+#JMP($97574)
+#FIXEDLENGTH(10,0)
+Celebrity<END>
+
+//人の なまえ
+#JMP($979E9)
+#FIXEDLENGTH(11,0)
+Person<END>
+
+//しょくぎょう
+#JMP($979F5)
+#FIXEDLENGTH(12,0)
+Co-worker<END>
+
+//人を麦すコトバ
+#JMP($97A02)
+#FIXEDLENGTH(14,0)
+Person dialect<END>
+
+//ロボット
+#JMP($9757F)
+#FIXEDLENGTH(8,0)
+Robot<END>
+
+//するコ卜
+#JMP($97698)
+#FIXEDLENGTH(8,0)
+Activity<END>
+
+//行くトコロ
+#JMP($9776E)
+#FIXEDLENGTH(10,0)
+Location<END>
+
+//食べ物・飲み物
+#JMP($97A11)
+#FIXEDLENGTH(14,0)
+Food or drink<END>
+
+//食べ物
+#JMP($97CA6)
+#FIXEDLENGTH(6,0)
+Food<END>
+
+//飲み物
+#JMP($97CAD)
+#FIXEDLENGTH(6,0)
+Drink<END>
+
+//生き物 - Living things
+#JMP($977DE)
+#FIXEDLENGTH(6,0)
+Animal<END>
+
+//音楽
+#FIXEDLENGTH(4,0)
+#JMP($977EF)
+Song<END>
+#JMP($977F4)
+Song<END>
+
+//見るモノ - Things to see
+#JMP($97806)
+#FIXEDLENGTH(8,0)
+Video<END>
+
+//読むモノ - Things to read
+#JMP($9783D)
+#FIXEDLENGTH(8,0)
+Book<END>
+
+//つかうモノ - Things to use
+#JMP($97A20)
+#FIXEDLENGTH(10,0)
+Object<END>
+
+//身につける - Things to wear/put on
+#JMP($97A2B)
+#FIXEDLENGTH(10,0)
+Clothing<END>
+//身につけるモノ
+#JMP($97CD9)
+#FIXEDLENGTH(14,0)
+Clothing<END>
+
+//東り物 - Vehicle
+#JMP($97A36)
+#FIXEDLENGTH(6,0)
+Travel<END>
+
+//コトバ - Language
+#JMP($9787C)
+#FIXEDLENGTH(6,0)
+Phrase<END>
+
+//体の一部 - Part of the body
+#JMP($978F8)
+#FIXEDLENGTH(8,0)
+Bodypart<END>
+
+//びょうき
+#JMP($97A3D)
+#FIXEDLENGTH(8,0)
+Sickness<END>
+
+// Start the game on a special day and talk to Toro
+//あ、今日は…[LR]
+#JMP($323B0)
+#FIXEDLENGTH(13,0)
+Ah, today is[LR]<END>
+
+//今日は…
+//「<$14><$00><$00>」 なんだって！
+#JMP($7D9B8)
+#FIXEDLENGTH(29,0)
+Today is…
+<$14><$00><$00>!<END>
+
+// August 19th - Japanese Haiku Memorial Day https://ja.wikipedia.org/wiki/俳句の日
+//俳句の日
+#JMP($9E642)
+#FIXEDLENGTH(8,0)
+HaikuDay<END>
+
+//へぇ～
+Wow～<END>
+
+//は（８）[LR]
+//い（１）[LR]
+//く（９）[LR]
+//なんだ[NYA]！[LR]
+#JMP($7EC49)
+#FIXEDLENGTH(39,0)
+Haiku Memorial Day is about poems.[LR]<END>
+
+//せっかくだから…
+#JMP($7EC7B)
+#FIXEDLENGTH(17,0)
+Since it's here,[LR]<END>
+
+//[WORD1]も 俳 句を作ってみたの[NYA]！
+#JMP($7EC96)
+#FIXEDLENGTH(32,0)
+I tried to write a poem, [NYA]!<END>
+
+//どれどれ？
+#JMP($9E64B)
+#FIXEDLENGTH(10,0)
+Can I see?<END>
+
+//聞いてやろう
+#JMP($9E656)
+#FIXEDLENGTH(12,0)
+I'll listen<END>
+
+//えー コホン…[LR]
+#JMP($7ECC9)
+#FIXEDLENGTH(14,0)
+Ah, ahem…[LR]<END>
+
+// Toro's Haiku poem doesn't translate well,
+// and I can't get an English poem that fits Haiku syllable rules to fit in this limited space
+//静けさや～[LR] - Silence~
+#JMP($7ED0C)
+#FIXEDLENGTH(11,0)
+In the dusk[LR]<END>
+
+//バキュームカー - septic tank truck; vacuum car; honey wagon?
+#JMP($9147B)
+#FIXEDLENGTH(14,0)
+Trucks driving<END>
+
+//めんたいこ - Pollock roe, a type of fish meat used in food
+#JMP($915FC)
+#FIXEDLENGTH(10,0)
+Cod dawdle<END>
+
+//パチパチパチ - Clapping hands
+#JMP($9A3B8)
+#FIXEDLENGTH(12,0)
+Applaud<END>
+
+//わっはっは
+#JMP($9A218)
+#FIXEDLENGTH(10,0)
+Wow!<END>
+
+//どうもなの[NYA]～[LR]
+#JMP($7ED45)
+#FIXEDLENGTH(16,0)
+Thanks [NYA]～[LR]<END>
+
+// Toro is woke up at night by the player
+
+
+// Toro describes his fear of an imaginary bandage monster
+
+//毎年 <$14><$01><$00>に なると…[LR]
+#JMP($4B373)
+#FIXEDLENGTH(20,0)
+Every year at <$14><$01><$00>…[LR]<END>
+
+//あらわれるの[NYA]…
+#JMP($4B389)
+#FIXEDLENGTH(17,0)
+Something appears<END>
+
+//に？
+#JMP($4B39F)
+#FIXEDLENGTH(4,0)
+Huh?<END>
+
+// If に？ chosen
+//包帯で [WORD0]を ぐるぐる巻きにして…[LR] - [WORD0] is a body part
+#JMP($4B3B2)
+#FIXEDLENGTH(36,0)
+It's [WORD0] is wrapped in bandages…[LR]<END>
+
+//夜な夜な 走り回る…[LR]
+#JMP($4B3D8)
+#FIXEDLENGTH(20,0)
+It lurks at night…[LR]<END>
+
+//「怪人 <$14><$00><$00>ミイラ」が あらわれるの[NYA]～[LR]
+#JMP($4B3F7)
+#FIXEDLENGTH(39,0)
+The "<$14><$00><$00> mummy monster" appears [NYA]～[LR]<END>
+
+// If talked to again after
+//[WORD0]に ささくれが できて…[LR]
+#JMP($505BC)
+#FIXEDLENGTH(28,0)
+It has nails on its [WORD0]…[LR]<END>
+
+//皮が ちょこっと めくれた時…
+#JMP($505E0)
+#FIXEDLENGTH(28,0)
+It's skin peels a little…<END>
+
+//足くび
+#JMP($9D748)
+#FIXEDLENGTH(6,0)
+ankle<END>
+
+//ささくれ？
+#JMP($9C738)
+#FIXEDLENGTH(10,0)
+Nails?<END>
+
+//そこを ゆっくり 引っぱってくと…[LR]
+#JMP($50616)
+#FIXEDLENGTH(33,0)
+If you pull it slowly…[LR]<END>
+
+//[WORD0]の皮が 全部 めくれちゃうんだって～[LR]
+#JMP($50642)
+#FIXEDLENGTH(40,0)
+The skin on it's [WORD0] peels off～[LR]<END>
+
+//わ～い！
+//[140100]する[NYA]
+#JMP($89FF4)
+#FIXEDLENGTH(19,0)
+Yay [NYA]![LR]
+Let's do [140100]<END>
