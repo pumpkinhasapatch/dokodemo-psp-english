@@ -48,12 +48,14 @@ Being a Japanese communication game, there is a lot of text that needs to be tra
 
 To play the translation, you will need an original Japanese copy of Doko Demo Issyo Portable dumped as an .iso file. It should match [these details](http://redump.org/disc/39834) on Redump. **Make sure you have the PlayStation Portable  version from 2004**, not the original PS1 version or other games like Rettsu Gakkou or Mainichi Issho (see table below). These games vary in contents and are not compatible with the translation project.
 
-| Game title | Doko Demo Issyo / Issho (PS1, 1999) | Doko Demo Issyo / Doko Demo Issho Portable (PSP, 2004) | Doko Demo Issyo: Rettsu Gakkou / Let's Go To School! (PSP, 2006) |
-|--|--|--|--|
-| Original box art | ![どこでもいっしょ「PlayStation」](https://static.wikia.nocookie.net/dokodemo/images/3/3b/Ddips1cover_hires.png) | ![どこでもいっしょ「PSP」 ](https://static.wikia.nocookie.net/dokodemo/images/d/d5/5052001-01.jpg) | ![ーどこでもいっしょー　レッツ学校！](https://static.wikia.nocookie.net/dokodemo/images/6/66/Doko_Demo_Issyo_Lets_School_Cover.jpg) |
-| MD5 checksum |  | a7d8ff8050ac0d1fd6b0d5970eecbd8d |  |
-| SHA256 checksum |  | c78d0974f660cd92c1b10a1466ac278625d38e4dd93bfb48f66f090ff7a4c119 |  |
-| Works with Translation Project? | ✗ | <div style="background-color:green">✓</div> | ✗ |
+| Game title | Doko Demo Issyo / Doko Demo Issho Portable (PSP, 2004) |
+|------------|--------------------------------------------------------|
+| Original box art | <img alt="どこでもいっしょ「PSP」" src="https://static.wikia.nocookie.net/dokodemo/images/d/d5/5052001-01.jpg" width="200px"><img width="200px" alt="dokodemo-umd-disc-hq" src="https://github.com/user-attachments/assets/8ea73365-10c3-4528-9087-1934d9d9d95a" /> |
+| Serial | UCJS 10002, UCJS 18002 |
+| Version | 1.01 |
+| Edition | Original, PSP the Best |
+| MD5 checksum |  a7d8ff8050ac0d1fd6b0d5970eecbd8d |
+| SHA256 checksum | c78d0974f660cd92c1b10a1466ac278625d38e4dd93bfb48f66f090ff7a4c119 |
 
 If you have a real PSP console or original UMD disc, you can use Custom Firmware to dump your UMD disc to .iso, apply the translation patch on your computer, then play it directly on your PSP for the most authentic experience. See the [ConsoleMods PSP wiki](https://consolemods.org/wiki/PSP:PSP_Mods_Wiki) for more information. PSVita owners should visit https://vita.hacks.guide/ or the [Vita Mods Wiki](https://consolemods.org/wiki/Vita:Vita_Mods_Wiki). If your copy of the game does not work with the xdelta patch, try using a different copy, dumping tool or create a [manual build](#building).
 
