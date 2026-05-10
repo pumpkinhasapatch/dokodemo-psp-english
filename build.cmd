@@ -93,6 +93,8 @@ echo Patch game files
 :: Replace game artwork that appears on the XMB/PPSSPP menu
 copy ICON0.png build\PSP_GAME\ICON0.PNG
 copy PIC0.png build\PSP_GAME\PIC0.PNG
+:: Animated game icon made with PSMF Stream Composer Suite
+copy ICON1.PMF build\PSP_GAME\ICON1.PMF
 
 :: Replace EBOOT.BIN with BOOT.BIN so the game always loads our modified BOOT.BIN
 copy /Y build\PSP_GAME\SYSDIR\BOOT.BIN build\PSP_GAME\SYSDIR\EBOOT.BIN
