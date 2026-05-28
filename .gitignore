@@ -22,3 +22,7 @@ insert/
 # Excel spreadsheets
 *.xlsx
 *.ods
+
+# Other files
+patches/param.txt
+textures/md5.txt

@@ -1,7 +1,0 @@
-#SETTARGETFILE("build/PSP_GAME/PARAM.SFO")
-#VAR(Table, TABLE)
-#ADDTBL("shiftjis.tbl", Table)
-#ACTIVETBL(Table)
-#FIXEDLENGTH(128,0)
-#JMP($158)
-Doko Demo Issyo PSP English Fan Translation (build 27-Mar-26 14:04)<END>
