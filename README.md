@@ -17,8 +17,8 @@
 </p>
 
 <p align="center">
-  <a href="https://pumpkin.moe/discord"><img src="https://img.shields.io/badge/discord-chat?logo=discord&logoColor=white&color=5865F2&label=Fan Translation" alt="Discord"></a>
-  <a href="https://discord.gg/3EYqGKpqNG"><img src="https://img.shields.io/discord/824319065773441045?logo=discord&logoColor=white&color=5865F2&label=Toro's Friend Dungeon" alt="Discord"></a><br>
+  <a href="https://pumpkin.moe/discord"><img src="https://img.shields.io/discord/1454051443559497822?logo=discord&logoColor=white&color=5865F2&label=Fan%20Translation%20chat" alt="Discord"></a>
+  <a href="https://discord.gg/3EYqGKpqNG"><img src="https://img.shields.io/discord/824319065773441045?logo=discord&logoColor=white&color=5865F2&label=Toro's%20Friend%20Dungeon" alt="Discord"></a><br>
   <a href="https://github.com/pumpkinhasapatch/dokodemo-psp-english/releases"><img src="https://img.shields.io/github/downloads/pumpkinhasapatch/dokodemo-psp-english/total" alt="Releases"></a>
   <a href="https://github.com/pumpkinhasapatch/dokodemo-psp-english/issues"><img src="https://img.shields.io/github/issues/pumpkinhasapatch/dokodemo-psp-english" alt="Issues"></a>
   <a href="https://github.com/pumpkinhasapatch/dokodemo-psp-english/commits/dev"><img src="https://img.shields.io/github/last-commit/pumpkinhasapatch/DokoDemo-PSP-Patcher" alt="Commits"></a>
