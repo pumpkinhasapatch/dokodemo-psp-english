@@ -1,7 +1,9 @@
 #!/bin/sh
+# Stop when a command returns a non zero status
+set -e
 
-# First thing entered after "./build.sh " in the Terminal
-iso=$1
+# Optional ISO path. If omitted, use the game files already in build/.
+iso=${1:-}
 
 echo ========================================================
 echo "     ~ Doko Demo Issyo PSP Patcher (Shell script) ~"
@@ -28,15 +30,16 @@ if [ ! -f ./tools/bpar/bpar ]; then
 fi
 
 if [ ! -f ./tools/GimConv/GimConv.exe ]; then
-  mkdir ./tools/GimConv
+  mkdir -p ./tools/GimConv
   echo "GimConv.exe is missing (needed for image conversion). Please download it and place in tools/GimConv/ folder."
   echo " "
   error=1
 fi
 
-if [ ! -f ./tools/abcde/abcde.pl ]; then
-  echo "abcde is missing (needed for in-game text replacement)."
-  echo "Get it from https://www.romhacking.net/forum/index.php?topic=25968.0"
+# Use Atlas through Wine to apply the project's text patches
+# The bundled abcde parser rejects the 00=<END> table entry
+if [ ! -f ./tools/Atlas/Atlas.exe ]; then
+  echo "Atlas.exe is missing. Place it in tools/Atlas/."
   echo " "
   error=1
 fi
@@ -45,8 +48,10 @@ if [ ! -f ./tools/7zip/7zz ]; then
   echo tools/7zip/7zz was not found
   echo Attempting to download it from GitHub...
   cd tools
-    curl -L https://github.com/ip7z/7zip/releases/download/24.08/7z2408-linux-x64.tar.xz -o 7zip.tar.xz
-    mkdir 7zip
+    # Follow redirects and fail on HTTP errors instead of saving an error page.
+    curl -fL https://github.com/ip7z/7zip/releases/download/24.08/7z2408-linux-x64.tar.xz -o 7zip.tar.xz
+    # Allow retrying after a previous download or extraction attempt.
+    mkdir -p 7zip
     cd 7zip
       tar -xf ../7zip.tar.xz
     cd ..
@@ -72,65 +77,71 @@ else
       echo Patching on top of existing build folder. You should delete the build folder first if your game is corrupted.
     fi
   else
-    if [ -f $iso ]; then
+    if [ -f "$iso" ]; then
       echo Trying to extract game into build folder
-      cd build
-        ../tools/7zip/7zz x -y "../$iso"
-      cd ..
+      # Extract from the project directory so both relative and absolute ISO paths work
+      # Quote the path to preserve spaces in filenames
+      ./tools/7zip/7zz x -y -obuild "$iso"
     else
-      echo $iso is not a file
+      printf 'ISO file not found: %s\n' "$iso" >&2
+      exit 1
     fi
   fi
 fi
 
+# # Verify the expected game files before modifying the extracted build
+for file in \
+  build/PSP_GAME/USRDIR/data/DATA.BP \
+  build/PSP_GAME/SYSDIR/BOOT.BIN \
+  build/PSP_GAME/PARAM.SFO
+do
+  if [ ! -f "$file" ]; then
+    printf 'Required game file is missing: %s\n' "$file" >&2
+    exit 1
+  fi
+done
+
 # https://stackoverflow.com/a/7522866
 if ! type "wine" > /dev/null; then
-  echo "Wine was not found. It is needed to run GimConv."
+  echo "Wine was not found. It is needed to run Atlas and GimConv."
   echo "Please install it using 'sudo apt install wine' or your package manager."
   echo " "
   error=1
 fi
 
-if ! type "perl" > /dev/null; then
-  echo "Perl was not found. It is needed to run abcde."
-  echo "Please install it using 'sudo apt install perl' or your package manager."
-  echo " "
-  error=1
-fi
-
 # Exit the script if error variable is set.
-if [ $error == 1 ] ; then exit 1; fi
+# Use a POSIX-compatible numeric comparison because this script runs with sh.
+if [ "$error" -eq 1 ] ; then exit 1; fi
 
 echo All checks passed successfully.
 echo " "
-
-# Replace GimConv config file with Rcomage version to fix PSP image conversion issues.
-cp -f ./GimConv.cfg ./tools/GimConv/
 
 echo Replacing game icon...
 cp -f ICON0.png build/PSP_GAME/ICON0.PNG
 cp -f PIC0.png build/PSP_GAME/PIC0.PNG
 cp -f ICON1.PMF build/PSP_GAME/ICON1.PMF
 
-echo Writing patches/param.txt to build/PSP_GAME/PARAM.SFO...
-perl tools/abcde/abcde.pl --artificial-end-token "<END>" -cm abcde::Atlas build/PSP_GAME/PARAM.SFO patches/param.txt
-
 echo Writing patches/boot.txt to build/PSP_GAME/SYSDIR/BOOT.BIN...
-perl tools/abcde/abcde.pl --artificial-end-token "<END>" -cm abcde::Atlas build/PSP_GAME/SYSDIR/BOOT.BIN patches/boot.txt
+wine tools/Atlas/Atlas.exe build/PSP_GAME/SYSDIR/BOOT.BIN patches/boot.txt
 
 # Delete EBOOT.BIN (encrypted boot) to make the game launch our modified BOOT.BIN.
-rm build/PSP_GAME/SYSDIR/EBOOT.BIN
+# Ignore an already missing EBOOT.BIN when reusing an existing build
+rm -f build/PSP_GAME/SYSDIR/EBOOT.BIN
 
-if [ ! -f ./insert/NEKO.KSC ]; then
+# Check the source files in /extract, since /insert contains working copies
+# that are overwritten before applying the text patches
+if [ ! -f ./extract/NEKO.KSC ] ||
+   [ ! -f ./extract/ROBO.KSC ] ||
+   [ ! -f ./extract/USAGI.KSC ]; then
   cd extract
   echo Extracting original game files from DATA.BP, this will take a minute
   # Hide output while bpar spams "magic number" warnings for unknown files
   ../tools/bpar/bpar -x ../build/PSP_GAME/USRDIR/data/DATA.BP > /dev/null 2>&1
 
-  # Delete font files because's thousands and they take forever to extract
+  # Delete font files because there are thousands and they take forever to extract
   echo Skipping font textures
-  # https://superuser.com/questions/392872/delete-files-with-regular-expression
-  ls | grep -P "^F[0-9]{3}.BPM$" | xargs -d"\n" rm
+  # Find handles filenames directly and succeeds when there are no matches
+  find . -maxdepth 1 -type f -name 'F[0-9][0-9][0-9].BPM' -delete
 
   echo Extracting BPM archives in the current directory
   # Use ./KS*.BPM to only extract KSC/DIC archives or ./*.BPM to extract everything
@@ -148,47 +159,50 @@ fi
 cp -f ./extract/*.KSC ./insert
 
 # Patch KSC files in insert folder
-echo Writing patches/toro_messages.txt to insert/NEKO.KSC...
-perl tools/abcde/abcde.pl --artificial-end-token "<END>" -cm abcde::Atlas insert/NEKO.KSC patches/toro_messages.txt
-echo Writing patches/toro_dialogue.txt to insert/NEKO.KSC...
-perl tools/abcde/abcde.pl --artificial-end-token "<END>" -cm abcde::Atlas insert/NEKO.KSC patches/toro_dialogue.txt
+echo Patching Toro messages...
+wine tools/Atlas/Atlas.exe insert/NEKO.KSC patches/toro_messages.txt
+if [ -f patches/toro_dialogue.txt ]; then
+  echo Patching Toro dialogue...
+  wine tools/Atlas/Atlas.exe insert/NEKO.KSC patches/toro_dialogue.txt
+fi
+if [ -f patches/toro_diary.txt ]; then
+  echo Patching Toro diary...
+  wine tools/Atlas/Atlas.exe insert/NEKO.KSC patches/toro_diary.txt
+fi
 echo Writing insert/NEKO.KSC to build/PSP_GAME/USRDIR/data/DATA.BP...
 ./tools/bpar/bpar id build/PSP_GAME/USRDIR/data/DATA.BP insert/NEKO.KSC
 
 
 echo Patching patches/suzuki_messages.txt to insert/ROBO.KSC...
-perl tools/abcde/abcde.pl --artificial-end-token "<END>" -cm abcde::Atlas insert/ROBO.KSC patches/suzuki_messages.txt
+wine tools/Atlas/Atlas.exe insert/ROBO.KSC patches/suzuki_messages.txt
 echo Inserting insert/ROBO.KSC to build/PSP_GAME/USRDIR/data/DATA.BP...
 ./tools/bpar/bpar id build/PSP_GAME/USRDIR/data/DATA.BP insert/ROBO.KSC
 
 echo Patching patches/jun_messages.txt to insert/USAGI.KSC...
-perl tools/abcde/abcde.pl --artificial-end-token "<END>" -cm abcde::Atlas insert/USAGI.KSC patches/jun_messages.txt
+wine tools/Atlas/Atlas.exe insert/USAGI.KSC patches/jun_messages.txt
 echo Inserting insert/USAGI.KSC to build/PSP_GAME/USRDIR/data/DATA.BP...
 ./tools/bpar/bpar id build/PSP_GAME/USRDIR/data/DATA.BP insert/USAGI.KSC
 
-cd textures
+(
+  cd textures
 
-# Delete existing GIM images from previous build
-for file in $(find . -type f -name '*.GIM')
-do
-    rm "$file"
-done
+  find . -type f -name '*.GIM' -delete
 
-from=png
-to=GIM
+  find . -type f -name '*.png' -exec sh -c '
+    for file do
+      printf "Converting %s to GIM...\n" "$file"
+      wine ../tools/GimConv/GimConv.exe \
+        "$file" -bpp4 -o "${file%.png}.GIM" || exit 1
+    done
+  ' sh {} +
 
-for file in $(find . -type f -name "*.${from}")
-do
-    echo Converting ${from} image $file to ${to}...
-    wine ../tools/GimConv/GimConv.exe $file -bpp4 -o "${file%.${from}}.${to}"
-done
-
-for file in $(find . -type f -name "*.${to}")
-do
-    echo "Inserting ${to} image $file..."
-    ../tools/bpar/bpar id ../build/PSP_GAME/USRDIR/data/DATA.BP "$file"
-done
-
-cd ..
+  find . -type f -name '*.GIM' -exec sh -c '
+    for file do
+      printf "Inserting %s...\n" "$file"
+      ../tools/bpar/bpar id \
+        ../build/PSP_GAME/USRDIR/data/DATA.BP "$file" || exit 1
+    done
+  ' sh {} +
+)
 
 echo All done! Check for any errors above, then find your patched Doko Demo Issyo game files in the build folder.
