@@ -37,7 +37,6 @@ if [ ! -f ./tools/GimConv/GimConv.exe ]; then
 fi
 
 # Use Atlas through Wine to apply the project's text patches
-# The bundled abcde parser rejects the 00=<END> table entry
 if [ ! -f ./tools/Atlas/Atlas.exe ]; then
   echo "Atlas.exe is missing. Place it in tools/Atlas/."
   echo " "

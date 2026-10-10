@@ -96,7 +96,7 @@ The translation project uses a custom build system that modifies an original cop
 
 ### Linux
 
-**Requirements:** [Wine](https://winehq.org), Perl.
+**Requirements:** [Wine](https://winehq.org).
 
 
 #### Linux commands
@@ -110,7 +110,7 @@ cd dokodemo-psp-english
 sudo chmod -R a+xX ./*
 
 # Install some dependencies (replace 'apt' with your package manager)
-sudo apt install wine perl -y
+sudo apt install wine -y
 
 # Attempt to patch the game based on current source files.
 # Should tell you if any files are missing.
@@ -146,7 +146,6 @@ You can also provide financial support to pumpkinhasapatch. I spend a lot of tim
 The following programs are included in the `tools` folder or required for the `build.cmd` and `build.sh` scripts to work. They are used under a different license not covered by the GPL. These programs are also open to changes (except GimConv) and the source code can be found on the linked webpages:
 
 - [Atlas v1.12 by Steve Monaco "Klarth"](https://github.com/stevemonaco/Atlas) (older versions at [Romhacking.net](https://www.romhacking.net/utilities/224)) - A text patching tool and scripting language to insert new text over the Doko Demo Issyo game data.
-- [abcde by abw](https://www.romhacking.net/utilities/1392/) - A cross-platform alternative to Atlas with more features and better error reporting, written in Perl script.
 - bpar by swagtoys - https://code.neko.rehab/ddi-tools/file (dead link, [archived](https://github.com/pumpkinhasapatch/ddi-tools)) - To extract and insert files from the game's proprietary DATA.BP archive.
 - Sony's GimConv - A freeware/proprietary program for Windows developed by Sony for converting PNG images to the GIM format the game uses. GimConv is not included with the Patcher due to copyright reasons, and you may need to add it to the `tools` folder yourself.
 
@@ -155,7 +154,7 @@ The following programs are included in the `tools` folder or required for the `b
 - [Jisho.org](https://jisho.org/about) and [Yomitan](https://github.com/themoeway/yomitan) developers for creating simple interfaces to browse digital Japanese-English dictionaries, used to look up tricky words and sentences when translating the game.
 - [JMdict](https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project), [KANJIDIC](https://www.edrdg.org/wiki/index.php/KANJIDIC_Project) and others for providing the large databases of information on Japanese words powering software like Jisho and Yomitan.
 - Clyde Mandelin "Tomato" for giving the world the [Mother 3 Fan Translation](https://mother3.fobby.net) and [Legends of Localization website](https://legendsoflocalization.com/), which laid the foundation of what good fan translation should be like.
-- [RikuKH3](https://gbatemp.net/threads/steins-gate-anyone-familiar-with-this-game-engine.346275/page-2#post-5065600) for the [Stein's Gate PSP Translation](https://github.com/BASLQC/steins-gate-psp-patch/blob/master/data/shiftjis.tbl) which gave inspiration and the shiftjis.tbl file used by Atlas/abcde for text encoding. Some changes were made to it in our project to work with abcde and Doko Demo Issyo Portable.
+- [RikuKH3](https://gbatemp.net/threads/steins-gate-anyone-familiar-with-this-game-engine.346275/page-2#post-5065600) for the [Stein's Gate PSP Translation](https://github.com/BASLQC/steins-gate-psp-patch/blob/master/data/shiftjis.tbl) which gave inspiration and the shiftjis.tbl file used by Atlas for text encoding. Some changes were made to it in our project to work with Doko Demo Issyo Portable.
 - [baalzeebul on Reddit](https://www.reddit.com/r/PSP/comments/17op7f2/doko_demo_issho_psp_english_guide_pdf_part_1/) for some translations in their "Doko Demo Issho English Translation Guide" (mainly for the "Teach word" menus).
 
 Please contact the repository owner if you have helped out and would like to be added to the credits or have your credit changed.
