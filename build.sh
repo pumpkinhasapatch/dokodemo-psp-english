@@ -131,7 +131,9 @@ rm -f build/PSP_GAME/SYSDIR/EBOOT.BIN
 # that are overwritten before applying the text patches
 if [ ! -f ./extract/NEKO.KSC ] ||
    [ ! -f ./extract/ROBO.KSC ] ||
-   [ ! -f ./extract/USAGI.KSC ]; then
+   [ ! -f ./extract/USAGI.KSC ] ||
+   [ ! -f ./extract/INU.KSC ] ||
+   [ ! -f ./extract/KAERU.KSC ]; then
   cd extract
   echo Extracting original game files from DATA.BP, this will take a minute
   # Hide output while bpar spams "magic number" warnings for unknown files
@@ -158,29 +160,38 @@ fi
 cp -f ./extract/*.KSC ./insert
 
 # Patch KSC files in insert folder
-echo Patching Toro messages...
-wine tools/Atlas/Atlas.exe insert/NEKO.KSC patches/toro_messages.txt
-if [ -f patches/toro_dialogue.txt ]; then
-  echo Patching Toro dialogue...
-  wine tools/Atlas/Atlas.exe insert/NEKO.KSC patches/toro_dialogue.txt
-fi
-if [ -f patches/toro_diary.txt ]; then
-  echo Patching Toro diary...
-  wine tools/Atlas/Atlas.exe insert/NEKO.KSC patches/toro_diary.txt
-fi
-echo Writing insert/NEKO.KSC to build/PSP_GAME/USRDIR/data/DATA.BP...
-./tools/bpar/bpar id build/PSP_GAME/USRDIR/data/DATA.BP insert/NEKO.KSC
+internal_names=(NEKO ROBO USAGI INU KAERU)
+declare -A patch_names
+patch_names[NEKO] = toro
+patch_names[ROBO] = suzuki
+patch_names[USAGI] = jun
+patch_names[INU] = pierre
+patch_names[KAERU] = ricky
 
+for name in NEKO ROBO USAGI INU KAERU; do
+  case "$name" in
+    NEKO)   patch=toro ;;
+    ROBO)   patch=suzuki ;;
+    USAGI)  patch=jun ;;
+    INU)    patch=pierre ;;
+    KAERU)  patch=ricky ;;
+  esac
 
-echo Patching patches/suzuki_messages.txt to insert/ROBO.KSC...
-wine tools/Atlas/Atlas.exe insert/ROBO.KSC patches/suzuki_messages.txt
-echo Inserting insert/ROBO.KSC to build/PSP_GAME/USRDIR/data/DATA.BP...
-./tools/bpar/bpar id build/PSP_GAME/USRDIR/data/DATA.BP insert/ROBO.KSC
+  target="insert/$name.KSC"
+  found=no
 
-echo Patching patches/jun_messages.txt to insert/USAGI.KSC...
-wine tools/Atlas/Atlas.exe insert/USAGI.KSC patches/jun_messages.txt
-echo Inserting insert/USAGI.KSC to build/PSP_GAME/USRDIR/data/DATA.BP...
-./tools/bpar/bpar id build/PSP_GAME/USRDIR/data/DATA.BP insert/USAGI.KSC
+  for patch_file in "patches/$patch"*.txt; do
+    [ -f "$patch_file" ] || continue
+    found=yes
+    echo "Applying $patch_file to $target..."
+    wine tools/Atlas/Atlas.exe "$target" "$patch_file" || exit 1
+  done
+
+  if [ "$found" = yes ]; then
+    echo "Writing $target to build/PSP_GAME/USRDIR/data/DATA.BP..."
+    ./tools/bpar/bpar id build/PSP_GAME/USRDIR/data/DATA.BP "$target" || exit 1
+  fi
+done
 
 (
   cd textures

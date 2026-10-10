@@ -126,59 +126,34 @@ copy /Y extract\*.DIC insert
 
 echo Patch Pokepi text
 :: The internal .KSC filenames are the type of animal in Japanese
-:: TODO: This is a mess, maybe rewrite it using filename variables and a for loop?
-set "pokepi_names=toro suzuki jun pierre ricky"
-set "internal_names=NEKO ROBO USAGI INU KAERU"
+for %%P in (
+  "toro NEKO"
+  "suzuki ROBO"
+  "jun USAGI"
+  "pierre INU"
+  "ricky KAERU"
+) do (
+  for /f "tokens=1,2" %%A in (%%P) do (
+    set "p=%%A"
+    set "q=%%B"
+    set "target=insert\!q!.KSC"
 
-rem build indexed arrays
-set idx=0
-for %%A in (%pokepi_names%) do (
-  set /A idx+=1
-  set "poke[!idx!]=%%A"
-)
-set max=%idx%
-
-set idx=0
-for %%B in (%internal_names%) do (
-  set /A idx+=1
-  set "int[!idx!]=%%B"
-)
-set max2=%idx%
-
-if not "%max%"=="%max2%" (
-  echo Error: name lists have different lengths (%max% vs %max2%) & exit /b 1
-)
-
-rem iterate by index and pair poke[i] with int[i]
-for /L %%i in (1,1,%max%) do (
-  set "p=!poke[%%i]!"
-  set "q=!int[%%i]!"
-
-  if exist "patches\!p!.xlsx" (
-    echo Converting spreadsheet !p!.xlsx to !p!_excel.txt
-    python excel_to_atlas.py "patches\!p!.xlsx" "patches\!p!_excel.txt"
-    !atlas! insert\!q!.KSC "patches\!p!_excel.txt"
-  )
-  if exist "patches\!p!_messages.txt" (
-    echo Patching !q!.KSC with !p!_messages.txt
-    !atlas! insert\!q!.KSC "patches\!p!_messages.txt"
-  )
-  if exist "patches\!p!_diary.txt" (
-    echo Patching !q!.KSC with !p!_diary.txt
-    !atlas! insert\!q!.KSC "patches\!p!_diary.txt"
-  )
-  if exist "patches\!p!_dialogue.txt" (
-    echo Patching !q!.KSC with !p!_dialogue.txt
-    !atlas! insert\!q!.KSC "patches\!p!_dialogue.txt"
-  )
-  if exist "patches\!p!_dictionary.txt" (
-    echo Patching !q!.DIC with !p!_dictionary.txt
-    !atlas! insert\!q!.DIC "patches\!p!_dictionary.txt"
+    rem Apply matching text patches
+    for %%F in ("patches\!p!*.txt") do (
+      if exist "%%~fF" (
+        if /I "%%~nF"=="!p!_dictionary" (
+          echo Patching insert\!q!.DIC with %%~nxF
+          !atlas! "insert\!q!.DIC" "%%~fF"
+        ) else (
+          echo Patching !target! with %%~nxF
+          !atlas! "!target!" "%%~fF"
+        )
+        if errorlevel 1 exit /b 1
+      )
+    )
   )
 )
 
-:: TODO: Add USAGI, INU, KAERU, ROBO and DIC files
-:: Use a list so we don't have to repeat so much code
 echo Inserting text files...
 cd insert
 for %%f in (*) do (
