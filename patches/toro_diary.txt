@@ -5402,7 +5402,7 @@ sama<END>
 //そう<END>
 #JMP($97AD9)
 #FIXEDLENGTH(4,0)
-Yes
+Sure<END>
 
 //まちがい<END>
 

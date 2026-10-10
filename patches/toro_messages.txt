@@ -32,9 +32,11 @@ meow<END>
 //[WORD1]の名前
 #FIXEDLENGTH(11,0)
 #JMP($C2D)
-[WORD1]s name
+[WORD1]s name<END>
+
+#FIXEDLENGTH(11,0)
 #JMP($C76)
-[WORD1]s name
+[WORD1]s name<END>
 
 // [LR] is a line return break (Tell the game to move down to a new line).
 //それは おいといて…[LR]<END>
@@ -1217,12 +1219,12 @@ Alright then…[LR]<END>
 #JMP($B6EB)
 #FIXEDLENGTH(13,0)
 //どっちの方が[LR]<END>
-Which is better[LR]<END>
+Which one?[LR]<END>
 
 #JMP($B70B)
 #FIXEDLENGTH(7,0)
-//って <$16><$14><END>
-You said <$16><$14><END>
+//って [WORD0]に 聞くね～END>
+I'll ask [WORD0] about that.<END>
 
 #JMP($B75C)
 #FIXEDLENGTH(12,0)
@@ -1517,10 +1519,10 @@ What?![LR]<END>
 #FIXEDLENGTH(34,0)
 My [WORD0] wont improve from sleep?[LR]<END>
 
-$JMP($29A4D)
+#JMP($29A4D)
 #FIXEDLENGTH(18,0)
 //いっぱい 寝れば…[LR]
-I thought sleep…[LR]<END>
+I thought sleep[LR]<END>
 
 #JMP($29A61)
 #FIXEDLENGTH(49,0)
@@ -1666,13 +1668,8 @@ ghosts appear and stuff～[LR]<END>
 //[WORD0]、今夜は いっしょに 寝てくれる？<END>
 #JMP($851C6)
 #FIXEDLENGTH(37,0)
-[WORD0], will you sleep with me tonight?
+[WORD0], will you sleep with me tonight?<END>
 
-// Where does the game pull this text from?
-//いいよ
-//Okay
-
-// Alt: Stop acting like a spoiled person!
 //甘えるな！
 #JMP($9EBF6)
 #FIXEDLENGTH(10,0)
@@ -1747,7 +1744,7 @@ Can you take me with you?<END>
 #FIXEDLENGTH(21,0)
 // 1614030016 = Player name
 //<$16><$14><$03><$00><$16>の 身近にいる…[LR]
-I'm close to you…[LR]
+I'm close to you…[LR]<END>
 
 #JMP($84D63)
 #FIXEDLENGTH(40,0)
@@ -1819,7 +1816,7 @@ Comedy<END>
 //おわらい
 #FIXEDLENGTH(8,0)
 #JMP($97559)
-Comedy<END>
+Comedian<END>
 
 //役者
 // Actor/Actress
@@ -1855,17 +1852,19 @@ Greetings nya!<END>
 //がんばるのニャ
 #JMP($97938)
 #FIXEDLENGTH(14,0)
-Ill do my best
+Ill do my best<END>
 
 //こんばんわ
 #FIXEDLENGTH(10,0)
 #JMP($9798D)
-Evening[LR]<END>
+Evening<END>
 
 //おはよう
 #FIXEDLENGTH(8,0)
 #JMP($978A7)
 Morning,<END>
+
+#FIXEDLENGTH(8,0)
 #JMP($97998)
 Morning <END>
 
@@ -2141,6 +2140,8 @@ Today is…
 #FIXEDLENGTH(8,0)
 HaikuDay<END>
 
+#JMP($7D9D7)
+#FIXEDLENGTH(6,0)
 //へぇ～
 Wow～<END>
 
