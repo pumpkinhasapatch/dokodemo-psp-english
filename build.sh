@@ -116,9 +116,9 @@ echo All checks passed successfully.
 echo " "
 
 echo Replacing game icon...
-cp -f ICON0.png build/PSP_GAME/ICON0.PNG
-cp -f PIC0.png build/PSP_GAME/PIC0.PNG
-cp -f ICON1.PMF build/PSP_GAME/ICON1.PMF
+cp -f xmb/ICON0.png build/PSP_GAME/ICON0.PNG
+cp -f xmb/PIC0.png build/PSP_GAME/PIC0.PNG
+cp -f xmb/ICON1.PMF build/PSP_GAME/ICON1.PMF
 
 echo Writing patches/boot.txt to build/PSP_GAME/SYSDIR/BOOT.BIN...
 wine tools/Atlas/Atlas.exe build/PSP_GAME/SYSDIR/BOOT.BIN patches/boot.txt
