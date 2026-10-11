@@ -180,10 +180,10 @@ Tut～[LR]<END>
 I already know[LR]
 that, [NYA]![LR]<END>
 
-//<$16><$14><$02><$00><$16> なの[NYA]！<END>
+//[WORD2] なの[NYA]！<END>
 #FIXEDLENGTH(16,0)
 #JMP($400B)
-It's <$16><$14><$02><$00><$16>!<END>
+It's [WORD2]!<END>
 
 //また ひとつ [LR]かしこく なったニャ！[LR]<END>
 #FIXEDLENGTH(35,0)
@@ -355,11 +355,11 @@ Same ranking<END>
 #FIXEDLENGTH(6,0)
 Lower<END>
 
-//<$16><$14><$02><$00><$16>、好き？
+//[WORD2]、好き？
 #JMP($7772)
 #FIXEDLENGTH(13,0)
 Liking[LR]
-<$16><$14><$02><$00><$16>?<END>
+[WORD2]?<END>
 
 //大好き
 #JMP($97D62)
@@ -402,10 +402,10 @@ woman<END>
 #FIXEDLENGTH(11,0)
 Different[LR]<END>
 
-//<$16><$14><$03><$00><$16>は <$16><$14><$02><$00><$16> なの[NYA]～[LR]<END>
+//[WORD3]は [WORD2] なの[NYA]～[LR]<END>
 #JMP($4468)
 #FIXEDLENGTH(24,0)
-<$16><$14><$03><$00><$16> is <$16><$14><$02><$00><$16> [NYA]～[LR]<END>
+[WORD3] is [WORD2] [NYA]～[LR]<END>
 
 //そうじゃ なくって…[LR]<END>
 #FIXEDLENGTH(20,0)
@@ -570,8 +570,8 @@ This is what [WORD0] taught me, [NYA]～[LR]<END>
 
 #JMP($486B)
 #FIXEDLENGTH(15,0)
-//<$16><$14><$02><$00><$16>は どう？[LR]<END>
-How is <$16><$14><$02><$00><$16>？[LR]<END>
+//[WORD2]は どう？[LR]<END>
+How is [WORD2]？[LR]<END>
 
 #JMP($488D)
 #FIXEDLENGTH(46,0)
@@ -722,9 +722,9 @@ Mistake<END>
 
 #JMP($4FBE)
 #FIXEDLENGTH(22,0)
-//<$16><$14><$02><$00><$16>って…[LR]
+//[WORD2]って…[LR]
 //どんな人？<END>
-What type is <$16><$14><$02><$00><$16>?<END>
+What type is [WORD2]?<END>
 
 //家族
 // Family
@@ -752,7 +752,7 @@ Aquatnce<END>
 
 #JMP($5074)
 #FIXEDLENGTH(31,0)
-//<$16><$14><$02><$00><$16>って…[LR]
+//[WORD2]って…[LR]
 //ひとり？ たくさん？<END>
 // Teach word -> Celebrity -> Idol
 Are they one[LR]
@@ -776,30 +776,30 @@ Group<END>
 
 #JMP($51EF)
 #FIXEDLENGTH(22,0)
-//<$16><$14><$02><$00><$16>って…[LR]
+//[WORD2]って…[LR]
 //どんな人？<END>
-What person is <$16><$14><$02><$00><$16>?<END>
+What person is [WORD2]?<END>
 
 #JMP($530A)
 #FIXEDLENGTH(20,0)
-//<$16><$14><$02><$00><$16>って…[LR]
+//[WORD2]って…[LR]
 //どっち？<END>
-<$16><$14><$02><$00><$16>…[LR]
+[WORD2]…[LR]
 Which one?<END>
 
 #JMP($53E0)
 #FIXEDLENGTH(28,0)
-//<$16><$14><$02><$00><$16>って…[LR]
+//[WORD2]って…[LR]
 //どんな人のコト？<END>
-<$16><$14><$02><$00><$16>…[LR]
+[WORD2]…[LR]
 Who are they?<END>
 
 #JMP($60AC)
 #FIXEDLENGTH(28,0)
-//<$16><$14><$02?><$00><$16>って…[LR]
+//[WORD2]って…[LR]
 //どんな食べモノ？<END>
 What type of[LR]
-food is <$16><$14><$02><$00><$16>?<END>
+food is [WORD2]?<END>
 
 #JMP($977D4)
 #FIXEDLENGTH(4,0)
@@ -813,52 +813,52 @@ Side<END>
 
 #JMP($6149)
 #FIXEDLENGTH(20,0)
-//<$16><$14><$02><$00><$16>って…[LR]
+//[WORD2]って…[LR]
 //どっち？<END>
-<$16><$14><$02><$00><$16>…[LR]
+[WORD2]…[LR]
 What is it?<END>
 
 #JMP($6263)
 #FIXEDLENGTH(20,0)
-//<$16><$14><$02><$00><$16>って…[LR]
+//[WORD2]って…[LR]
 //どっち？<END>
-<$16><$14><$02><$00><$16>…[LR]
+[WORD2]…[LR]
 What is it?<END>
 
 #JMP($634E)
 #FIXEDLENGTH(20,0)
-//<$16><$14><$02><$00><$16>って…[LR]
+//[WORD2]って…[LR]
 //どっち？<END>
-<$16><$14><$02><$00><$16>…[LR]
+[WORD2]…[LR]
 What is it?<END>
 
 #JMP($6446)
 #FIXEDLENGTH(24,0)
 // Television programme
-//<$16><$14><$02><$00><$16>って…[LR]
+//[WORD2]って…[LR]
 //どんな番組？<END>
-<$16><$14><$02><$00><$16>…[LR]
+[WORD2]…[LR]
 What kind of show?<END>
 
 #JMP($6595)
 #FIXEDLENGTH(18,0)
-//<$16><$14><$02><$00><$16>って…[LR]
+//[WORD2]って…[LR]
 //どれ？<END>
-<$16><$14><$02><$00><$16>…[LR]
+[WORD2]…[LR]
 Which one?<END>
 
 #JMP($66AC)
 #FIXEDLENGTH(18,0)
-//<$16><$14><$02><$00><$16>って…[LR]
+//[WORD2]って…[LR]
 //どれ？<END>
-<$16><$14><$02><$00><$16>…[LR]
+[WORD2]…[LR]
 Which one?<END>
 
 #JMP($6792)
 #FIXEDLENGTH(28,0)
-//<$16><$14><$02><$00><$16>って…[LR]
+//[WORD2]って…[LR]
 //どんな風に使う？<END>
-<$16><$14><$02><$00><$16>…[LR]
+[WORD2]…[LR]
 What weather is it?<END>
 
 #JMP($9522)
@@ -1108,16 +1108,16 @@ Wow nya～[LR]
 #JMP($B168)
 #FIXEDLENGTH(37,0)
 //わかった～[LR]
-//こんど <$16><$14><$02><$00><$16>に 会ったら…[LR]<END>
+//こんど [WORD2]に 会ったら…[LR]<END>
 Okay～[LR]
-Now let's meet <$16><$14><$02><$00><$16>…[LR]<END>
+Now let's meet [WORD2]…[LR]<END>
 
 #JMP($B193)
 #FIXEDLENGTH(28,0)
 //わかった～[LR]
-//あとで <$16><$14><$02><$00><$16>に…[LR]<END>
+//あとで [WORD2]に…[LR]<END>
 Okay～[LR]
-See <$16><$14><$02><$00><$16> later…[LR]<END>
+See [WORD2] later…[LR]<END>
 
 #JMP($B1CF)
 #FIXEDLENGTH(20,0)
@@ -1170,8 +1170,8 @@ I see, [NYA].[LR]<END>
 
 #JMP($B544)
 #FIXEDLENGTH(18,0)
-//あとで、<$16><$14><$03><$00><$16>に～[LR]<END>
-Later, <$16><$14><$03><$00><$16>～<END>
+//あとで、[WORD3]に～[LR]<END>
+Later, [WORD3]～<END>
 
 // Only overwrite bytes between 0x0000B59F and 0x0000B5B0.
 // Trim the end of the translated text if it is any longer.
@@ -1734,7 +1734,7 @@ When you go <$14><$00><$00>,[LR]<END>
 #JMP($84C13)
 #FIXEDLENGTH(37,0)
 // 1614030016 = Pokepi name
-//<$16><$14><$03><$00><$16>も いっしょに 連れてってくれる？
+//[WORD3]も いっしょに 連れてってくれる？
 Can you take me with you?<END>
 
 // If yes:
@@ -1743,13 +1743,13 @@ Can you take me with you?<END>
 #JMP($84D4C)
 #FIXEDLENGTH(21,0)
 // 1614030016 = Player name
-//<$16><$14><$03><$00><$16>の 身近にいる…[LR]
+//[WORD3]の 身近にいる…[LR]
 I'm close to you…[LR]<END>
 
 #JMP($84D63)
 #FIXEDLENGTH(40,0)
-//<$16><$14><$01><$00><$16>とか <$16><$14><$02><$00><$16>に 会ってみたかった[NYA]…[LR]
-I wanted to meet <$16><$14><$01><$00><$16> and <$16><$14><$02><$00><$16>, [NYA]…[LR]<END>
+//[WORD1]とか [WORD2]に 会ってみたかった[NYA]…[LR]
+I wanted to meet [WORD1] and [WORD2], [NYA]…[LR]<END>
 
 
 
@@ -1834,11 +1834,11 @@ Sportsperson<END>
 #JMP($97B5D)
 Character<END>
 
-//<$16><$14><$02><$00><$16>って…[LR]
+//[WORD2]って…[LR]
 //男の人？ 女の人？[LR]
 #FIXEDLENGTH(30,0)
 #JMP($7453)
-Is <$16><$14><$02><$00><$16> a[LR]
+Is [WORD2] a[LR]
 man or[LR]
 woman?[LR]<END>
 
@@ -1884,7 +1884,7 @@ What are the things you cherish?<END>
 What kind of food do adults eat?<END>
 
 // This message is repeated a lot more times in NEKO.KSC, why?
-//<$16><$14><$02><$00><$16>より エライ人の 名前 おしえて～？
+//[WORD2]より エライ人の 名前 おしえて～？
 #FIXEDLENGTH(38,0)
 #JMP($6BA5C)
 Tell me the name of someone important.<END>
@@ -1936,24 +1936,24 @@ What are they?<END>
 
 #JMP($5751)
 #FIXEDLENGTH(24,0)
-//<$16><$14><$02><$00><$16>って…[LR]
+//[WORD2]って…[LR]
 //どんなコト？
-<$16><$14><$02><$00><$16>…[LR]
+[WORD2]…[LR]
 What's that？<END>
 
 #JMP($57F1)
 #FIXEDLENGTH(26,0)
-//<$16><$14><$02><$00><$16>って…[LR]
+//[WORD2]って…[LR]
 //ひとりでする？
 Can you do[LR]
-<$16><$14><$02><$00><$16> alone?<END>
+[WORD2] alone?<END>
 
 #JMP($5995)
 #FIXEDLENGTH(20,0)
-//<$16><$14><$02><$00><$16>って…[LR]
+//[WORD2]って…[LR]
 //どっち？
 Which one[LR]
-is <$16><$14><$02><$00><$16>?<END>
+is [WORD2]?<END>
 
 //ふつうの人
 #JMP($97B96)
@@ -1988,10 +1988,10 @@ Say again<END>
 #JMP($7069)
 [WORD0]?[LR]What kind is it?<END>
 
-//<$16><$14><$02><$00><$16>って…[LR]なあに？
+//[WORD2]って…[LR]なあに？
 #JMP($7829)
 #FIXEDLENGTH(18,0)
-<$16><$14><$02><$00><$16>[LR]What's that?<END>
+[WORD2][LR]What's that?<END>
 
 //使うもノ - things you use
 //Items<END>
