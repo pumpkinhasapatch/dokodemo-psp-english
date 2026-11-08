@@ -160,13 +160,6 @@ fi
 cp -f ./extract/*.KSC ./insert
 
 # Patch KSC files in insert folder
-internal_names=(NEKO ROBO USAGI INU KAERU)
-declare -A patch_names
-patch_names[NEKO] = toro
-patch_names[ROBO] = suzuki
-patch_names[USAGI] = jun
-patch_names[INU] = pierre
-patch_names[KAERU] = ricky
 
 for name in NEKO ROBO USAGI INU KAERU; do
   case "$name" in
