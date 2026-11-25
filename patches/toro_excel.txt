@@ -7,7 +7,7 @@
 #JMP($C7F7 )
 #FIXEDLENGTH(6,0)
 //ニャ！ 
- Meow! <END>
+ Meow! <END>
 
 #JMP($8E1C8 )
 #FIXEDLENGTH(4,0)

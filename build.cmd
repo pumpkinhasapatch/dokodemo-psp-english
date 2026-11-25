@@ -19,6 +19,8 @@ set "bpar=tools\bpar\bpar_cosmo.com"
 set "gimconv=tools\GimConv\GimConv.exe"
 set "pngquant=tools\pngquant\pngquant.exe"
 set "databp=build\PSP_GAME\USRDIR\data\DATA.BP"
+:: Use Windows find.exe explicitly; Git Bash/MSYS put a Unix find earlier on PATH
+set "findexe=%SystemRoot%\System32\find.exe"
 
 title Doko Demo Issyo PSP Patcher
 
@@ -37,7 +39,8 @@ set expectedhash=a7d8ff8050ac0d1fd6b0d5970eecbd8d
 set "gameiso="
 for %%f in ("*.iso") do (
     echo Checking %%f...
-    for /f %%h in ('certutil -hashfile "%%f" MD5 ^| find /i /v "certutil" ^| find /i /v "hash"') do set "filehash=%%h"
+    set "lastiso=%%f"
+    for /f %%h in ('certutil -hashfile "%%f" MD5 ^| "%findexe%" /i /v "certutil" ^| "%findexe%" /i /v "hash"') do set "filehash=%%h"
     echo !filehash!
 
     if "!expectedhash!"=="!filehash!" (
@@ -51,12 +54,12 @@ if "!gameiso!"=="" (
     if exist "*.iso" (
         echo An ISO file was found but the checksum is incorrect.
         echo You may have the wrong game or a modified ISO that was already run through the patcher.
-        echo Make sure !file! is a original, unmodified copy of Doko Demo Issyo for PSP.
+        echo Make sure !lastiso! is a original, unmodified copy of Doko Demo Issyo for PSP.
         echo Other games like Doko Demo Issyo: Rettsu Gakkou or Doko Demo Issyo for PS1 are not supported.
         echo.
         set /P "yn=Continue anyway? (may cause errors) [y/n] "
         if /i "!yn!" neq "y" goto End
-        set "gameiso=!file!"
+        set "gameiso=!lastiso!"
         echo.
     ) else (
         echo This build script requires an original, unmodified copy of Doko Demo Issyo for PSP.
@@ -178,7 +181,7 @@ for /R textures %%f in (*.png) do (
     rem Remove the base directory part from the full path to get the relative path
     set "relPath=%%f"
     set "relPath=.!relPath:%cd%\textures=!"
-    for /f %%h in ('certutil -hashfile "%%f" MD5 ^| find /i /v "certutil" ^| find /i /v "hash"') do set "filehash=%%h"
+    for /f %%h in ('certutil -hashfile "%%f" MD5 ^| "%findexe%" /i /v "certutil" ^| "%findexe%" /i /v "hash"') do set "filehash=%%h"
     echo hashed file !relPath! !filehash!
     echo !relPath! !filehash!>>textures\md5.txt
 
