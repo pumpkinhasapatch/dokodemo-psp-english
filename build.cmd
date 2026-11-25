@@ -10,7 +10,7 @@ set "baseDir=%~dp0"
 cd /d "%baseDir%"
 
 :: Clear folder from previous builds
-rmdir /S /Q build
+if exist build rmdir /S /Q build
 mkdir build
 
 set "sevenzip=tools\7-Zip\7z.exe"
@@ -122,8 +122,8 @@ if not exist "extract\NEKO.KSC" (
     cd ..
 )
 
-del /S /Q insert
-mkdir insert
+if exist insert del /S /Q insert>nul
+if not exist insert mkdir insert
 copy /Y extract\*.KSC insert
 copy /Y extract\*.DIC insert
 
@@ -172,9 +172,9 @@ for %%f in (*) do (
 cd ..
 
 :: Delete converted image files
-del /S /Q textures\*.GIM>nul
-del /S /Q textures\*-fs8.png>nul
-del textures\md5.txt
+del /S /Q textures\*.GIM>nul 2>nul
+del /S /Q textures\*-fs8.png>nul 2>nul
+if exist textures\md5.txt del textures\md5.txt
 
 echo Converting .png textures to .GIM format
 for /R textures %%f in (*.png) do (
@@ -210,8 +210,8 @@ for /R %%f in (*.GIM) do (
 cd ..
 
 :: Delete converted image files
-del /S /Q textures\*.GIM>nul
-del /S /Q textures\*-fs8.png>nul
+del /S /Q textures\*.GIM>nul 2>nul
+del /S /Q textures\*-fs8.png>nul 2>nul
 
 echo Patching finished. Have fun!
 :: If PPSSPP is installed in the default folder, try to start the game
