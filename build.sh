@@ -388,8 +388,9 @@ if [ ! -f ./extract/NEKO.KSC ] ||
   cd ..
 fi
 
-# Copy original KSC files to insert folder
+# Copy original KSC and DIC files to insert folder
 cp -f ./extract/*.KSC ./insert
+cp -f ./extract/*.DIC ./insert
 
 # Patch KSC files in insert folder
 
@@ -402,20 +403,27 @@ for name in NEKO ROBO USAGI INU KAERU; do
     KAERU)  patch=ricky ;;
   esac
 
-  target="insert/$name.KSC"
-  found=no
+  ksc_found=no
+  dic_found=no
 
   for patch_file in "patches/$patch"*.txt; do
     [ -f "$patch_file" ] || continue
-    found=yes
+    # Dictionary patches (e.g. toro_dictionary.txt) write to the .DIC word list
+    case "$patch_file" in
+      "patches/${patch}_dictionary.txt") target="insert/$name.DIC"; dic_found=yes ;;
+      *)                                 target="insert/$name.KSC"; ksc_found=yes ;;
+    esac
     echo "Applying $patch_file to $target..."
     wine tools/Atlas/Atlas.exe "$target" "$patch_file" || exit 1
   done
 
-  if [ "$found" = yes ]; then
+  for ext in KSC DIC; do
+    if [ "$ext" = KSC ]; then found=$ksc_found; else found=$dic_found; fi
+    [ "$found" = yes ] || continue
+    target="insert/$name.$ext"
     echo "Writing $target to build/PSP_GAME/USRDIR/data/DATA.BP..."
     ./tools/bpar/bpar id build/PSP_GAME/USRDIR/data/DATA.BP "$target" || exit 1
-  fi
+  done
 done
 
 # The conversion commands are used inside 'find -exec sh -c', so they have to

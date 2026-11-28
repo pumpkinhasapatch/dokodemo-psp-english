@@ -71,7 +71,7 @@ def wrap_translation(text):
 
     # Send the raw text on stdin (avoids shell/arg encoding/quoting issues)
     proc = subprocess.run(
-        [sys.executable, "word_wrap.py"],
+        [sys.executable, str(Path(__file__).with_name("word_wrap.py"))],
         input=text,
         capture_output=True,
         text=True,
@@ -90,7 +90,9 @@ def row_to_block(row, cols):
     length  = fmt_length(row[cols[1]])
     original_raw = fmt_cell(row[cols[2]])
     original = "\n".join("//" + line for line in original_raw.splitlines())
-    translation_raw = fmt_cell(row[cols[3]])
+    # Spreadsheet programs often insert non-breaking spaces, which are not in
+    # shiftjis.tbl and make Atlas fail with "Character missing from table".
+    translation_raw = fmt_cell(row[cols[3]]).replace("\u00a0", " ")
     translation = wrap_translation(translation_raw)
     lines = [
         f"#JMP(${address})",

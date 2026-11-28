@@ -21,7 +21,7 @@
   <a href="https://discord.gg/3EYqGKpqNG"><img src="https://img.shields.io/discord/824319065773441045?logo=discord&logoColor=white&color=5865F2&label=Toro's%20Friend%20Dungeon" alt="Discord"></a><br>
   <a href="https://github.com/pumpkinhasapatch/dokodemo-psp-english/releases"><img src="https://img.shields.io/github/downloads/pumpkinhasapatch/dokodemo-psp-english/total" alt="Releases"></a>
   <a href="https://github.com/pumpkinhasapatch/dokodemo-psp-english/issues"><img src="https://img.shields.io/github/issues/pumpkinhasapatch/dokodemo-psp-english" alt="Issues"></a>
-  <a href="https://github.com/pumpkinhasapatch/dokodemo-psp-english/commits/dev"><img src="https://img.shields.io/github/last-commit/pumpkinhasapatch/DokoDemo-PSP-Patcher" alt="Commits"></a>
+  <a href="https://github.com/pumpkinhasapatch/dokodemo-psp-english/commits/dev"><img src="https://img.shields.io/github/last-commit/pumpkinhasapatch/dokodemo-psp-english/dev" alt="Commits"></a>
   <a href="https://ko-fi.com/pumpkinhasapatch"><img src="https://img.shields.io/badge/support_me_on-ko_fi-red?logo=ko-fi" alt="Ko-Fi"></a>
 </p>
 
@@ -52,7 +52,7 @@ If you have a real PSP console or original UMD disc, you can use Custom Firmware
 ### Applying xdelta patch
 The English translation is shared through xdelta patches. xdelta is a binary file containing the minimal amount of changes needed to convert an original copy of Doko Demo Issyo Portable into our modified (translated) game.
 
-You can get the latest xdelta patch from the translation project [Releases page](https://github.com/pumpkinhasapatch/dokodemo-psp-english), and apply them to your game using xdelta patching software like the ones below.
+You can get the latest xdelta patch from the translation project [Releases page](https://github.com/pumpkinhasapatch/dokodemo-psp-english/releases), and apply them to your game using xdelta patching software like the ones below.
 
 This is the easiest way to play Doko Demo Issyo in English, but it is difficult to make changes to the .xdelta files before applying them to your game without the use of extra software. If you would like to help edit translations or improve the code, see the [Building](#building) section below.
 
@@ -62,7 +62,7 @@ This is the easiest way to play Doko Demo Issyo in English, but it is difficult 
 - [Xdelta UI](https://www.romhacking.net/utilities/598/) (Windows)
 - [Delta Patcher](https://github.com/marco-calautti/DeltaPatcher) (Windows, Mac, Linux)
 
-Choose one of these xdelta patching tools compatible with your device and download the latest .xdelta patch file from our [Releases page](https://pumpkinhasapatch/dokodemo-psp-english/releases). In the patcher set your original .iso of Doko Demo Issyo Portable as the Source File the .xdelta file you downloaded as the Patch. Click the "Apply Patch" button to combine both files and save a copy of the translated game.
+Choose one of these xdelta patching tools compatible with your device and download the latest .xdelta patch file from our [Releases page](https://github.com/pumpkinhasapatch/dokodemo-psp-english/releases). In the patcher set your original .iso of Doko Demo Issyo Portable as the Source File the .xdelta file you downloaded as the Patch. Click the "Apply Patch" button to combine both files and save a copy of the translated game.
 
 If using Delta Patcher, make sure to click the settings icon and check "Backup original file", or your original game ISO will be overwritten. Keep a copy of your original game ISO for future patch releases.
 
@@ -158,7 +158,7 @@ For how to convert your patched game folder into a disc image or .xdelta file, p
 
 Doko Demo Issyo is a text-focused game with thousands of Japanese messages that need to be translated for this project to work. We could really use your help in searching for new data in the game's files and providing accurate Japanese-English translations.
 
-If you are a skilled programmer or Japanese reader, Join our [Discord server](https://pumpkin.moe) to talk with the translation team and learn more.
+If you are a skilled programmer or Japanese reader, Join our [Discord server](https://pumpkin.moe/discord) to talk with the translation team and learn more.
 
 On GitHub, documentation is provided on [our wiki](https://github.com/pumpkinhasapatch/dokodemo-psp-english/wiki), and you can [create an issue](https://github.com/pumpkinhasapatch/dokodemo-psp-english/issues/new) if you find any bugs or problems with translated text, or fork and open a [pull request](https://github.com/pumpkinhasapatch/dokodemo-psp-english/pulls/new) if you have edited the code in this repository with new fixes or translations.
 
