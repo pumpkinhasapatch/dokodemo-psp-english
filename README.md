@@ -83,6 +83,25 @@ See the [instruction booklet](https://github.com/pumpkinhasapatch/dokodemo-psp-e
 
 The translation project uses a custom build system that modifies an original copy of Doko Demo Issyo PSP by reading the original game files and inserting our custom text and images into them. You will need an original copy of the game and our Windows/Linux scripts to build the game.
 
+### Dependencies
+
+The build scripts use the following programs. **Most of them are downloaded or built automatically the first time you run the build script**, so in practice you usually only need Wine (on Linux) and GimConv.
+
+| Program | What it does | How to get it |
+|---------|--------------|---------------|
+| **GimConv** | Converts PNG textures to the game's GIM format | **You must supply this yourself.** It is proprietary Sony freeware that cannot be redistributed. Get it from the [RCOMage release](https://github.com/kakaroto/RCOMage/releases/tag/1.1.1) and put `GimConv.exe` and its files in `tools/GimConv/`. |
+| **Wine** | Runs the Windows tools (Atlas, GimConv) on Linux | Install with your package manager, for example `sudo apt install wine`. Not needed on Windows. |
+| **Atlas** | Inserts the translated text into the game files | Downloaded automatically from [its releases page](https://github.com/stevemonaco/Atlas/releases). |
+| **bpar** | Reads and writes the game's `DATA.BP` archive | Built automatically from the included `tools/bpar/bpar.c` if you have a C compiler (`cc`, `gcc` or `clang`). |
+| **pngquant** | Converts textures to 8-bit alpha PNG before GimConv | Downloaded automatically from [pngquant.org](https://pngquant.org), or install it with `sudo apt install pngquant`. |
+| **7-Zip** | Extracts the game ISO | Downloaded automatically from [its releases page](https://github.com/ip7z/7zip/releases). |
+| **curl**, **tar** | Used to download the tools above | Usually already installed. Only needed for the automatic downloads. |
+| **Python 3** | Only for the translator helper scripts in `scripts/` | [python.org](https://www.python.org/downloads). Not needed for a normal build. |
+
+If a program is missing, the build script tells you exactly what it needs and stops before changing anything, so you can install everything in one go and run it again.
+
+> **A note on Wine:** Atlas and GimConv are 32-bit Windows programs. On a 64-bit Linux system you may also need 32-bit support, for example `sudo dpkg --add-architecture i386 && sudo apt update && sudo apt install wine32:i386` on Debian/Ubuntu.
+
 ### Windows
 
 **Requirements:** Windows 10/11, [Python 3](https://www.python.org/downloads) installed to PATH.
@@ -96,8 +115,9 @@ The translation project uses a custom build system that modifies an original cop
 
 ### Linux
 
-**Requirements:** [Wine](https://winehq.org).
+**Requirements:** [Wine](https://winehq.org) and GimConv (see [Dependencies](#dependencies) above). Everything else is downloaded or built automatically.
 
+**Optional:** a C compiler such as `gcc` (to build bpar from the included source), [pngquant](https://pngquant.org) (downloaded automatically if missing), [PPSSPP emulator](https://ppsspp.org) (the patched build folder is started automatically when PPSSPP is found).
 
 #### Linux commands
 ```sh
@@ -109,12 +129,22 @@ cd dokodemo-psp-english
 # Allow files like build.sh and tools/bpar to run as programs
 sudo chmod -R a+xX ./*
 
-# Install some dependencies (replace 'apt' with your package manager)
+# Install Wine (replace 'apt' with your package manager).
+# pngquant, Atlas, 7-Zip and bpar are set up by the build script automatically,
+# but installing pngquant and gcc yourself also works.
 sudo apt install wine -y
+
+# Allow bpar file extraction tool to run as an executable.
+sudo chmod +x ./tools/bpar/bpar
 
 # Attempt to patch the game based on current source files.
 # Should tell you if any files are missing.
 ./build.sh
+
+# You can also pass a game iso, or place it in the project folder so the
+# script finds it automatically. The checksum is verified and the build
+# folder is cleared before the game is extracted.
+./build.sh path/to/ddipsp.iso
 ```
 
 ### MacOS

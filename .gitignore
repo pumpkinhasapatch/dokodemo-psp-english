@@ -19,6 +19,9 @@ insert/
 # pngquant converted images
 *-fs8.png
 
+# Programs automatically downloaded by the build script
+tools/7zip
+
 # Excel spreadsheets
 *.xlsx
 *.ods
